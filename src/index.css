@@ -1,0 +1,218 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-paper: #f7f2e8;
+  --color-cream: #eee7d8;
+  --color-ink: #18231f;
+  --color-forest: #173f35;
+  --color-moss: #5f7866;
+  --color-terracotta: #d96745;
+  --color-sun: #f0b94b;
+  --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Lora', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    background: var(--color-paper);
+  }
+
+  body {
+    margin: 0;
+    min-width: 320px;
+    min-height: 100vh;
+    background: var(--color-paper);
+    color: var(--color-ink);
+    font-family: var(--font-sans);
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  a,
+  button,
+  summary {
+    outline-color: var(--color-terracotta);
+    outline-offset: 4px;
+  }
+
+  button,
+  summary {
+    cursor: pointer;
+  }
+
+  ::selection {
+    background: var(--color-sun);
+    color: var(--color-ink);
+  }
+}
+
+.container-shell {
+  width: min(calc(100% - 2rem), 80rem);
+  margin-inline: auto;
+}
+
+.section-padding {
+  padding-block: clamp(5.25rem, 10vw, 9rem);
+}
+
+.section-kicker {
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: color-mix(in srgb, var(--color-forest) 68%, transparent);
+}
+
+.section-title {
+  max-width: 48rem;
+  font-family: var(--font-display);
+  font-size: clamp(2.55rem, 5vw, 5rem);
+  font-weight: 500;
+  line-height: 1.02;
+  letter-spacing: -0.05em;
+}
+
+.button-primary,
+.button-secondary {
+  display: inline-flex;
+  min-height: 3.25rem;
+  align-items: center;
+  gap: 0.65rem;
+  padding-inline: 1.3rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+}
+
+.button-primary {
+  background: var(--color-forest);
+  color: var(--color-paper);
+}
+
+.button-primary:hover {
+  background: var(--color-terracotta);
+  transform: translateY(-2px);
+}
+
+.button-secondary {
+  border: 1px solid color-mix(in srgb, var(--color-forest) 22%, transparent);
+  color: var(--color-ink);
+}
+
+.button-secondary:hover {
+  border-color: var(--color-forest);
+  transform: translateY(-2px);
+}
+
+.skip-link {
+  position: fixed;
+  top: 0.75rem;
+  left: 0.75rem;
+  z-index: 100;
+  transform: translateY(-200%);
+  background: var(--color-sun);
+  padding: 0.75rem 1rem;
+  color: var(--color-ink);
+  font-size: 0.8rem;
+  font-weight: 700;
+  transition: transform 160ms ease;
+}
+
+.skip-link:focus {
+  transform: translateY(0);
+}
+
+.hero-arch {
+  border-radius: 18rem 18rem 1rem 1rem;
+}
+
+/* .topographic {
+  background-image:
+    radial-gradient(circle at 70% 20%, transparent 0 8%, rgba(23, 63, 53, 0.08) 8.2% 8.5%, transparent 8.7% 13%, rgba(23, 63, 53, 0.07) 13.2% 13.5%, transparent 13.7%),
+    radial-gradient(circle at 42% 70%, transparent 0 14%, rgba(23, 63, 53, 0.07) 14.2% 14.5%, transparent 14.7% 21%, rgba(23, 63, 53, 0.06) 21.2% 21.5%, transparent 21.7%);
+  background-size: 28rem 28rem, 36rem 36rem;
+} */
+
+.route-canvas {
+  background-image:
+    linear-gradient(rgba(247, 242, 232, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(247, 242, 232, 0.055) 1px, transparent 1px);
+  background-size: 3rem 3rem;
+}
+
+.destination-card::after {
+  position: absolute;
+  inset: 0;
+  border: 1px solid rgba(247, 242, 232, 0.24);
+  content: '';
+  pointer-events: none;
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stamp-float {
+  0%, 100% {
+    transform: rotate(12deg) translateY(0);
+  }
+  50% {
+    transform: rotate(9deg) translateY(-7px);
+  }
+}
+
+.hero-reveal {
+  animation: fade-up 650ms both cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hero-reveal-delay-1 {
+  animation-delay: 90ms;
+}
+
+.hero-reveal-delay-2 {
+  animation-delay: 180ms;
+}
+
+.hero-reveal-delay-3 {
+  animation-delay: 270ms;
+}
+
+.stamp {
+  animation: stamp-float 5s ease-in-out infinite;
+}
+
+@media (min-width: 640px) {
+  .container-shell {
+    width: min(calc(100% - 3rem), 80rem);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+  }
+}
