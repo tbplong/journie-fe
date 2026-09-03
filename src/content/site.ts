@@ -35,13 +35,13 @@ export const sampleItinerary = [
     area: 'Quận 3',
     category: 'Lịch sử',
     duration: '1 giờ 20 phút',
-    cost: '40.000đ',
+    cost: '~40.000đ',
     description: 'Bắt đầu sớm để tham quan không gian trưng bày khi lượng khách còn thấp.',
     travelToNext: {
       mode: 'Đi bộ',
       distance: '750 m',
       duration: '10 phút',
-      note: 'Đi thẳng theo Võ Văn Tần, không cần gọi xe.',
+      // note: 'Đi thẳng theo Võ Văn Tần, không cần gọi xe.',
     },
   },
   {
@@ -51,13 +51,13 @@ export const sampleItinerary = [
     area: 'Quận 1',
     category: 'Kiến trúc · Lịch sử',
     duration: '1 giờ 15 phút',
-    cost: '65.000đ',
+    cost: '~65.000đ',
     description: 'Khung giờ vừa đủ cho tuyến tham quan chính và khuôn viên bên ngoài.',
     travelToNext: {
       mode: 'Đi bộ',
       distance: '1,1 km',
       duration: '16 phút',
-      note: 'Tuyến đi xuôi về phía nam, tránh quay lại đường cũ.',
+      // note: 'Tuyến đi xuôi về phía nam, tránh quay lại đường cũ.',
     },
   },
   {
@@ -73,7 +73,7 @@ export const sampleItinerary = [
       mode: 'Đi bộ',
       distance: '650 m',
       duration: '9 phút',
-      note: 'Quãng ngắn trong khu trung tâm, nhanh hơn di chuyển bằng ô tô.',
+      // note: 'Quãng ngắn trong khu trung tâm, nhanh hơn di chuyển bằng ô tô.',
     },
   },
   {
@@ -83,13 +83,13 @@ export const sampleItinerary = [
     area: 'Quận 1',
     category: 'Nghệ thuật · Kiến trúc',
     duration: '1 giờ 20 phút',
-    cost: '30.000đ',
+    cost: '~30.000đ',
     description: 'Ưu tiên hoạt động trong nhà vào đầu giờ chiều, khi nhiệt độ ngoài trời cao.',
     travelToNext: {
       mode: 'Taxi',
       distance: '1,8 km',
       duration: '10 phút',
-      note: 'Có 50 phút nghỉ cà phê trước khi tiếp tục chặng cuối.',
+      // note: 'Có 50 phút nghỉ cà phê trước khi tiếp tục chặng cuối.',
     },
   },
   {

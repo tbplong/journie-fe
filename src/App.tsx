@@ -267,7 +267,7 @@ function App() {
                   Từ một ý tưởng đến hành trình sẵn sàng để đi.
                 </h2>
                 <p className="mt-7 max-w-2xl text-base leading-7 text-ink/65 sm:text-lg sm:leading-8">
-                  Bạn giữ quyền quyết định. AI đảm nhiệm phần tổng hợp, sắp xếp và kiểm tra những
+                  Bạn giữ quyền quyết định. Journie đảm nhiệm phần tổng hợp, sắp xếp và kiểm tra những
                   ràng buộc khiến việc lập kế hoạch trở nên phức tạp.
                 </p>
               </div>
@@ -436,9 +436,9 @@ function App() {
                             )}
                             {item.travelToNext.mode} · {item.travelToNext.distance} · {item.travelToNext.duration}
                           </span>
-                          <span className="text-[0.68rem] leading-5 text-ink/45 sm:text-right">
+                          {/* <span className="text-[0.68rem] leading-5 text-ink/45 sm:text-right">
                             {item.travelToNext.note}
-                          </span>
+                          </span> */}
                         </div>
                       )}
                     </li>
