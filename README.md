@@ -21,8 +21,14 @@ npm run preview  # Preview the production build locally
 ```text
 src/
 ├── assets/images/       # Destination images and Journie brand assets
-├── components/Header.tsx
-├── content/site.ts      # Brand name, content, and landing page data
+├── components/          # Shared UI and providers
+├── content/site.ts      # Brand content and landing page data
+├── hooks/               # Shared React hooks
+├── i18n/messages.ts     # Vietnamese and English copy
+├── layouts/             # Global page chrome
+├── pages/               # Route-level page content
+├── types/               # Shared TypeScript types
+├── utils/               # Formatting utilities
 ├── App.tsx
 ├── index.css
 └── main.tsx

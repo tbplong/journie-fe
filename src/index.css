@@ -5,7 +5,6 @@
   --color-cream: #eee7d8;
   --color-ink: #18231f;
   --color-forest: #173f35;
-  --color-moss: #5f7866;
   --color-terracotta: #d96745;
   --color-sun: #f0b94b;
   --font-sans: 'Be Vietnam Pro', ui-sans-serif, system-ui, sans-serif;
@@ -13,17 +12,12 @@
 }
 
 @layer base {
-  * {
-    box-sizing: border-box;
-  }
-
   html {
     scroll-behavior: smooth;
     background: var(--color-paper);
   }
 
   body {
-    margin: 0;
     min-width: 320px;
     min-height: 100vh;
     background: var(--color-paper);
@@ -130,30 +124,11 @@
   transform: translateY(0);
 }
 
-.hero-arch {
-  border-radius: 18rem 18rem 1rem 1rem;
-}
-
-/* .topographic {
-  background-image:
-    radial-gradient(circle at 70% 20%, transparent 0 8%, rgba(23, 63, 53, 0.08) 8.2% 8.5%, transparent 8.7% 13%, rgba(23, 63, 53, 0.07) 13.2% 13.5%, transparent 13.7%),
-    radial-gradient(circle at 42% 70%, transparent 0 14%, rgba(23, 63, 53, 0.07) 14.2% 14.5%, transparent 14.7% 21%, rgba(23, 63, 53, 0.06) 21.2% 21.5%, transparent 21.7%);
-  background-size: 28rem 28rem, 36rem 36rem;
-} */
-
 .route-canvas {
   background-image:
     linear-gradient(rgba(247, 242, 232, 0.055) 1px, transparent 1px),
     linear-gradient(90deg, rgba(247, 242, 232, 0.055) 1px, transparent 1px);
   background-size: 3rem 3rem;
-}
-
-.destination-card::after {
-  position: absolute;
-  inset: 0;
-  border: 1px solid rgba(247, 242, 232, 0.24);
-  content: '';
-  pointer-events: none;
 }
 
 @keyframes fade-up {
@@ -164,15 +139,6 @@
   to {
     opacity: 1;
     transform: translateY(0);
-  }
-}
-
-@keyframes stamp-float {
-  0%, 100% {
-    transform: rotate(12deg) translateY(0);
-  }
-  50% {
-    transform: rotate(9deg) translateY(-7px);
   }
 }
 
@@ -190,10 +156,6 @@
 
 .hero-reveal-delay-3 {
   animation-delay: 270ms;
-}
-
-.stamp {
-  animation: stamp-float 5s ease-in-out infinite;
 }
 
 @media (min-width: 640px) {

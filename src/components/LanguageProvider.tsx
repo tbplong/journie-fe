@@ -1,12 +1,12 @@
 import { useEffect, useState, type ReactNode } from 'react'
-import { LanguageContext } from './LanguageContext'
-import { messages, type Language } from './messages'
+import { LanguageContext } from '../hooks/useLanguage'
+import { messages } from '../i18n/messages'
+import type { Language } from '../types/i18n'
 
 const STORAGE_KEY = 'journie-language'
 
 function getInitialLanguage(): Language {
-  const savedLanguage = localStorage.getItem(STORAGE_KEY)
-  return savedLanguage === 'en' ? 'en' : 'vi'
+  return localStorage.getItem(STORAGE_KEY) === 'en' ? 'en' : 'vi'
 }
 
 export function LanguageProvider({ children }: { children: ReactNode }) {

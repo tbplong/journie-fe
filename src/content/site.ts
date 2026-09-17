@@ -7,10 +7,8 @@ import logoMark from '../assets/images/journie-mark.png'
 import ninhBinhImage from '../assets/images/ninh-binh.jpg'
 import phuQuocImage from '../assets/images/phu-quoc.jpg'
 
-const configuredName = import.meta.env.VITE_SITE_NAME?.trim()
-
 export const siteConfig = {
-  name: configuredName || 'Journie',
+  name: 'Journie',
   heroImage: ninhBinhImage,
   sampleItineraryImage: hoChiMinhCityImage,
   logoMark,
@@ -19,7 +17,6 @@ export const siteConfig = {
 
 export const sampleItinerary = [
   {
-    id: 'war-remnants-museum',
     time: '08:00',
     endTime: '09:20',
     durationMinutes: 80,
@@ -31,7 +28,6 @@ export const sampleItinerary = [
     },
   },
   {
-    id: 'independence-palace',
     time: '09:30',
     endTime: '10:45',
     durationMinutes: 75,
@@ -43,7 +39,6 @@ export const sampleItinerary = [
     },
   },
   {
-    id: 'ben-thanh-market',
     time: '11:05',
     endTime: '12:30',
     durationMinutes: 85,
@@ -55,7 +50,6 @@ export const sampleItinerary = [
     },
   },
   {
-    id: 'fine-arts-museum',
     time: '12:45',
     endTime: '14:05',
     durationMinutes: 80,
@@ -67,7 +61,6 @@ export const sampleItinerary = [
     },
   },
   {
-    id: 'nguyen-hue-bach-dang',
     time: '15:15',
     endTime: '17:30',
     durationMinutes: 135,
@@ -78,22 +71,18 @@ export const sampleItinerary = [
 
 export const destinations = [
   {
-    id: 'ha-giang',
     image: haGiangImage,
     className: 'md:col-span-7 md:row-span-2',
   },
   {
-    id: 'hoi-an',
     image: hoiAnImage,
     className: 'md:col-span-5',
   },
   {
-    id: 'ha-long',
     image: haLongImage,
     className: 'md:col-span-5',
   },
   {
-    id: 'phu-quoc',
     image: phuQuocImage,
     className: 'md:col-span-12',
   },

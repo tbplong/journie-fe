@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { ArrowUpRight, Menu, X } from 'lucide-react'
 import { siteConfig } from '../content/site'
-import { useLanguage } from '../i18n/LanguageContext'
+import { useLanguage } from '../hooks/useLanguage'
 
 function LanguageSwitcher() {
   const { language, messages, setLanguage } = useLanguage()
