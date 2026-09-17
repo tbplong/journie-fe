@@ -1,4 +1,5 @@
 import { siteConfig } from '../content/site'
+import type { Language } from '../types/i18n'
 
 const vi = {
   meta: {
@@ -286,7 +287,5 @@ const en: Messages = {
     creditPlaces: ['Trang An, Ninh Binh', 'Ha Thanh, Ha Giang', 'Hoi An Ancient Town', 'Ha Long Bay', 'Phu Quoc Beach', 'Saigon River, Ho Chi Minh City'],
   },
 }
-
-export type Language = 'vi' | 'en'
 
 export const messages: Record<Language, Messages> = { vi, en }
