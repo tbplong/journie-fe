@@ -146,10 +146,12 @@ const vi = {
     title: 'Mỗi miền một nhịp, mỗi người một cách đi.',
     description: 'Từ những cung đèo phương Bắc đến miền biển phía Nam, hành trình bắt đầu từ nơi bạn muốn đến.',
     destinations: [
-      { name: 'Hà Giang', region: 'Miền đá nở hoa', alt: 'Ruộng bậc thang xanh giữa núi đồi Hà Giang' },
-      { name: 'Hội An', region: 'Miền phố cổ', alt: 'Những ngôi nhà vàng và đèn lồng tại phố cổ Hội An' },
-      { name: 'Hạ Long', region: 'Miền kỳ quan', alt: 'Vịnh Hạ Long nhìn từ trên cao với núi đá vôi và thuyền' },
-      { name: 'Phú Quốc', region: 'Miền nắng biển', alt: 'Bãi biển Phú Quốc với hàng dừa bên bờ cát' },
+      { name: 'Hà Giang', region: 'Miền đá nở hoa', description: 'Cung đèo uốn lượn, ruộng bậc thang và những chuyến đi chậm giữa mây.', alt: 'Ruộng bậc thang xanh giữa núi đồi Hà Giang' },
+      { name: 'Hạ Long', region: 'Miền kỳ quan', description: 'Đảo đá vôi nhô lên giữa làn nước xanh ngọc, đẹp nhất khi bình minh còn phủ sương.', alt: 'Vịnh Hạ Long nhìn từ trên cao với núi đá vôi và thuyền' },
+      { name: 'Ninh Bình', region: 'Miền non nước', description: 'Thuyền lướt qua hang động và vách đá vôi, một nhịp sống chậm giữa non nước.', alt: 'Du khách chèo thuyền giữa núi đá vôi và sông nước Tràng An, Ninh Bình' },
+      { name: 'Hội An', region: 'Miền phố cổ', description: 'Đèn lồng lên màu khi chiều xuống, phố cổ hợp để đi bộ và ở lại lâu hơn dự định.', alt: 'Những ngôi nhà vàng và đèn lồng tại phố cổ Hội An' },
+      { name: 'Sài Gòn', region: 'Miền phố thị', description: 'Bảo tàng, chợ, quán cà phê và bờ sông lên đèn, gói trọn trong một ngày.', alt: 'Trung tâm Thành phố Hồ Chí Minh nhìn từ sông Sài Gòn' },
+      { name: 'Phú Quốc', region: 'Miền nắng biển', description: 'Bãi cát dài, hoàng hôn trên biển và những ngày không cần nhìn đồng hồ.', alt: 'Bãi biển Phú Quốc với hàng dừa bên bờ cát' },
     ],
   },
   cta: {
@@ -294,10 +296,12 @@ const en: Messages = {
     title: 'Every region has a rhythm. Every traveler has a way.',
     description: 'From northern mountain passes to southern shores, your journey begins wherever you want to go.',
     destinations: [
-      { name: 'Ha Giang', region: 'Where stone blooms', alt: 'Green rice terraces among the mountains of Ha Giang' },
-      { name: 'Hoi An', region: 'Ancient streets', alt: 'Yellow houses and lanterns in Hoi An Ancient Town' },
-      { name: 'Ha Long', region: 'Natural wonder', alt: 'Aerial view of limestone islands and boats in Ha Long Bay' },
-      { name: 'Phu Quoc', region: 'Sunlit shores', alt: 'Phu Quoc beach with palm trees lining the sand' },
+      { name: 'Ha Giang', region: 'Where stone blooms', description: 'Winding passes, terraced fields, and slow rides among the clouds.', alt: 'Green rice terraces among the mountains of Ha Giang' },
+      { name: 'Ha Long', region: 'Natural wonder', description: 'Limestone islands rise from emerald water, loveliest when dawn mist still lingers.', alt: 'Aerial view of limestone islands and boats in Ha Long Bay' },
+      { name: 'Ninh Binh', region: 'Mountains and water', description: 'Boats glide beneath limestone cliffs and through caves, a slower rhythm between rock and river.', alt: 'Travelers rowing among limestone mountains and waterways in Trang An, Ninh Binh' },
+      { name: 'Hoi An', region: 'Ancient streets', description: 'Lanterns glow as evening falls, and the old town is made for walking and lingering.', alt: 'Yellow houses and lanterns in Hoi An Ancient Town' },
+      { name: 'Saigon', region: 'City on the river', description: 'Museums, markets, cafés, and a glowing riverfront, all within a single day.', alt: 'Central Ho Chi Minh City viewed from the Saigon River' },
+      { name: 'Phu Quoc', region: 'Sunlit shores', description: 'Long beaches, sunsets over the sea, and days with no need to check the time.', alt: 'Phu Quoc beach with palm trees lining the sand' },
     ],
   },
   cta: {

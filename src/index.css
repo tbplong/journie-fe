@@ -562,6 +562,15 @@ body::after {
   }
 }
 
+.explore-progress {
+  animation: explore-progress linear both;
+}
+
+@keyframes explore-progress {
+  from { transform: scaleX(0); }
+  to { transform: scaleX(1); }
+}
+
 /* ───────── Genie details ───────── */
 
 .scene-star {
@@ -624,6 +633,30 @@ body::after {
   border-color: rgba(217, 103, 69, 0.85);
 }
 
+/* ───────── Gold shimmer on key words ───────── */
+
+.text-shimmer {
+  background-image: linear-gradient(
+    100deg,
+    var(--color-terracotta) 0%,
+    var(--color-terracotta) 38%,
+    #f6c768 50%,
+    var(--color-terracotta) 62%,
+    var(--color-terracotta) 100%
+  );
+  background-size: 260% 100%;
+  background-position: 100% 0;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 5.5s ease-in-out 1.6s infinite;
+}
+
+@keyframes shimmer {
+  0% { background-position: 100% 0; }
+  55%, 100% { background-position: -60% 0; }
+}
+
 /* ───────── Wisp (lamp smoke / journey line) ───────── */
 
 .wisp-rise {
@@ -661,3 +694,22 @@ body::after {
   to { transform: translate3d(0, -8px, 0) rotate(1deg); }
 }
 
+/* A gold line draws across the foot of a card on hover. */
+.hover-line {
+  position: relative;
+}
+
+.hover-line::after {
+  content: '';
+  position: absolute;
+  inset: auto 0 0 0;
+  height: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  background: linear-gradient(90deg, var(--color-terracotta), var(--color-sun));
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.hover-line:hover::after {
+  transform: scaleX(1);
+}

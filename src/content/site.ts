@@ -71,21 +71,60 @@ export const sampleItinerary = [
 
 export const destinations = [
   {
+    id: 'ha-giang',
     image: haGiangImage,
-    className: 'md:col-span-7 md:row-span-2',
+    atmosphere: 'highland',
+    coordinates: [22.8233, 104.9836],
+    tint: '#0f3128',
   },
   {
-    image: hoiAnImage,
-    className: 'md:col-span-5',
-  },
-  {
+    id: 'ha-long',
     image: haLongImage,
-    className: 'md:col-span-5',
+    atmosphere: 'bay',
+    coordinates: [20.9101, 107.1839],
+    tint: '#0c3440',
   },
   {
-    image: phuQuocImage,
-    className: 'md:col-span-12',
+    id: 'ninh-binh',
+    image: ninhBinhImage,
+    atmosphere: 'karst',
+    coordinates: [20.2506, 105.9745],
+    tint: '#173f35',
   },
+  {
+    id: 'hoi-an',
+    image: hoiAnImage,
+    atmosphere: 'lanterns',
+    coordinates: [15.8801, 108.338],
+    tint: '#3a2310',
+  },
+  {
+    id: 'sai-gon',
+    image: hoChiMinhCityImage,
+    atmosphere: 'city',
+    coordinates: [10.7769, 106.7009],
+    tint: '#14202b',
+  },
+  {
+    id: 'phu-quoc',
+    image: phuQuocImage,
+    atmosphere: 'sunset',
+    coordinates: [10.2899, 103.984],
+    tint: '#103a43',
+  },
+] as const
+
+export type Atmosphere = (typeof destinations)[number]['atmosphere']
+
+/** One chapter per landing-page section; scrolling reads as travelling between places. */
+export const journeyChapters = [
+  { id: 'top', coordinates: [20.2506, 105.9745], tone: 'light' },
+  { id: 'cau-chuyen', coordinates: [22.8233, 104.9836], tone: 'light' },
+  { id: 'cach-hoat-dong', coordinates: [15.8801, 108.338], tone: 'light' },
+  { id: 'hanh-trinh', coordinates: [10.7769, 106.7009], tone: 'dark' },
+  { id: 'thich-ung', coordinates: [20.9101, 107.1839], tone: 'light' },
+  { id: 'kham-pha', coordinates: [16.0471, 108.2068], tone: 'dark' },
+  { id: 'khoi-hanh', coordinates: [10.2899, 103.984], tone: 'dark' },
 ] as const
 
 export const imageCredits = [
