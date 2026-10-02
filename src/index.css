@@ -546,6 +546,38 @@ body::after {
   100% { transform: translate3d(32cqw, 15cqw, 0) rotate(24deg); opacity: 0; }
 }
 
+/* ───────── Cursor ───────── */
+
+.magic-dot,
+.magic-ring {
+  position: fixed;
+  left: 0;
+  top: 0;
+  border-radius: 50%;
+  transition: opacity 240ms ease;
+  will-change: transform;
+}
+
+.magic-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--color-terracotta);
+  box-shadow: 0 0 0 2px rgba(247, 242, 232, 0.65);
+}
+
+.magic-ring {
+  width: 34px;
+  height: 34px;
+  border: 1.5px solid rgba(240, 185, 75, 0.9);
+  background: radial-gradient(circle, rgba(240, 185, 75, 0.14), transparent 70%);
+  transition: opacity 240ms ease, background-color 240ms ease, border-color 240ms ease;
+}
+
+.magic-ring[data-active='true'] {
+  background: rgba(240, 185, 75, 0.2);
+  border-color: rgba(217, 103, 69, 0.85);
+}
+
 /* ───────── Wisp (lamp smoke / journey line) ───────── */
 
 .wisp-rise {
