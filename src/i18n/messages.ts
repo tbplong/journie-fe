@@ -20,6 +20,12 @@ const vi = {
     closeMenu: 'Đóng menu',
     home: `${siteConfig.name}, về đầu trang`,
     language: 'Chọn ngôn ngữ',
+    destinationPicker: 'Chọn điểm đến',
+    pauseSlideshow: 'Tạm dừng tự chuyển điểm đến',
+    playSlideshow: 'Tự chuyển điểm đến',
+  },
+  journey: {
+    places: ['Ninh Bình', 'Hà Giang', 'Hội An', 'Sài Gòn', 'Hạ Long', 'Dọc đất nước', 'Phú Quốc'],
   },
   nav: [
     { label: 'Câu chuyện', href: '#cau-chuyen' },
@@ -40,6 +46,14 @@ const vi = {
     imageCaption: 'Tràng An, Ninh Bình',
     weather: 'Sáng mai · 26°C',
     weatherNote: 'Đẹp trời để đi thuyền',
+    wishLabel: 'Chạm vào cây đèn để ước một chuyến đi',
+    wishCaption: 'Chạm để ước',
+    wishes: [
+      'Ba ngày ở Hội An, đi thật chậm và ăn thật nhiều.',
+      'Săn mây Hà Giang mà không lo lệch lịch.',
+      'Trời mưa thì đổi sang quán cà phê, chuyến đi vẫn trọn.',
+      'Ra Phú Quốc vừa túi tiền, vừa kịp hoàng hôn.',
+    ],
   },
   highlights: ['Cá nhân hóa', 'Lịch trình thực tế', 'Thích ứng tức thời', 'Đi khắp Việt Nam'],
   story: {
@@ -175,6 +189,12 @@ const en: Messages = {
     closeMenu: 'Close menu',
     home: `${siteConfig.name}, back to top`,
     language: 'Select language',
+    destinationPicker: 'Choose a destination',
+    pauseSlideshow: 'Pause automatic destination changes',
+    playSlideshow: 'Play automatic destination changes',
+  },
+  journey: {
+    places: ['Ninh Binh', 'Ha Giang', 'Hoi An', 'Saigon', 'Ha Long', 'Across Vietnam', 'Phu Quoc'],
   },
   nav: [
     { label: 'Our story', href: '#cau-chuyen' },
@@ -195,6 +215,14 @@ const en: Messages = {
     imageCaption: 'Trang An, Ninh Binh',
     weather: 'Tomorrow morning · 26°C',
     weatherNote: 'Perfect weather for a boat ride',
+    wishLabel: 'Rub the lamp to wish for a trip',
+    wishCaption: 'Rub to wish',
+    wishes: [
+      'Three slow days in Hoi An, and plenty to eat.',
+      'Chasing clouds in Ha Giang without a schedule scramble.',
+      'If it rains, swap in a café stop and keep the trip whole.',
+      'Phu Quoc on a sensible budget, in time for sunset.',
+    ],
   },
   highlights: ['Personalized', 'Practical itineraries', 'Real-time adaptation', 'Across Vietnam'],
   story: {
