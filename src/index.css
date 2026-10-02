@@ -78,15 +78,33 @@
 
   .button-primary,
   .button-secondary {
+    position: relative;
     display: inline-flex;
     min-height: 3.25rem;
     align-items: center;
     gap: 0.65rem;
+    overflow: hidden;
+    isolation: isolate;
     padding-inline: 1.3rem;
     font-size: 0.78rem;
     font-weight: 600;
     text-decoration: none;
-    transition: transform 180ms ease, background-color 180ms ease, color 180ms ease;
+    transition:
+      transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      background-color 360ms ease,
+      color 360ms ease,
+      border-color 360ms ease,
+      box-shadow 360ms ease;
+  }
+
+  .button-primary svg,
+  .button-secondary svg {
+    transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .button-primary:hover svg,
+  .button-secondary:hover svg {
+    transform: translate(3px, 3px);
   }
 
   .button-primary {
@@ -94,18 +112,45 @@
     color: var(--color-paper);
   }
 
+  /* A band of lamp-light sweeps across on hover. */
+  .button-primary::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    transform: translateX(-120%) skewX(-18deg);
+    background: linear-gradient(90deg, transparent, rgba(240, 185, 75, 0.45), transparent);
+    transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
   .button-primary:hover {
     background: var(--color-terracotta);
     transform: translateY(-2px);
+    box-shadow: 0 14px 30px -14px rgba(217, 103, 69, 0.65);
+  }
+
+  .button-primary:hover::after {
+    transform: translateX(120%) skewX(-18deg);
   }
 
   .button-secondary {
     border: 1px solid color-mix(in srgb, var(--color-forest) 22%, transparent);
     color: var(--color-ink);
+    background-image: linear-gradient(var(--color-forest), var(--color-forest));
+    background-repeat: no-repeat;
+    background-position: left center;
+    background-size: 0% 100%;
+    transition:
+      background-size 520ms cubic-bezier(0.22, 1, 0.36, 1),
+      transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+      color 360ms ease,
+      border-color 360ms ease;
   }
 
   .button-secondary:hover {
     border-color: var(--color-forest);
+    background-size: 100% 100%;
+    color: var(--color-paper);
     transform: translateY(-2px);
   }
 }
@@ -184,6 +229,7 @@
     transition-duration: 0.01ms !important;
   }
 }
+
 /* ───────── Depth & texture ───────── */
 
 body::after {
