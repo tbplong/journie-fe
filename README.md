@@ -22,17 +22,47 @@ npm run preview  # Preview the production build locally
 src/
 ├── assets/images/       # Destination images and Journie brand assets
 ├── components/          # Shared UI and providers
-├── content/site.ts      # Brand content and landing page data
-├── hooks/               # Shared React hooks
+│   ├── motion/          # Reusable motion: RevealHeading, Magnetic, Tilt, CountUp, Coordinates
+│   └── scenes/          # Place-based animated backdrops (karst, terraces, lanterns, city, bay, sunset, footer sky)
+├── content/site.ts      # Brand content, destinations and journey chapters
+├── hooks/               # Shared React hooks (language, motion preferences, active section)
 ├── i18n/messages.ts     # Vietnamese and English copy
 ├── layouts/             # Global page chrome
-├── pages/               # Route-level page content
+├── pages/               # Route-level page content (composes sections)
+├── sections/            # One file per landing page section
 ├── types/               # Shared TypeScript types
-├── utils/               # Formatting utilities
+├── utils/               # Formatting and CSS helpers
 ├── App.tsx
 ├── index.css
 └── main.tsx
 ```
+
+## Motion and Scenes
+
+Scrolling the page reads as travelling through Vietnam. Each section has a backdrop drawn for a place:
+
+| Section | Place | Scene |
+| --- | --- | --- |
+| Hero | Ninh Binh | Limestone towers in layered mist, low sun, birds |
+| Story | Ha Giang | Terraced hillsides drifting at different speeds |
+| How it works | Hoi An | Swaying lantern canopy and lanterns rising from the river |
+| Sample itinerary | Saigon | Skyline at dusk with Landmark 81, Bitexco, twinkling windows and traffic light trails |
+| Always adapting | Ha Long | Islets, a junk on the swell, light rain |
+| Explore | Six destinations | Photo backdrop with weather and life that change per destination |
+| Closing call to action | Phu Quoc | Setting sun, waves and palms |
+
+Notes for working on it:
+
+- Motion uses [`motion`](https://motion.dev) for scroll-linked and in-view animation and [`lenis`](https://lenis.darkroom.engineering) for smooth scrolling. Ambient loops (mist, waves, lanterns) are plain CSS keyframes in `src/index.css`.
+- Every scene is wrapped in `SceneFrame`, which pauses its CSS animations while off-screen.
+- Under `prefers-reduced-motion`, smooth scroll, parallax, autoplay and particle layers are turned off and content shows in its final state.
+- Pointer effects (tilt, magnetic buttons, cursor parallax) only run on devices with a fine pointer and hover.
+- Custom CSS classes in `index.css` live in `@layer components`, so Tailwind utilities can override them.
+- Scene sizes that must stay visible next to content are set in `rem`, not as a percentage of the section height.
+- Genie details: `MagicCursor` (lamp-glow ring and a stardust trail, mouse only; other components can scatter dust with the `journie:sparkle` window event), `WishLamp` in the hero (rub the lamp for a trip wish), a shooting star in the Saigon sky and a night-sky footer.
+- Smoothness: Lenis is driven by motion's frame loop, scroll layers that move are promoted with `will-change`, only the active Explore photo is mounted (Ken Burns runs in CSS), and most animation is transform/opacity so it stays on the compositor. Avoid adding `backdrop-filter` or animated SVG attributes on large areas.
+- The footer uses `journie-lockup-light.png`, a recoloured copy of the lockup (forest green to paper) so the logo reads on the dark footer. Regenerate it if the logo changes.
+- To add a destination, extend `destinations` in `src/content/site.ts` and add its copy to both languages in `src/i18n/messages.ts`.
 
 ## Images and Licenses
 
