@@ -30,3 +30,7 @@ export function formatDistance(distanceKm: number, locale: string) {
         maximumFractionDigits: 1,
       }).format(distanceKm)
 }
+
+export function formatCoordinates(latitude: number, longitude: number) {
+  return `${latitude.toFixed(4)}° N, ${longitude.toFixed(4)}° E`
+}
