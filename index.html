@@ -24,6 +24,15 @@
     />
     <meta name="twitter:card" content="summary" />
     <title>Journie | Lập kế hoạch du lịch Việt Nam cùng AI</title>
+    <script>
+      // A reader who chose English sees the English title and language from the first paint, not after the app loads
+      try {
+        if (localStorage.getItem('journie-language') === 'en') {
+          document.documentElement.lang = 'en'
+          document.title = 'Journie | Plan your Vietnam trip with AI'
+        }
+      } catch (e) {}
+    </script>
   </head>
   <body>
     <div id="root"></div>

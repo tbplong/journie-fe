@@ -1,0 +1,2587 @@
+/*
+ * Journie app styles. Everything here is built from the landing palette in index.css:
+ * paper, forest, terracotta, sun, jade. Shapes follow the landing too: near-square corners,
+ * hairline borders, arch-topped image frames and misty karst.
+ */
+
+/* ───────── Pattern fallback used when a city has no photo ───────── */
+
+.girih-gold {
+  background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64' fill='none' stroke='%23f0b94b' stroke-opacity='.2' stroke-width='1'><path d='M58 32 44.9 37.4 50.4 50.4 37.4 44.9 32 58 26.6 44.9 13.6 50.4 19.1 37.4 6 32 19.1 26.6 13.6 13.6 26.6 19.1 32 6 37.4 19.1 50.4 13.6 44.9 26.6Z'/><path d='M0 0h5L0 5ZM64 0h-5l5 5ZM0 64h5L0 59ZM64 64h-5l5-5Z'/></svg>");
+}
+
+/* ───────── Buttons and chips ───────── */
+
+.btn-gold,
+.btn-night,
+.btn-ghost {
+  position: relative;
+  display: inline-flex;
+  min-height: 3rem;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  overflow: hidden;
+  isolation: isolate;
+  padding-inline: 1.25rem;
+  border-radius: 2px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+  transition:
+    transform 360ms cubic-bezier(0.22, 1, 0.36, 1),
+    box-shadow 360ms ease,
+    background-color 300ms ease,
+    color 300ms ease,
+    border-color 300ms ease,
+    opacity 200ms ease;
+}
+
+.btn-gold:disabled,
+.btn-night:disabled,
+.btn-ghost:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+/* A band of lamp-light sweeps across on hover, as on the landing buttons. */
+.btn-gold::after,
+.btn-night::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-130%) skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(240, 185, 75, 0.45), transparent);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.btn-gold:not(:disabled):hover::after,
+.btn-night:not(:disabled):hover::after {
+  transform: translateX(130%) skewX(-18deg);
+}
+
+.btn-gold {
+  background: var(--color-sun);
+  color: var(--color-forest);
+  box-shadow: 0 12px 26px -16px rgba(217, 103, 69, 0.8);
+}
+
+.btn-gold::after {
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.6), transparent);
+}
+
+.btn-gold:not(:disabled):hover {
+  background: #f4c566;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -14px rgba(217, 103, 69, 0.9);
+}
+
+.btn-gold:not(:disabled):active,
+.btn-night:not(:disabled):active {
+  transform: translateY(0) scale(0.98);
+}
+
+.btn-night {
+  background: var(--color-forest);
+  color: var(--color-paper);
+}
+
+.btn-night:not(:disabled):hover {
+  background: var(--color-terracotta);
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px -14px rgba(217, 103, 69, 0.65);
+}
+
+.btn-ghost {
+  border: 1px solid color-mix(in srgb, var(--color-forest) 24%, transparent);
+  color: var(--color-ink);
+}
+
+.btn-ghost:not(:disabled):hover {
+  border-color: var(--color-forest);
+  background: color-mix(in srgb, var(--color-forest) 6%, transparent);
+  transform: translateY(-1px);
+}
+
+.btn-sm {
+  min-height: 2.35rem;
+  padding-inline: 0.9rem;
+  font-size: 0.78rem;
+}
+
+.chip {
+  display: inline-flex;
+  min-height: 2.1rem;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid color-mix(in srgb, var(--color-forest) 22%, transparent);
+  border-radius: 999px;
+  padding-inline: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-ink) 78%, transparent);
+  transition: background-color 260ms ease, color 260ms ease, border-color 260ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.chip:hover {
+  border-color: var(--color-terracotta);
+  color: var(--color-terracotta);
+}
+
+.chip:active {
+  transform: scale(0.95);
+}
+
+.chip-on {
+  background: var(--color-forest);
+  border-color: var(--color-forest);
+  color: var(--color-paper);
+}
+
+.chip-on:hover {
+  color: var(--color-paper);
+  border-color: var(--color-terracotta);
+  background: var(--color-terracotta);
+}
+
+.demo-chip {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  border: 1px dashed color-mix(in srgb, var(--a-ink, var(--color-forest)) 35%, transparent);
+  padding: 0.65rem 0.8rem;
+  text-align: left;
+  color: var(--a-ink, var(--color-forest));
+  transition: background-color 260ms ease, border-color 260ms ease, transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.demo-chip strong {
+  display: block;
+  font-size: 0.8rem;
+  line-height: 1.2;
+}
+
+.demo-chip small {
+  display: block;
+  font-size: 0.68rem;
+  color: var(--a-muted, color-mix(in srgb, var(--color-ink) 58%, transparent));
+}
+
+.demo-chip:not(:disabled):hover {
+  border-style: solid;
+  border-color: var(--color-terracotta);
+  background: color-mix(in srgb, var(--color-terracotta) 8%, transparent);
+  transform: translateY(-2px);
+}
+
+.demo-chip:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+/* ───────── Workspace surfaces ───────── */
+
+.app-root {
+  /* The workspace keeps the landing page's near-square corners whatever radius a utility asks for. */
+  --radius-md: 3px;
+  --radius-lg: 4px;
+  --radius-xl: 5px;
+  --radius-2xl: 6px;
+  --radius-3xl: 8px;
+}
+
+.app-bg {
+  background:
+    radial-gradient(ellipse 55% 38% at 100% 0, var(--day-glow-a), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 0 100%, var(--day-glow-b), transparent 70%),
+    var(--color-paper);
+}
+
+.app-bg {
+  transition: background-color 1400ms ease;
+}
+
+.panel {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--color-forest) 14%, transparent);
+  border-radius: 4px;
+  background: #fbf8f0;
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.8) inset;
+}
+
+.panel-night {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  border-radius: 4px;
+  background:
+    radial-gradient(ellipse 70% 90% at 100% 0, var(--n-glow-a), transparent 60%),
+    radial-gradient(ellipse 60% 80% at 0 100%, rgba(217, 103, 69, 0.18), transparent 62%),
+    linear-gradient(155deg, var(--n-bg-top), var(--n-surface-2) 55%, var(--n-surface));
+  color: var(--color-paper);
+}
+
+.panel-night::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  opacity: 0.9;
+  background-image:
+    radial-gradient(1.2px 1.2px at 12% 22%, rgba(247, 242, 232, 0.8), transparent),
+    radial-gradient(1px 1px at 34% 12%, rgba(247, 242, 232, 0.6), transparent),
+    radial-gradient(1.4px 1.4px at 58% 28%, rgba(247, 242, 232, 0.7), transparent),
+    radial-gradient(1px 1px at 76% 16%, rgba(247, 242, 232, 0.55), transparent),
+    radial-gradient(1.2px 1.2px at 90% 38%, rgba(247, 242, 232, 0.7), transparent),
+    radial-gradient(1px 1px at 22% 62%, rgba(247, 242, 232, 0.45), transparent),
+    radial-gradient(1px 1px at 68% 72%, rgba(247, 242, 232, 0.5), transparent);
+}
+
+.h-display {
+  font-family: var(--font-display);
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  line-height: 1.08;
+  text-wrap: balance;
+}
+
+/* Desktop top bar of the traveller app (TopBar in AppShell): clear at the top of the page, frosted once it scrolls. */
+.topbar {
+  border-bottom: 1px solid transparent;
+  transition: background-color 300ms ease, border-color 300ms ease, backdrop-filter 300ms ease;
+}
+
+.topbar[data-scrolled='true'] {
+  border-bottom-color: color-mix(in srgb, var(--color-forest) 12%, transparent);
+  background: color-mix(in srgb, var(--color-paper) 90%, transparent);
+  backdrop-filter: blur(12px);
+}
+
+html[data-app-phase='night'] .topbar[data-scrolled='true'] {
+  border-bottom-color: rgba(247, 242, 232, 0.1);
+  background: color-mix(in srgb, var(--n-body) 86%, transparent);
+}
+
+.topbar-link {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0 1rem;
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: color-mix(in srgb, var(--color-ink) 66%, transparent);
+  transition: color 220ms ease;
+}
+
+.topbar-link:hover,
+.topbar-link[aria-current='page'] {
+  color: var(--color-ink);
+}
+
+/* Below xl the tabs drop their icons (AppShell) and close up, so every label still fits from 1024px */
+@media (width < 80rem) {
+  .topbar-link {
+    padding: 0 0.625rem;
+  }
+}
+
+html[data-app-phase='night'] .topbar-link {
+  color: rgba(247, 242, 232, 0.68);
+}
+
+html[data-app-phase='night'] .topbar-link:hover,
+html[data-app-phase='night'] .topbar-link[aria-current='page'] {
+  color: var(--color-paper);
+}
+
+/* The hover pill that follows the pointer, and the gold pill: a copy of the tabs in dark-on-gold, clipped to the active one */
+.topbar-hover {
+  position: absolute;
+  inset: 0.75rem 0;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-ink) 8%, transparent);
+}
+
+.topbar-active {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  pointer-events: none;
+  background: var(--color-sun);
+  transition: clip-path 420ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.topbar-active .topbar-link,
+html[data-app-phase='night'] .topbar-active .topbar-link {
+  color: var(--color-night);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .topbar-active {
+    transition: none;
+  }
+}
+
+.skeleton {
+  position: relative;
+  overflow: hidden;
+  border-radius: 3px;
+  background: color-mix(in srgb, var(--color-forest) 8%, transparent);
+}
+
+.skeleton::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  transform: translateX(-100%);
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.7), transparent);
+  animation: skeleton 1.5s ease-in-out infinite;
+}
+
+@keyframes skeleton {
+  to { transform: translateX(100%); }
+}
+
+.pulse-dot {
+  position: relative;
+}
+
+.pulse-dot::after {
+  content: '';
+  position: absolute;
+  inset: -4px;
+  border-radius: 50%;
+  border: 2px solid currentColor;
+  opacity: 0;
+  animation: pulse-ring 1.8s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% { transform: scale(0.6); opacity: 0.8; }
+  100% { transform: scale(1.6); opacity: 0; }
+}
+
+input[type='range'].range {
+  appearance: none;
+  height: 1.5rem;
+  width: 100%;
+  background: transparent;
+  cursor: pointer;
+}
+
+input[type='range'].range::-webkit-slider-runnable-track {
+  height: 5px;
+  border-radius: 99px;
+  background: linear-gradient(90deg, var(--color-terracotta) var(--fill, 50%), color-mix(in srgb, var(--color-forest) 16%, transparent) var(--fill, 50%));
+}
+
+input[type='range'].range::-moz-range-track {
+  height: 5px;
+  border-radius: 99px;
+  background: color-mix(in srgb, var(--color-forest) 16%, transparent);
+}
+
+input[type='range'].range::-moz-range-progress {
+  height: 5px;
+  border-radius: 99px;
+  background: var(--color-terracotta);
+}
+
+input[type='range'].range::-webkit-slider-thumb {
+  appearance: none;
+  width: 1.15rem;
+  height: 1.15rem;
+  margin-top: -0.36rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-paper);
+  background: var(--color-forest);
+  box-shadow: 0 2px 8px rgba(23, 63, 53, 0.45);
+  transition: transform 160ms ease;
+}
+
+input[type='range'].range::-moz-range-thumb {
+  width: 1.15rem;
+  height: 1.15rem;
+  border-radius: 50%;
+  border: 3px solid var(--color-paper);
+  background: var(--color-forest);
+  box-shadow: 0 2px 8px rgba(23, 63, 53, 0.45);
+}
+
+input[type='range'].range:active::-webkit-slider-thumb {
+  transform: scale(1.25);
+}
+
+.tabular {
+  font-variant-numeric: tabular-nums;
+}
+
+.timeline-rail {
+  background-image: linear-gradient(var(--color-forest) 40%, transparent 0);
+  background-size: 2px 8px;
+  opacity: 0.28;
+}
+
+/* ───────── Map ───────── */
+
+.journie-map.leaflet-container {
+  background:
+    linear-gradient(rgba(23, 63, 53, 0.06) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 63, 53, 0.06) 1px, transparent 1px),
+    #ebe5d4;
+  background-size: 40px 40px;
+  font-family: var(--font-sans);
+}
+
+.journie-map .leaflet-tile-pane {
+  filter: saturate(0.7) sepia(0.2) hue-rotate(-6deg) contrast(1.02);
+}
+
+.journie-map .leaflet-control-attribution {
+  font-size: 10px;
+  background: rgba(247, 242, 232, 0.85);
+}
+
+.map-pin {
+  display: grid;
+  place-items: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 50% 50% 50% 4px;
+  transform: rotate(-45deg);
+  border: 2px solid #fff;
+  color: #fff;
+  font-weight: 700;
+  font-size: 12px;
+  box-shadow: 0 6px 14px rgba(13, 40, 34, 0.4);
+  transition: transform 260ms cubic-bezier(0.22, 1, 0.36, 1), filter 200ms ease;
+}
+
+.map-pin > span {
+  transform: rotate(45deg);
+}
+
+.map-pin[data-active='true'] {
+  transform: rotate(-45deg) scale(1.3);
+  filter: drop-shadow(0 0 10px rgba(240, 185, 75, 0.95));
+  z-index: 800;
+}
+
+.route-line {
+  stroke-dasharray: 2 9;
+  animation: route-flow 1.4s linear infinite;
+}
+
+.me-dot {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: var(--color-terracotta);
+  border: 3px solid #fff;
+  box-shadow: 0 4px 10px rgba(13, 40, 34, 0.5);
+  position: relative;
+}
+
+/* The expanding ring is a transformed layer, not an animated box-shadow, so the live map does not repaint every frame. */
+.me-dot::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  z-index: -1;
+  border-radius: 50%;
+  background: rgba(217, 103, 69, 0.7);
+  animation: me-ring 1.8s ease-out infinite;
+}
+
+@keyframes me-ring {
+  0% { transform: scale(1); opacity: 1; }
+  70%, 100% { transform: scale(2.8); opacity: 0; }
+}
+
+/* ───────── Weather ───────── */
+
+.sky-cloud {
+  position: fixed;
+  z-index: 0;
+  pointer-events: none;
+  will-change: transform;
+  animation: cloud-drift var(--dur, 90s) linear var(--delay, 0s) infinite;
+}
+
+@keyframes cloud-drift {
+  from { transform: translate3d(-30vw, 0, 0); }
+  to { transform: translate3d(130vw, 0, 0); }
+}
+
+/* Weather behind the dashboard hero: a lazy cloud bank, a rain veil and the odd flash. */
+
+.hero-cloud {
+  position: absolute;
+  will-change: transform;
+  animation: hero-cloud var(--dur, 70s) ease-in-out var(--delay, 0s) infinite alternate;
+}
+
+@keyframes hero-cloud {
+  from { transform: translate3d(-4rem, 0, 0); }
+  to { transform: translate3d(4rem, 0.4rem, 0); }
+}
+
+.hero-drop {
+  position: absolute;
+  top: -40px;
+  width: 1.5px;
+  height: var(--len, 22px);
+  border-radius: 1px;
+  background: linear-gradient(to bottom, transparent, rgba(196, 228, 240, 0.8));
+  transform: rotate(12deg);
+  will-change: transform;
+  animation: hero-drop var(--d, 0.8s) linear var(--delay, 0s) infinite;
+}
+
+@keyframes hero-drop {
+  from { transform: translate3d(0, 0, 0) rotate(12deg); }
+  to { transform: translate3d(-90px, 560px, 0) rotate(12deg); }
+}
+
+.hero-mist {
+  position: absolute;
+  inset: auto 0 0;
+  height: 38%;
+  background: linear-gradient(to top, rgba(170, 214, 224, 0.16), transparent);
+}
+
+.hero-flash {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  background: radial-gradient(ellipse 60% 70% at 62% 0, rgba(235, 244, 255, 0.16), rgba(235, 244, 255, 0.03) 60%, transparent 80%);
+  animation: hero-flash 16s ease-out 3s infinite;
+}
+
+@keyframes hero-flash {
+  0%, 70%, 100% { opacity: 0; }
+  74% { opacity: 1; }
+  88% { opacity: 0; }
+}
+
+/* ───────── Journie the mascot ───────── */
+
+.di-float {
+  animation: di-float 4.4s ease-in-out infinite alternate;
+  will-change: transform;
+}
+
+@keyframes di-float {
+  from { transform: translate3d(0, 1.5%, 0) rotate(-1deg); }
+  to { transform: translate3d(0, -3.5%, 0) rotate(1.2deg); }
+}
+
+.di-shadow {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: di-shadow 4.4s ease-in-out infinite alternate;
+}
+
+@keyframes di-shadow {
+  from { transform: scale(1.06); opacity: 0.5; }
+  to { transform: scale(0.78); opacity: 0.26; }
+}
+
+.di-eyes {
+  transform-box: view-box;
+  transform-origin: 120px 98px;
+  animation: di-blink 5.4s ease-in-out infinite;
+}
+
+@keyframes di-blink {
+  0%, 92%, 100% { transform: scaleY(1); }
+  95% { transform: scaleY(0.08); }
+}
+
+.di-tail {
+  animation: di-tail 2.6s ease-in-out infinite alternate;
+}
+
+@keyframes di-tail {
+  from { transform: rotate(-7deg); }
+  to { transform: rotate(9deg); }
+}
+
+.di-tassel {
+  animation: di-tassel 2.2s ease-in-out infinite alternate;
+}
+
+@keyframes di-tassel {
+  from { transform: rotate(-9deg); }
+  to { transform: rotate(7deg); }
+}
+
+.di-twinkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: di-twinkle 2s ease-in-out infinite;
+}
+
+@keyframes di-twinkle {
+  0%, 100% { transform: scale(0.3) rotate(0deg); opacity: 0.2; }
+  50% { transform: scale(1) rotate(45deg); opacity: 1; }
+}
+
+.di-umbrella {
+  animation: di-umbrella 3s ease-in-out infinite alternate;
+  transform-box: view-box;
+  transform-origin: 188px 120px;
+}
+
+@keyframes di-umbrella {
+  from { transform: rotate(-2.5deg); }
+  to { transform: rotate(3deg); }
+}
+
+.di-zzz {
+  animation: di-zzz 2.6s ease-in infinite;
+  opacity: 0;
+}
+
+@keyframes di-zzz {
+  0% { transform: translate(0, 6px) scale(0.6); opacity: 0; }
+  30% { opacity: 1; }
+  100% { transform: translate(10px, -22px) scale(1.1); opacity: 0; }
+}
+
+.di-drop {
+  animation: di-drop 1.4s ease-in infinite;
+  transform-box: fill-box;
+}
+
+@keyframes di-drop {
+  0% { transform: translateY(-4px); opacity: 0; }
+  20% { opacity: 1; }
+  100% { transform: translateY(16px); opacity: 0; }
+}
+
+.di-rumble {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: di-rumble 0.9s ease-in-out infinite;
+}
+
+@keyframes di-rumble {
+  0%, 100% { opacity: 0.25; transform: scale(0.85); }
+  50% { opacity: 1; transform: scale(1.12); }
+}
+
+.di-fan {
+  animation: di-fan 0.34s ease-in-out infinite alternate;
+}
+
+@keyframes di-fan {
+  from { transform: rotate(-24deg); }
+  to { transform: rotate(22deg); }
+}
+
+.di-bubble {
+  position: relative;
+  border-radius: 14px;
+  background: #f7f2e8;
+  border: 1px solid rgba(23, 63, 53, 0.24);
+  padding: 0.65rem 0.95rem;
+  color: #18231f;
+  font-family: var(--font-display);
+  font-size: 0.92rem;
+  font-style: italic;
+  line-height: 1.4;
+  box-shadow: 0 16px 30px -18px rgba(13, 40, 34, 0.5);
+}
+
+.di-bubble::after {
+  content: '';
+  position: absolute;
+  width: 12px;
+  height: 12px;
+  background: #f7f2e8;
+  border: solid rgba(23, 63, 53, 0.24);
+  border-width: 0 1px 1px 0;
+  transform: rotate(45deg);
+}
+
+.di-bubble[data-tail='bottom']::after {
+  bottom: -7px;
+  left: 50%;
+  margin-left: -6px;
+}
+
+.di-bubble[data-tail='bottom-right']::after {
+  bottom: -7px;
+  right: 1.6rem;
+}
+
+.di-bubble[data-tail='bottom-left']::after {
+  bottom: -7px;
+  left: 1.6rem;
+}
+
+.di-bubble[data-tail='none']::after {
+  display: none;
+}
+
+.di-bubble[data-tail='right']::after {
+  right: -7px;
+  top: 50%;
+  margin-top: -6px;
+  border-width: 1px 1px 0 0;
+}
+
+/* ───────── Auth: split card, sky and the lamp that lights the password ───────── */
+
+.auth-root {
+  --a-ink: #18231f;
+  --a-muted: rgba(24, 35, 31, 0.64);
+  --a-line: rgba(23, 63, 53, 0.22);
+  --a-card: rgba(251, 248, 240, 0.94);
+  --a-field: rgba(255, 255, 255, 0.78);
+  --a-primary: #173f35;
+  --a-primary-ink: #f7f2e8;
+  --a-accent: #d96745;
+  --ridge-far: rgba(23, 63, 53, 0.13);
+  --ridge-mid: rgba(23, 63, 53, 0.21);
+  --ridge-near: rgba(23, 63, 53, 0.32);
+  position: relative;
+  isolation: isolate;
+  min-height: 100dvh;
+  overflow-x: clip;
+  color: var(--a-ink);
+}
+
+.auth-root[data-phase='day'][data-weather='rain'],
+.auth-root[data-phase='day'][data-weather='storm'] {
+  --ridge-far: rgba(23, 63, 53, 0.16);
+  --ridge-mid: rgba(23, 63, 53, 0.26);
+  --ridge-near: rgba(23, 63, 53, 0.4);
+}
+
+.auth-root[data-phase='night'] {
+  --a-ink: #f7f2e8;
+  --a-muted: rgba(247, 242, 232, 0.66);
+  --a-line: rgba(247, 242, 232, 0.22);
+  --a-card: rgba(14, 40, 34, 0.9);
+  --a-field: rgba(247, 242, 232, 0.07);
+  --a-primary: #f0b94b;
+  --a-primary-ink: #0f2b24;
+  --ridge-far: rgba(79, 184, 164, 0.16);
+  --ridge-mid: rgba(18, 58, 50, 0.7);
+  --ridge-near: rgba(8, 28, 24, 0.9);
+}
+
+.auth-sky {
+  position: absolute;
+  inset: 0;
+  z-index: -3;
+  opacity: 0;
+  transition: opacity 1200ms ease;
+}
+
+.auth-sky[data-on='true'] {
+  opacity: 1;
+}
+
+.auth-sky[data-key='day-clear'] {
+  background:
+    radial-gradient(ellipse 50% 42% at 84% 6%, rgba(240, 185, 75, 0.55), transparent 68%),
+    linear-gradient(180deg, #f8ebcd 0%, #f4eee0 42%, #e5ebe0 100%);
+}
+
+.auth-sky[data-key='day-cloudy'] {
+  background: linear-gradient(180deg, #e3e8e2 0%, #eeece1 50%, #e2e9df 100%);
+}
+
+.auth-sky[data-key='day-rain'] {
+  background: linear-gradient(180deg, #c4d1cb 0%, #dde4dd 55%, #cfdad3 100%);
+}
+
+.auth-sky[data-key='day-storm'] {
+  background: linear-gradient(180deg, #8fa09a 0%, #b9c6c0 55%, #a7b6af 100%);
+}
+
+.auth-sky[data-key='night-clear'] {
+  background:
+    radial-gradient(ellipse 55% 40% at 14% 6%, rgba(240, 185, 75, 0.12), transparent 70%),
+    linear-gradient(180deg, #08201b 0%, #0f3029 48%, #154038 100%);
+}
+
+.auth-sky[data-key='night-cloudy'] {
+  background: linear-gradient(180deg, #0a221d 0%, #12332c 50%, #17433b 100%);
+}
+
+.auth-sky[data-key='night-rain'] {
+  background: linear-gradient(180deg, #071a17 0%, #0c2723 55%, #11332e 100%);
+}
+
+.auth-sky[data-key='night-storm'] {
+  background: linear-gradient(180deg, #050f0e 0%, #081a18 55%, #0b2220 100%);
+}
+
+.ridge path {
+  transition: fill 1200ms ease;
+}
+
+.auth-card {
+  display: grid;
+  width: min(100%, 62rem);
+  overflow: hidden;
+  border: 1px solid var(--a-line);
+  border-radius: 6px;
+  background: var(--a-card);
+  box-shadow: 0 44px 80px -44px rgba(13, 40, 34, 0.7);
+  transition: background-color 900ms ease, border-color 900ms ease;
+}
+
+@media (min-width: 900px) {
+  .auth-card {
+    grid-template-columns: minmax(0, 0.94fr) minmax(0, 1.06fr);
+  }
+}
+
+.auth-visual {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  /* The whole 3:4 poster shows, so its own text is never cropped. */
+  aspect-ratio: 3 / 4;
+  border-radius: 4px;
+  color: #f7f2e8;
+  box-shadow: 0 30px 60px -36px rgba(13, 40, 34, 0.55);
+}
+
+.auth-visual img {
+  position: absolute;
+  inset: 0;
+  z-index: -2;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* A soft shade only behind the tagline at the top of the photograph. */
+.auth-visual::after {
+  content: '';
+  position: absolute;
+  inset: 0 0 auto;
+  height: 20%;
+  z-index: -1;
+  background: linear-gradient(180deg, rgba(13, 40, 34, 0.6), rgba(13, 40, 34, 0));
+}
+
+.field-shell {
+  background: var(--a-field);
+  border: 1px solid var(--a-line);
+  transition: border-color 300ms ease, box-shadow 300ms ease, background-color 900ms ease;
+}
+
+.field-shell:hover {
+  border-color: color-mix(in srgb, var(--a-ink) 45%, transparent);
+}
+
+.field-shell:focus-within {
+  border-color: var(--a-accent);
+  box-shadow: 0 0 0 3px color-mix(in srgb, var(--a-accent) 18%, transparent);
+}
+
+.field-shell[data-error='true'] {
+  border-color: var(--color-pomegranate);
+}
+
+.field-input {
+  color: var(--a-ink);
+}
+
+.field-input::placeholder {
+  color: var(--a-muted);
+  opacity: 0.7;
+}
+
+/* ───────── The torch: a soft light that follows the pointer, and the things it wakes ───────── */
+
+.torch-btn {
+  color: var(--a-muted);
+}
+
+.torch-btn:hover {
+  color: var(--a-accent);
+}
+
+.torch-btn[data-on='true'] {
+  color: var(--color-sun);
+}
+
+.torch-glow {
+  position: absolute;
+  inset: -0.2rem;
+  z-index: -1;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 224, 140, 0.55), transparent 68%);
+  animation: torch-breathe 2.8s ease-in-out infinite;
+}
+
+@keyframes torch-breathe {
+  0%, 100% { transform: scale(0.9); opacity: 0.75; }
+  50% { transform: scale(1.12); opacity: 1; }
+}
+
+.light-glow {
+  position: fixed;
+  inset: 0;
+  z-index: 30;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 900ms ease;
+  background:
+    radial-gradient(circle 120px at var(--lx, 50%) var(--ly, 50%), rgba(255, 232, 170, 0.26), transparent 100%),
+    radial-gradient(circle 300px at var(--lx, 50%) var(--ly, 50%), rgba(255, 220, 140, 0.15), transparent 100%);
+}
+
+.light-glow[data-on='true'] {
+  opacity: 1;
+}
+
+.auth-root[data-phase='night'] .light-glow {
+  mix-blend-mode: screen;
+}
+
+.auth-root:not([data-phase='night']) .light-glow {
+  background:
+    radial-gradient(circle 120px at var(--lx, 50%) var(--ly, 50%), rgba(255, 214, 120, 0.3), transparent 100%),
+    radial-gradient(circle 300px at var(--lx, 50%) var(--ly, 50%), rgba(255, 200, 100, 0.12), transparent 100%);
+}
+
+/* after dark the scenery dims, except where the torch points */
+.light-dark {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 900ms ease;
+  background: radial-gradient(circle 320px at var(--lx, 50%) var(--ly, 50%), transparent 0%, rgba(2, 10, 8, 0.2) 40%, rgba(2, 10, 8, 0.66) 100%);
+}
+
+.light-dark[data-on='true'] {
+  opacity: 1;
+}
+
+/* the secret on a password field: dots in the dark, letters in the light */
+.lit-input {
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: var(--a-ink);
+}
+
+.lit-readout {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 300ms ease;
+  font-family: var(--font-mono, ui-monospace, SFMono-Regular, Menlo, Consolas, monospace);
+  font-size: 0.95rem;
+}
+
+.lit-readout[data-on='true'] {
+  opacity: 1;
+}
+
+.lit-dots,
+.lit-chars {
+  position: absolute;
+  left: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  white-space: pre;
+}
+
+.lit-dots {
+  color: var(--a-muted);
+  -webkit-mask-image: radial-gradient(circle 112px at var(--ox, -999px) var(--oy, -999px), transparent 55%, #000 100%);
+  mask-image: radial-gradient(circle 112px at var(--ox, -999px) var(--oy, -999px), transparent 55%, #000 100%);
+}
+
+.lit-chars {
+  color: var(--a-accent);
+  text-shadow: 0 0 12px rgba(240, 185, 75, 0.7);
+  -webkit-mask-image: radial-gradient(circle 112px at var(--ox, -999px) var(--oy, -999px), #000 38%, transparent 100%);
+  mask-image: radial-gradient(circle 112px at var(--ox, -999px) var(--oy, -999px), #000 38%, transparent 100%);
+}
+
+.auth-root[data-phase='night'] .lit-chars {
+  color: #ffe08a;
+}
+
+/* spots */
+
+.spot {
+  position: absolute;
+  pointer-events: none;
+}
+
+.spot > :not(.spot-hint) {
+  opacity: 0;
+  transition: opacity 700ms ease, filter 700ms ease, transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.spot[data-on='true'] > :not(.spot-hint) {
+  opacity: 0.42;
+  filter: saturate(0.5) brightness(0.8);
+}
+
+.spot[data-lit='true'] > :not(.spot-hint) {
+  opacity: 1;
+  filter: none;
+}
+
+.spot-hint {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.9rem;
+  height: 0.9rem;
+  margin: -0.45rem;
+  background: #ffe08a;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.spot[data-on='true'][data-lit='false'] .spot-hint {
+  opacity: 0.85;
+  animation: hint-twinkle 2.2s ease-in-out infinite;
+}
+
+@keyframes hint-twinkle {
+  0%, 100% { transform: scale(0.5) rotate(0deg); }
+  50% { transform: scale(1.05) rotate(45deg); }
+}
+
+.auth-visual > .spot {
+  z-index: 3;
+}
+
+.auth-moon-face {
+  opacity: 0;
+  transition: opacity 600ms ease;
+}
+
+.auth-moon[data-lit='true'] .auth-moon-face {
+  opacity: 1;
+}
+
+.auth-moon[data-lit='true'] {
+  animation: moon-bob 2.4s ease-in-out infinite;
+  filter: drop-shadow(0 0 22px rgba(255, 238, 180, 0.8));
+}
+
+@keyframes moon-bob {
+  0%, 100% { transform: translateY(0) rotate(-3deg); }
+  50% { transform: translateY(-6px) rotate(3deg); }
+}
+
+.auth-moon[data-lit='true'] .auth-moon-wink {
+  animation: wink 3s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+@keyframes wink {
+  0%, 70%, 100% { transform: scaleY(1); }
+  78%, 90% { transform: scaleY(-1) translateY(-4px); }
+}
+
+/* lantern */
+.lantern svg {
+  transform-origin: 50% 0;
+}
+
+.lantern[data-lit='true'] svg {
+  animation: lantern-sway 3.2s ease-in-out infinite alternate;
+  filter: drop-shadow(0 0 16px rgba(255, 170, 70, 0.85));
+}
+
+@keyframes lantern-sway {
+  from { transform: rotate(-7deg); }
+  to { transform: rotate(7deg); }
+}
+
+.lantern-flame {
+  opacity: 0;
+  transition: opacity 500ms ease;
+}
+
+.lantern[data-lit='true'] .lantern-flame {
+  opacity: 1;
+  animation: flicker 1.4s ease-in-out infinite;
+  transform-box: fill-box;
+  transform-origin: 50% 100%;
+}
+
+@keyframes flicker {
+  0%, 100% { transform: scale(1); opacity: 0.95; }
+  35% { transform: scale(0.88, 1.08); opacity: 0.8; }
+  70% { transform: scale(1.08, 0.94); opacity: 1; }
+}
+
+.lantern-body {
+  transition: fill 600ms ease;
+}
+
+.lantern[data-lit='true'] .lantern-body {
+  fill: #f08a4b;
+}
+
+/* treasure chest */
+.chest-lid {
+  transform-box: view-box;
+  transform-origin: 14px 52px;
+  transition: transform 800ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.chest[data-lit='true'] .chest-lid {
+  transform: rotate(-34deg) translate(-2px, -2px);
+}
+
+.chest-rays {
+  opacity: 0;
+  transform-box: view-box;
+  transform-origin: 60px 52px;
+}
+
+.chest[data-lit='true'] .chest-rays {
+  opacity: 1;
+  animation: spin-slow 12s linear infinite;
+}
+
+.chest-coin {
+  opacity: 0;
+}
+
+.chest[data-lit='true'] .chest-coin {
+  animation: coin-pop 2.2s ease-out infinite;
+  animation-delay: calc(var(--i) * 0.16s);
+}
+
+@keyframes coin-pop {
+  0% { transform: translateY(0) scale(0.5); opacity: 0; }
+  14% { opacity: 1; }
+  45% { transform: translateY(-34px) scale(1); opacity: 1; }
+  70% { transform: translateY(-14px) scale(1); opacity: 1; }
+  100% { transform: translateY(-2px) scale(0.9); opacity: 0; }
+}
+
+/* lotus */
+.lotus-petal {
+  transform-box: view-box;
+  transform: rotate(calc(var(--a) * 0.18));
+  transform-origin: 0 0;
+  transition: transform 1000ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.lotus[data-lit='true'] .lotus-petal {
+  transform: rotate(var(--a));
+}
+
+.lotus-heart {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0);
+  transition: transform 700ms cubic-bezier(0.34, 1.56, 0.64, 1) 300ms;
+}
+
+.lotus[data-lit='true'] .lotus-heart {
+  transform: scale(1);
+}
+
+/* constellation */
+.constellation-line {
+  stroke-dasharray: 1;
+  stroke-dashoffset: 1;
+  transition: stroke-dashoffset 1800ms cubic-bezier(0.4, 0, 0.2, 1);
+  filter: drop-shadow(0 0 4px rgba(255, 238, 180, 0.9));
+}
+
+.constellation[data-lit='true'] .constellation-line {
+  stroke-dashoffset: 0;
+}
+
+.constellation-star {
+  transform-box: fill-box;
+  transform-origin: center;
+  transform: scale(0.6);
+  transition: transform 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+  transition-delay: calc(var(--i) * 140ms);
+}
+
+.constellation[data-lit='true'] .constellation-star {
+  transform: scale(1.25);
+  filter: drop-shadow(0 0 5px #fff4cf);
+}
+
+.constellation-label {
+  margin-top: -0.4rem;
+  text-align: center;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 0.95rem;
+  color: #ffeab0;
+  text-shadow: 0 0 10px rgba(255, 224, 140, 0.8);
+  opacity: 0;
+  transform: translateY(6px);
+  transition: opacity 900ms ease 1.2s, transform 900ms ease 1.2s;
+}
+
+.constellation[data-lit='true'] .constellation-label {
+  opacity: 1;
+  transform: none;
+}
+
+/* kite */
+.kite-body {
+  transform-box: view-box;
+  transform-origin: 60px 150px;
+  transform: rotate(-28deg) translateY(8px);
+  transition: transform 1100ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.kite[data-lit='true'] .kite-body {
+  animation: kite-dance 3.4s ease-in-out infinite alternate;
+}
+
+@keyframes kite-dance {
+  0% { transform: rotate(-16deg) translateY(-8px); }
+  50% { transform: rotate(10deg) translateY(-18px); }
+  100% { transform: rotate(18deg) translateY(-6px); }
+}
+
+/* birds and bats */
+.flock-bird {
+  transform-box: fill-box;
+  transition: transform 1500ms cubic-bezier(0.3, 0, 0.2, 1), opacity 1100ms ease;
+  transition-delay: calc(var(--i) * 120ms);
+}
+
+.flock[data-lit='true'] .flock-bird {
+  transform: translate(calc(60px + var(--i) * 44px), calc(-46px - var(--i) * 22px)) rotate(-10deg);
+  opacity: 0;
+}
+
+/* koi leaping in the photo */
+.fish-body,
+.fish-drops {
+  opacity: 0;
+  transform-box: view-box;
+}
+
+.fish-ripples {
+  opacity: 0;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+.fish[data-lit='true'] .fish-body {
+  animation: fish-leap 3.8s ease-in-out infinite;
+}
+
+.fish[data-lit='true'] .fish-drops {
+  animation: fish-drops 3.8s ease-out infinite;
+}
+
+.fish[data-lit='true'] .fish-ripples {
+  animation: fish-ripples 3.8s ease-out infinite;
+}
+
+@keyframes fish-leap {
+  0% { transform: translate(-4px, 40px) rotate(-52deg); opacity: 0; }
+  6% { opacity: 1; }
+  20% { transform: translate(22px, -16px) rotate(-26deg); opacity: 1; }
+  32% { transform: translate(52px, -6px) rotate(26deg); opacity: 1; }
+  42% { transform: translate(72px, 40px) rotate(74deg); opacity: 0; }
+  100% { transform: translate(72px, 40px) rotate(74deg); opacity: 0; }
+}
+
+@keyframes fish-drops {
+  0%, 12% { transform: translate(0, 0); opacity: 0; }
+  22% { opacity: 1; }
+  38% { transform: translate(14px, 40px); opacity: 0; }
+  100% { opacity: 0; }
+}
+
+@keyframes fish-ripples {
+  0%, 36% { transform: scale(0.2); opacity: 0; }
+  42% { opacity: 0.9; }
+  75%, 100% { transform: scale(1.25); opacity: 0; }
+}
+
+/* the message on the cliff */
+.cliff-note-text {
+  white-space: nowrap;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.7rem;
+  color: rgba(255, 232, 170, 0);
+  text-shadow: 0 0 0 rgba(255, 224, 140, 0);
+  transition: color 900ms ease, text-shadow 900ms ease !important;
+  opacity: 1 !important;
+  filter: none !important;
+}
+
+.cliff-note[data-lit='true'] .cliff-note-text {
+  color: rgba(255, 234, 176, 0.97);
+  text-shadow: 0 0 16px rgba(255, 214, 110, 0.85);
+}
+
+/* fireflies gather round the light */
+.firefly {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 0.45rem;
+  height: 0.45rem;
+  margin: -0.22rem;
+  border-radius: 50%;
+  background: #ffe58a;
+  box-shadow: 0 0 12px 4px rgba(255, 214, 102, 0.85);
+  animation: firefly 4.6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * -0.7s);
+}
+
+@keyframes firefly {
+  0% { transform: translate(calc(var(--i) * 6px - 20px), calc(var(--i) * -5px + 14px)) scale(0.8); }
+  33% { transform: translate(calc(var(--i) * -7px + 24px), calc(var(--i) * 4px - 18px)) scale(1.15); }
+  66% { transform: translate(calc(var(--i) * 5px - 6px), calc(var(--i) * 6px - 26px)) scale(0.9); }
+  100% { transform: translate(calc(var(--i) * 6px - 20px), calc(var(--i) * -5px + 14px)) scale(0.8); }
+}
+
+/* The passage between sign-in and the app (PortalWipe): a dark stage that spreads from the press, then the title on it */
+.portal-wipe {
+  background: #0b0f0d;
+  will-change: clip-path;
+}
+
+/* The title on the way into the app (JournieIntro): a dark stage with a faint gold glow behind the word */
+.journie-intro {
+  background:
+    radial-gradient(ellipse 50% 40% at 50% 52%, rgba(240, 185, 75, 0.14), transparent 70%),
+    #0b0f0d;
+}
+
+/* ───────── Reduced motion and polish ───────── */
+
+@media (prefers-reduced-motion: reduce) {
+  .di-float,
+  .di-rumble,
+  .di-fan,
+  .di-shadow,
+  .di-tail,
+  .di-tassel,
+  .di-twinkle,
+  .di-umbrella,
+  .torch-glow,
+  .header-route,
+  .header-pin,
+  .di-zzz,
+  .di-drop,
+  .sky-cloud,
+  .sky-sun-rays,
+  .hero-cloud,
+  .hero-drop,
+  .hero-flash,
+  .route-line,
+  .me-dot::after,
+  .pulse-dot::after {
+    animation: none !important;
+  }
+}
+
+/* A destination's drawing at the foot of the page (DrawnBackdrop), in the colours of its poster, fading out at the top and sides. */
+.drawn-backdrop {
+  pointer-events: none;
+  bottom: 0;
+  left: 50%;
+  width: min(100%, 120vh);
+  aspect-ratio: 2 / 1;
+  transform: translateX(-50%);
+  mix-blend-mode: multiply;
+  -webkit-mask-image: linear-gradient(to top, #000 40%, transparent), linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to top, #000 40%, transparent), linear-gradient(to right, transparent, #000 16%, #000 84%, transparent);
+  mask-composite: intersect;
+}
+
+.drawn-backdrop[data-night='true'] {
+  mix-blend-mode: normal;
+}
+
+.drawn-backdrop img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.drawn-backdrop[data-wide='true'] {
+  width: 100%;
+  height: 58%;
+  aspect-ratio: auto;
+  -webkit-mask-image: linear-gradient(to top, #000 45%, transparent);
+  mask-image: linear-gradient(to top, #000 45%, transparent);
+}
+
+.drawn-backdrop[data-wide='true'] img {
+  object-fit: cover;
+  object-position: 50% 100%;
+}
+
+/* While the planning screen waits (PlanPage), its photo slideshow is the only thing moving: the sky and header loops hold still. */
+.busy-screen :is(.sky-sun-rays, .sky-cloud, .header-route, .header-pin, .spin-slow, .route-flow) {
+  animation-play-state: paused !important;
+}
+
+/* Grid items may shrink below their content width; stops tabs, maps and tables forcing sideways scroll on phones. */
+:where(.grid) > * {
+  min-width: 0;
+}
+
+button,
+a,
+[role='button'],
+[role='tab'],
+select,
+summary {
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ───────── Auth form pieces ───────── */
+
+.auth-root {
+  --a-error: #b8381f;
+  --a-ok: #1d7356;
+}
+
+.auth-root[data-phase='night'] {
+  --a-error: #ff9d85;
+  --a-ok: #6fd3b8;
+}
+
+/* The human check, laid out like the widgets big sites use: a box to tick on the left, who runs the check on the right */
+.antibot {
+  display: flex;
+  min-height: 4.1rem;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  border: 1px solid var(--a-line);
+  border-radius: 2px;
+  background: var(--a-field);
+  padding: 0 0.9rem 0 0.75rem;
+  transition: border-color 300ms ease;
+}
+
+.antibot:hover {
+  border-color: color-mix(in srgb, var(--a-ink) 45%, transparent);
+}
+
+.antibot[data-state='done'] {
+  border-color: color-mix(in srgb, var(--a-ok) 55%, transparent);
+}
+
+.antibot-check {
+  display: flex;
+  min-height: 2.75rem;
+  min-width: 0;
+  align-items: center;
+  gap: 0.8rem;
+  border-radius: 2px;
+  padding: 0 0.25rem;
+  cursor: pointer;
+}
+
+.antibot-check:disabled {
+  cursor: default;
+}
+
+.antibot-check:focus-visible {
+  outline: 2px solid var(--a-accent);
+  outline-offset: 2px;
+}
+
+.antibot-box {
+  position: relative;
+  display: grid;
+  width: 1.6rem;
+  height: 1.6rem;
+  flex-shrink: 0;
+  place-items: center;
+  border: 2px solid color-mix(in srgb, var(--a-ink) 42%, transparent);
+  border-radius: 3px;
+  background: var(--a-card);
+  transition: border-color 200ms ease, background-color 200ms ease;
+}
+
+.antibot-check:not(:disabled):hover .antibot-box {
+  border-color: var(--a-accent);
+}
+
+.antibot[data-state='checking'] .antibot-box,
+.antibot[data-state='done'] .antibot-box {
+  border-color: transparent;
+  background: transparent;
+}
+
+.antibot-spinner {
+  width: 1.6rem;
+  height: 1.6rem;
+  border: 2.5px solid color-mix(in srgb, var(--a-ok) 22%, transparent);
+  border-top-color: var(--a-ok);
+  border-radius: 999px;
+  animation: antibot-spin 700ms linear infinite;
+}
+
+.antibot-tick {
+  width: 1.6rem;
+  height: 1.6rem;
+  animation: antibot-pop 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.antibot-tick circle {
+  fill: var(--a-ok);
+}
+
+.antibot-tick path {
+  fill: none;
+  stroke: var(--a-card);
+  stroke-width: 2.4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  stroke-dasharray: 16;
+  stroke-dashoffset: 16;
+  animation: antibot-draw 360ms 120ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.antibot-label {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--a-ink);
+}
+
+.antibot[data-state='done'] .antibot-label {
+  color: var(--a-ok);
+}
+
+.antibot-brand {
+  flex-shrink: 0;
+  color: var(--a-accent);
+}
+
+@keyframes antibot-spin {
+  to {
+    rotate: 360deg;
+  }
+}
+
+@keyframes antibot-pop {
+  from {
+    scale: 0.4;
+    opacity: 0;
+  }
+}
+
+@keyframes antibot-draw {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .antibot-spinner {
+    animation-duration: 2s;
+  }
+
+  .antibot-tick,
+  .antibot-tick path {
+    animation: none;
+    stroke-dashoffset: 0;
+  }
+}
+
+.auth-btn {
+  position: relative;
+  display: inline-flex;
+  min-height: 3.1rem;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  overflow: hidden;
+  isolation: isolate;
+  border-radius: 2px;
+  background: var(--a-primary);
+  color: var(--a-primary-ink);
+  font-size: 0.86rem;
+  font-weight: 700;
+  transition: transform 360ms cubic-bezier(0.22, 1, 0.36, 1), background-color 300ms ease, box-shadow 360ms ease;
+}
+
+.auth-btn::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  transform: translateX(-130%) skewX(-18deg);
+  background: linear-gradient(90deg, transparent, rgba(240, 185, 75, 0.5), transparent);
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-btn:not(:disabled):hover {
+  background: var(--color-terracotta);
+  color: #fff;
+  transform: translateY(-2px);
+  box-shadow: 0 16px 30px -16px rgba(217, 103, 69, 0.8);
+}
+
+.auth-btn:not(:disabled):hover::after {
+  transform: translateX(130%) skewX(-18deg);
+}
+
+.auth-btn:disabled {
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.di-dot {
+  animation: di-dot 1.2s ease-in-out infinite;
+}
+
+@keyframes di-dot {
+  0%, 100% { opacity: 0.25; transform: translateY(0); }
+  50% { opacity: 1; transform: translateY(-4px); }
+}
+
+.auth-chip {
+  display: inline-flex;
+  min-height: 2.05rem;
+  align-items: center;
+  gap: 0.4rem;
+  border: 1px solid var(--a-line);
+  border-radius: 999px;
+  padding-inline: 0.85rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--a-ink);
+  transition: background-color 260ms ease, color 260ms ease, border-color 260ms ease, transform 300ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.auth-chip:hover {
+  border-color: var(--a-accent);
+  color: var(--a-accent);
+}
+
+.auth-chip:active {
+  transform: scale(0.95);
+}
+
+.auth-chip[aria-pressed='true'] {
+  background: var(--a-primary);
+  border-color: var(--a-primary);
+  color: var(--a-primary-ink);
+}
+
+/* ───────── Discover: postcards ───────── */
+
+.postcard {
+  position: relative;
+  border: 1px solid color-mix(in srgb, var(--color-forest) 20%, transparent);
+  background: #fdfaf2;
+  transition: transform 380ms cubic-bezier(0.22, 1, 0.36, 1), box-shadow 380ms ease, border-color 260ms ease;
+}
+
+/* a fine ticket edge: two semicircle notches either side of the tear line */
+.postcard::before,
+.postcard::after {
+  content: '';
+  position: absolute;
+  top: 9rem;
+  z-index: 2;
+  width: 14px;
+  height: 14px;
+  margin-top: -7px;
+  border-radius: 50%;
+  background: var(--color-paper);
+  border: 1px solid color-mix(in srgb, var(--color-forest) 20%, transparent);
+  pointer-events: none;
+}
+
+.postcard::before { left: -8px; clip-path: inset(0 0 0 50%); }
+.postcard::after { right: -8px; clip-path: inset(0 50% 0 0); }
+
+.postcard:hover {
+  transform: translateY(-5px) rotate(-0.4deg);
+  border-color: var(--pc);
+  box-shadow: 0 22px 34px -24px color-mix(in srgb, var(--pc) 70%, #0d2822), 5px 5px 0 -1px color-mix(in srgb, var(--pc) 22%, transparent);
+}
+
+.postcard-art {
+  background:
+    radial-gradient(circle at 18% 120%, color-mix(in srgb, var(--pc) 26%, transparent), transparent 55%),
+    radial-gradient(1.2px 1.2px at 12px 12px, color-mix(in srgb, var(--pc) 28%, transparent) 99%, transparent 100%) 0 0 / 14px 14px,
+    color-mix(in srgb, var(--pc) 10%, #fbf5e6);
+  color: color-mix(in srgb, var(--pc) 70%, #173f35);
+  border-bottom: 1px solid color-mix(in srgb, var(--pc) 28%, transparent);
+}
+
+.postcard-icon {
+  transform-origin: 50% 90%;
+  transition: transform 520ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+.postcard:hover .postcard-icon {
+  transform: translateY(-4px) rotate(-8deg) scale(1.08);
+}
+
+.postcard-scene {
+  transition: transform 900ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.postcard:hover .postcard-scene {
+  transform: scale(1.06);
+}
+
+.art-steam {
+  animation: art-steam 2.4s ease-in-out infinite;
+}
+
+@keyframes art-steam {
+  0%, 100% { transform: translateY(0); opacity: 0.9; }
+  50% { transform: translateY(-3px); opacity: 0.45; }
+}
+
+.postcard-route {
+  stroke-dashoffset: 0;
+}
+
+.postcard:hover .postcard-route {
+  animation: route-flow 1.1s linear infinite;
+}
+
+@keyframes route-flow {
+  to { stroke-dashoffset: -20; }
+}
+
+.postmark {
+  width: 4.4rem;
+  height: 4.4rem;
+  transform: rotate(-12deg);
+  opacity: 0.85;
+  transition: transform 700ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.postcard:hover .postmark {
+  transform: rotate(8deg) scale(1.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .postcard,
+  .postcard-icon,
+  .postmark {
+    transition: none !important;
+  }
+  .postcard:hover .postcard-route { animation: none; }
+}
+
+
+/* ───────── Sky bodies: the sun and the moon of the workspace ───────── */
+
+.sky-body {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.sky-sun,
+.sky-moon {
+  position: absolute;
+  top: 0.1rem;
+  right: 4.5rem;
+  width: 6.2rem;
+  height: 6.2rem;
+  opacity: 0;
+  transform: translate3d(0, 11rem, 0) rotate(-24deg) scale(0.8);
+  transition: transform 1500ms cubic-bezier(0.22, 1, 0.36, 1), opacity 1100ms ease;
+}
+
+.sky-sun[data-up='true'],
+.sky-moon[data-up='true'] {
+  opacity: var(--show, 1);
+  transform: none;
+}
+
+.sky-sun-disc {
+  position: absolute;
+  inset: 18%;
+  border-radius: 50%;
+  background: radial-gradient(circle at 36% 34%, #fff3c4, #f6c75a 55%, #eda63b);
+  box-shadow: 0 0 60px 18px rgba(240, 185, 75, 0.38);
+}
+
+.sky-sun-rays {
+  position: absolute;
+  inset: -30%;
+  border-radius: 50%;
+  background: repeating-conic-gradient(from 0deg, rgba(240, 185, 75, 0.28) 0 4deg, transparent 4deg 12deg);
+  mask-image: radial-gradient(circle, #000 0 22%, transparent 62%);
+  animation: spin-slow 90s linear infinite;
+}
+
+.sky-moon-glow {
+  position: absolute;
+  inset: -45%;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(255, 244, 205, 0.28), transparent 62%);
+}
+
+.sky-moon-disc {
+  position: absolute;
+  inset: 8%;
+  width: 84%;
+  height: 84%;
+  filter: drop-shadow(0 0 16px rgba(255, 244, 205, 0.45));
+}
+
+@media (max-width: 1023px) {
+  .sky-sun,
+  .sky-moon {
+    top: 4.6rem;
+    right: 1rem;
+    width: 4.4rem;
+    height: 4.4rem;
+  }
+}
+
+/* ───────── Night in the workspace ─────────
+   The whole workspace flips to a deep forest night. Foreground tokens (ink, forest) turn light, surfaces
+   turn dark, `paper` stays the light cream so text on dark panels is untouched. */
+
+/* Each background drawing brings its own palette (data-app-scene, set by the app shell): the ground and surfaces by night, the
+   dark panels in both phases, and a tint on the paper by day. Without a scene: Tràng An's green, the app's first look. */
+:root {
+  --n-body: #09201b;
+  --n-bg-top: #0b241f;
+  --n-bg-bottom: #08191a;
+  --n-glow-a: rgba(79, 184, 164, 0.16);
+  --n-glow-b: rgba(112, 92, 196, 0.14);
+  --n-cream: #133129;
+  --n-surface: #153830;
+  --n-surface-2: #1c4a3e;
+  --n-raised: #163b33;
+  --n-accent: #2f7a66;
+  --n-pop: #0f2b25;
+  --n-card: #112f29;
+  --n-map: #1a2a27;
+  --day-glow-a: rgba(240, 185, 75, 0.14);
+  --day-glow-b: rgba(79, 184, 164, 0.1);
+}
+
+/* Hạ Long: jade water and karst green */
+html[data-app-scene='ha-long'] {
+  --n-body: #0e1b18;
+  --n-bg-top: #132420;
+  --n-bg-bottom: #0a1412;
+  --n-glow-a: rgba(145, 162, 145, 0.2);
+  --n-glow-b: rgba(138, 75, 51, 0.1);
+  --n-cream: #15241f;
+  --n-surface: #182a24;
+  --n-surface-2: #213830;
+  --n-raised: #1c2f29;
+  --n-accent: #4e6a3c;
+  --n-pop: #132420;
+  --n-card: #172822;
+  --n-map: #15211d;
+  --day-glow-a: rgba(145, 162, 145, 0.2);
+  --day-glow-b: rgba(138, 75, 51, 0.08);
+}
+
+/* Hà Giang: young rice and a cyan sky */
+html[data-app-scene='ha-giang'] {
+  --n-body: #0f1a0c;
+  --n-bg-top: #142310;
+  --n-bg-bottom: #0b1409;
+  --n-glow-a: rgba(120, 206, 227, 0.14);
+  --n-glow-b: rgba(67, 116, 21, 0.2);
+  --n-cream: #16240f;
+  --n-surface: #1a2a14;
+  --n-surface-2: #24381b;
+  --n-raised: #1e2f17;
+  --n-accent: #3f6f22;
+  --n-pop: #142310;
+  --n-card: #18270f;
+  --n-map: #16200f;
+  --day-glow-a: rgba(120, 206, 227, 0.16);
+  --day-glow-b: rgba(67, 116, 21, 0.1);
+}
+
+/* Hội An: ochre walls and red lanterns */
+html[data-app-scene='hoi-an'] {
+  --n-body: #1a140c;
+  --n-bg-top: #211a0f;
+  --n-bg-bottom: #130f09;
+  --n-glow-a: rgba(215, 172, 55, 0.18);
+  --n-glow-b: rgba(194, 59, 42, 0.12);
+  --n-cream: #231b10;
+  --n-surface: #281f13;
+  --n-surface-2: #352a1a;
+  --n-raised: #2d2316;
+  --n-accent: #7d5f1a;
+  --n-pop: #211a0f;
+  --n-card: #261d12;
+  --n-map: #1f180f;
+  --day-glow-a: rgba(215, 172, 55, 0.18);
+  --day-glow-b: rgba(194, 59, 42, 0.08);
+}
+
+/* Phú Quốc: sea blues and sand */
+html[data-app-scene='phu-quoc'] {
+  --n-body: #0b1824;
+  --n-bg-top: #0f2030;
+  --n-bg-bottom: #08121b;
+  --n-glow-a: rgba(74, 159, 224, 0.2);
+  --n-glow-b: rgba(217, 199, 168, 0.1);
+  --n-cream: #10202e;
+  --n-surface: #132535;
+  --n-surface-2: #1b3247;
+  --n-raised: #162a3c;
+  --n-accent: #2f6fb0;
+  --n-pop: #0f2030;
+  --n-card: #122333;
+  --n-map: #111d28;
+  --day-glow-a: rgba(74, 159, 224, 0.16);
+  --day-glow-b: rgba(217, 199, 168, 0.2);
+}
+
+/* Sài Gòn: the navy of its towers at blue hour, warmed by their lights */
+html[data-app-scene='sai-gon'] {
+  --n-body: #0d1626;
+  --n-bg-top: #111c30;
+  --n-bg-bottom: #0a111e;
+  --n-glow-a: rgba(51, 80, 124, 0.26);
+  --n-glow-b: rgba(227, 168, 87, 0.1);
+  --n-cream: #142036;
+  --n-surface: #16233a;
+  --n-surface-2: #1f3050;
+  --n-raised: #1a2842;
+  --n-accent: #34507e;
+  --n-pop: #111c30;
+  --n-card: #15213a;
+  --n-map: #141c2a;
+  --day-glow-a: rgba(51, 80, 124, 0.13);
+  --day-glow-b: rgba(227, 168, 87, 0.12);
+}
+
+/* Hà Nội: the grey moss of Hồ Gươm */
+html[data-app-scene='ha-noi'] {
+  --n-body: #121815;
+  --n-bg-top: #172019;
+  --n-bg-bottom: #0e1310;
+  --n-glow-a: rgba(110, 122, 78, 0.22);
+  --n-glow-b: rgba(165, 173, 185, 0.12);
+  --n-cream: #1a221d;
+  --n-surface: #1d2621;
+  --n-surface-2: #27332c;
+  --n-raised: #222c26;
+  --n-accent: #56664a;
+  --n-pop: #172019;
+  --n-card: #1b241f;
+  --n-map: #18201c;
+  --day-glow-a: rgba(110, 122, 78, 0.14);
+  --day-glow-b: rgba(165, 173, 185, 0.18);
+}
+
+/* Đà Nẵng: violet night over the Han River, with the dragon gold */
+html[data-app-scene='da-nang'] {
+  --n-body: #140f1a;
+  --n-bg-top: #1a1322;
+  --n-bg-bottom: #100b15;
+  --n-glow-a: rgba(68, 59, 184, 0.22);
+  --n-glow-b: rgba(214, 158, 42, 0.12);
+  --n-cream: #1d1626;
+  --n-surface: #211a2b;
+  --n-surface-2: #2c2339;
+  --n-raised: #261e31;
+  --n-accent: #4b3f8a;
+  --n-pop: #1a1322;
+  --n-card: #1f1829;
+  --n-map: #1a1521;
+  --day-glow-a: rgba(214, 158, 42, 0.16);
+  --day-glow-b: rgba(68, 59, 184, 0.08);
+}
+
+/* Huế: the dark wood of Ngọ Môn and its lacquered red */
+html[data-app-scene='hue'] {
+  --n-body: #18110d;
+  --n-bg-top: #1f1611;
+  --n-bg-bottom: #120d0a;
+  --n-glow-a: rgba(163, 59, 43, 0.2);
+  --n-glow-b: rgba(171, 150, 131, 0.12);
+  --n-cream: #221914;
+  --n-surface: #271d17;
+  --n-surface-2: #33271f;
+  --n-raised: #2c211b;
+  --n-accent: #7a3a2c;
+  --n-pop: #1f1611;
+  --n-card: #251b16;
+  --n-map: #1d1612;
+  --day-glow-a: rgba(163, 59, 43, 0.1);
+  --day-glow-b: rgba(167, 197, 224, 0.16);
+}
+
+html[data-app-phase='night'] {
+  color-scheme: dark;
+  --color-ink: #f1f7f2;
+  --color-forest: #e1f1e8;
+  --color-cream: var(--n-cream);
+  --color-night: var(--n-body);
+  --color-jade-ink: #86e0c9;
+  --color-sun-ink: #f3c969;
+  --color-terracotta-ink: #f29a80;
+  --app-surface: var(--n-surface);
+  --app-surface-2: var(--n-surface-2);
+  --app-line: rgba(211, 232, 221, 0.26);
+  --chart-grid: rgba(211, 232, 221, 0.16);
+  --chart-label: rgba(241, 247, 242, 0.82);
+  --chart-cursor: rgba(211, 232, 221, 0.4);
+  --chart-dot-edge: var(--n-body);
+}
+
+html[data-app-phase='night'],
+html[data-app-phase='night'] body {
+  background: var(--n-body);
+}
+
+html[data-app-phase='night'] ::selection {
+  background: var(--color-sun);
+  color: var(--n-body);
+}
+
+.app-bg {
+  transition: background-color 1200ms ease;
+}
+
+html[data-app-phase='night'] .app-bg {
+  background:
+    radial-gradient(ellipse 55% 42% at 100% 0, var(--n-glow-a), transparent 70%),
+    radial-gradient(ellipse 50% 40% at 0 100%, var(--n-glow-b), transparent 70%),
+    linear-gradient(180deg, var(--n-bg-top), var(--n-bg-bottom));
+}
+
+/* weather tints the ground a little */
+html[data-app-phase='day'] .app-bg[data-weather='cloudy'] { background-color: #ece9de; }
+html[data-app-phase='day'] .app-bg[data-weather='rain'] { background-color: #e0e6df; }
+html[data-app-phase='day'] .app-bg[data-weather='storm'] { background-color: #d3dbd5; }
+
+html[data-app-phase='night'] .text-lapis { color: #7fd1bd; }
+html[data-app-phase='night'] .text-pomegranate { color: #ff9a82; }
+
+/* Gold stays the one bright thing: its text must stay dark although the forest token turns light at night. */
+html[data-app-phase='night'] :is(.btn-gold, .bg-sun, .bg-gold) { color: var(--n-body); }
+html[data-app-phase='night'] .btn-gold { box-shadow: 0 0 0 1px rgba(246, 203, 90, 0.55), 0 10px 28px -8px rgba(240, 185, 75, 0.55); }
+html[data-app-phase='night'] .btn-night { background: var(--n-accent); color: #f7f2e8; }
+
+/* Captions step up so small text stays readable on every surface. */
+:is(.text-ink\/25, .text-ink\/30, .text-ink\/35, .text-ink\/40, .text-ink\/45) { color: color-mix(in srgb, var(--color-ink) 62%, transparent); }
+:is(.text-ink\/50, .text-ink\/55, .text-ink\/58, .text-ink\/60) { color: color-mix(in srgb, var(--color-ink) 76%, transparent); }
+html[data-app-phase='night'] :is(.text-ink\/65, .text-ink\/67, .text-ink\/70, .text-ink\/75, .text-ink\/80) { color: color-mix(in srgb, var(--color-ink) 92%, transparent); }
+
+/* The same on the always-dark panels, in the day too. */
+:is(.text-paper\/30, .text-paper\/40, .text-paper\/45, .text-paper\/50) { color: color-mix(in srgb, var(--color-paper) 66%, transparent); }
+:is(.text-paper\/55, .text-paper\/60, .text-paper\/62, .text-paper\/65) { color: color-mix(in srgb, var(--color-paper) 80%, transparent); }
+:is(.text-paper\/70, .text-paper\/75, .text-paper\/80) { color: color-mix(in srgb, var(--color-paper) 92%, transparent); }
+
+html[data-app-phase='night'] .panel {
+  background: var(--app-surface);
+  border-color: var(--app-line);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 18px 38px -26px rgba(0, 0, 0, 0.75);
+}
+
+html[data-app-phase='night'] .panel-night {
+  border: 1px solid rgba(240, 185, 75, 0.22);
+  box-shadow: 0 30px 60px -40px rgba(0, 0, 0, 0.8);
+}
+
+html[data-app-phase='night'] .bg-white,
+html[data-app-phase='night'] [class*='bg-white/'] {
+  background-color: color-mix(in srgb, var(--n-raised) 82%, transparent);
+}
+
+html[data-app-phase='night'] .bg-paper {
+  background-color: var(--app-surface);
+}
+
+html[data-app-phase='night'] [class*='bg-paper/9'],
+html[data-app-phase='night'] [class*='bg-paper/8'] {
+  background-color: color-mix(in srgb, var(--n-body) 90%, transparent);
+}
+
+html[data-app-phase='night'] .bg-forest,
+html[data-app-phase='night'] .chip-on {
+  background-color: var(--n-accent);
+  border-color: var(--n-accent);
+  color: #f7f2e8;
+}
+
+html[data-app-phase='night'] .chip-on:hover {
+  background-color: var(--color-terracotta);
+  border-color: var(--color-terracotta);
+}
+
+html[data-app-phase='night'] input,
+html[data-app-phase='night'] textarea,
+html[data-app-phase='night'] select {
+  color: var(--color-ink);
+}
+
+html[data-app-phase='night'] .skeleton::after {
+  background: linear-gradient(90deg, transparent, rgba(211, 232, 221, 0.12), transparent);
+}
+
+html[data-app-phase='night'] .leaflet-tile-pane {
+  filter: invert(1) hue-rotate(172deg) brightness(0.82) contrast(0.92) saturate(0.7);
+}
+
+html[data-app-phase='night'] .leaflet-container {
+  background: var(--n-map);
+}
+
+html[data-app-phase='night'] .sky-pop {
+  background: var(--n-pop);
+  border-color: var(--app-line);
+}
+
+html[data-app-phase='night'] .postcard {
+  background: var(--n-card);
+  border-color: var(--app-line);
+}
+
+html[data-app-phase='night'] .postcard::before,
+html[data-app-phase='night'] .postcard::after {
+  background: var(--n-body);
+  border-color: var(--app-line);
+}
+
+html[data-app-phase='night'] .postcard-art {
+  background:
+    radial-gradient(circle at 18% 120%, color-mix(in srgb, var(--pc) 34%, transparent), transparent 55%),
+    radial-gradient(1.2px 1.2px at 12px 12px, color-mix(in srgb, var(--pc) 40%, transparent) 99%, transparent 100%) 0 0 / 14px 14px,
+    color-mix(in srgb, var(--pc) 16%, var(--n-pop));
+  color: color-mix(in srgb, var(--pc) 55%, #e6eee7);
+}
+
+.di-dust {
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 39;
+  width: 11px;
+  height: 11px;
+  pointer-events: none;
+  clip-path: polygon(50% 0, 62% 38%, 100% 50%, 62% 62%, 50% 100%, 38% 62%, 0 50%, 38% 38%);
+  filter: drop-shadow(0 0 3px rgba(240, 185, 75, 0.8));
+}
+
+.header-route {
+  animation: route-flow 1.6s linear infinite;
+}
+
+.header-pin {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: pin-pulse 2.6s ease-in-out infinite;
+}
+
+@keyframes pin-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.35); }
+}
+
+/* ───────── Admin workspace: a plain decision-support console, no motion and no decoration ───────── */
+
+html[data-console] {
+  --color-paper: #ffffff;
+  --color-cream: #eef1f4;
+  --color-ink: #17212b;
+  --color-forest: #17212b;
+  --color-night: #1c2a35;
+  --color-midnight: #1c2a35;
+  --color-lapis: #0a6a5c;
+  --color-firuze: #12806f;
+  --color-jade: #12806f;
+  --color-jade-ink: #0a6a5c;
+  --color-terracotta: #b4432a;
+  --color-terracotta-ink: #a23a23;
+  --color-pomegranate: #b42318;
+  --color-sun: #d9920a;
+  --color-gold: #d9920a;
+  --color-sun-ink: #7a4f00;
+  --font-display: var(--font-sans);
+  --console-bg: #f2f4f7;
+  --console-side: #fafbfc;
+  --console-head: #f6f8fa;
+  --console-line: #d5dbe2;
+  --console-hover: #eaf0f3;
+  --console-muted: #4f5b67;
+  background: var(--console-bg);
+  color-scheme: light;
+  scroll-behavior: auto;
+}
+
+html[data-console] body {
+  background: var(--console-bg);
+  color: var(--color-ink);
+  cursor: auto;
+}
+
+html[data-console] *:not(.animate-spin),
+html[data-console] *::before,
+html[data-console] *::after {
+  animation: none !important;
+  transition: none !important;
+}
+
+html[data-console] ::selection {
+  background: #bfe3dc;
+  color: var(--color-ink);
+}
+
+html[data-console] :focus-visible {
+  outline: 2px solid var(--color-lapis);
+  outline-offset: 1px;
+}
+
+/* Secondary text stays readable on white */
+html[data-console] :is(.text-ink\/40, .text-ink\/45, .text-ink\/50, .text-ink\/55, .text-ink\/60, .text-ink\/65) {
+  color: var(--console-muted);
+}
+
+.console-root {
+  --radius-md: 4px;
+  --radius-lg: 4px;
+  --radius-xl: 6px;
+  --radius-2xl: 6px;
+  --radius-3xl: 6px;
+  background: var(--console-bg);
+  font-size: 0.875rem;
+}
+
+.console-side {
+  border-right: 1px solid var(--console-line);
+  background: var(--console-side);
+}
+
+.console-group {
+  padding: 0.85rem 0.75rem 0.25rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--console-muted);
+}
+
+.console-link {
+  display: flex;
+  min-height: 2.1rem;
+  align-items: center;
+  gap: 0.6rem;
+  border-radius: 4px;
+  padding-inline: 0.75rem;
+  font-size: 0.84rem;
+  font-weight: 500;
+  color: var(--color-ink);
+}
+
+.console-link:hover {
+  background: var(--console-hover);
+}
+
+.console-link[aria-current='page'] {
+  background: #dcefeb;
+  color: var(--color-jade-ink);
+  font-weight: 600;
+}
+
+.console-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+
+.console-head h1 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.3;
+  color: var(--color-ink);
+}
+
+.console-head p {
+  margin-top: 0.1rem;
+  font-size: 0.82rem;
+  color: var(--console-muted);
+}
+
+.console-title {
+  border-radius: 6px 6px 0 0;
+  border-bottom: 1px solid var(--console-line);
+  background: var(--console-head);
+  padding: 0.55rem 1rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--color-ink);
+}
+
+.console-kpis {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1px;
+  overflow: hidden;
+  border: 1px solid var(--console-line);
+  border-radius: 6px;
+  background: var(--console-line);
+}
+
+@media (min-width: 48rem) {
+  .console-kpis { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+@media (min-width: 80rem) {
+  .console-kpis { grid-template-columns: repeat(6, minmax(0, 1fr)); }
+}
+
+.console-kpis > div {
+  background: #fff;
+  padding: 0.6rem 0.9rem;
+}
+
+.console-kpis dt {
+  font-size: 0.75rem;
+  color: var(--console-muted);
+}
+
+.console-kpis dd {
+  margin-top: 0.1rem;
+  font-size: 1.35rem;
+  font-weight: 600;
+  line-height: 1.2;
+  font-variant-numeric: tabular-nums;
+  color: var(--color-ink);
+}
+
+.console-level {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  border-radius: 3px;
+  padding: 0.12rem 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.console-level[data-level='ok'] { background: #dcefeb; color: #0a5c50; }
+.console-level[data-level='act'] { background: #fde8e4; color: #912018; }
+.console-level[data-level='review'] { background: #fdf1d7; color: #7a4f00; }
+.console-level[data-level='info'] { background: #e7edf2; color: #38454f; }
+
+html[data-console] .panel {
+  border: 1px solid var(--console-line);
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: none;
+}
+
+/* The dark panel becomes a plain one: its text classes read the paper colour, so that colour turns to ink inside it */
+html[data-console] .panel-night {
+  --color-paper: #17212b;
+  border: 1px solid var(--console-line);
+  border-radius: 6px;
+  background: #fff;
+  color: var(--color-ink);
+}
+
+html[data-console] .panel-night::before { display: none; }
+
+html[data-console] :is(.btn-gold, .btn-night, .btn-ghost) {
+  min-height: 2.25rem;
+  border-radius: 4px;
+  padding-inline: 0.85rem;
+  font-size: 0.8rem;
+  box-shadow: none;
+  transform: none !important;
+}
+
+html[data-console] :is(.btn-gold, .btn-night, .btn-ghost)::after { display: none; }
+html[data-console] :is(.btn-gold, .btn-night, .btn-ghost).btn-sm { min-height: 2rem; padding-inline: 0.7rem; font-size: 0.78rem; }
+html[data-console] .btn-gold { background: var(--color-lapis); color: #fff; }
+html[data-console] .btn-gold:not(:disabled):hover { background: #085548; box-shadow: none; }
+html[data-console] .btn-night { background: #2b3a46; color: #fff; }
+html[data-console] .btn-night:not(:disabled):hover { background: #17212b; box-shadow: none; }
+html[data-console] .btn-ghost { border-color: var(--console-line); background: #fff; color: var(--color-ink); }
+html[data-console] .btn-ghost:not(:disabled):hover { border-color: #aeb8c2; background: var(--console-hover); }
+
+html[data-console] .chip {
+  min-height: 1.85rem;
+  border-color: var(--console-line);
+  border-radius: 4px;
+  background: #fff;
+  padding-inline: 0.6rem;
+  font-size: 0.78rem;
+  color: var(--color-ink);
+  transform: none !important;
+}
+
+html[data-console] .chip:hover { border-color: #aeb8c2; background: var(--console-hover); color: var(--color-ink); }
+html[data-console] .chip-on,
+html[data-console] .chip-on:hover { border-color: var(--color-lapis); background: var(--color-lapis); color: #fff; }
+
+html[data-console] .h-display {
+  font-family: var(--font-sans);
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+}
+
+html[data-console] :is(input:not([type='checkbox'], [type='radio'], [type='range']), select, textarea) {
+  border-color: var(--console-line);
+  border-radius: 4px;
+  background-color: #fff;
+  color: var(--color-ink);
+}
+
+html[data-console] table { font-variant-numeric: tabular-nums; }
+html[data-console] table thead:not(.sr-only) { background: var(--console-head); color: var(--console-muted); }
+html[data-console] table thead th { border-bottom: 1px solid var(--console-line); background: var(--console-head); font-size: 0.75rem; font-weight: 600; }
+html[data-console] table tbody tr { border-top: 1px solid #e6eaee; }
+html[data-console] table tbody tr:first-child { border-top: 0; }
+html[data-console] table tbody tr:hover { background: var(--console-hover); }
+
+html[data-console] .dash-card { padding: 0.8rem 1rem; }
+html[data-console] .dash-card > h2 { margin: -0.8rem -1rem 0.7rem; border-bottom: 1px solid var(--console-line); border-radius: 6px 6px 0 0; background: var(--console-head); padding: 0.55rem 1rem; font-size: 0.82rem; font-weight: 600; }
+html[data-console] .dash-filters { margin-bottom: 0.75rem; gap: 0.6rem; padding: 0.6rem 0.8rem; }
+html[data-console] .dash-filters :is(input, select) { height: 2rem; }
+
+/* On a phone the filters take two columns, and the shared dashboard table drops its kind column so the numbers stay in view */
+@media (max-width: 40rem) {
+  html[data-console] .dash-filters:not([role='search']) { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: end; }
+  html[data-console] .dash-filters:not([role='search']) > svg { display: none; }
+  html[data-console] .dash-filters :is(input, select) { width: 100%; }
+  html[data-console] .dash-filters .btn-gold { margin-left: 0; }
+  html[data-console] .dash-card table :is(th, td):nth-child(2) { display: none; }
+  html[data-console] main table :is(th, td) { padding-inline: 0.45rem; }
+  html[data-console] main table :is(th, td):first-child { padding-left: 0.75rem; }
+}
+
+/* In the app, a jump to a part of the page (scrollIntoView, #anchor) stops below the sticky top bar instead of under it */
+html[data-app-phase] {
+  scroll-padding-top: 5.5rem;
+}
+
+/* ───────── Page moves (app/pageTransition.ts), after the vercel-react-view-transitions recipes ─────────
+   Only the page (`app-page`) and a trip's title move; the root stays live, so the bars, sky and backdrop keep running. */
+.app-page {
+  view-transition-name: app-page;
+}
+
+::view-transition {
+  pointer-events: none;
+}
+
+::view-transition-old(root) {
+  display: none;
+}
+
+::view-transition-new(root) {
+  animation: none;
+}
+
+::view-transition-group(app-page) {
+  animation: none;
+}
+
+/* Between tabs: a quick cross-fade, no slide (no depth to show) */
+::view-transition-old(app-page) {
+  animation: 150ms ease-in both vt-fade reverse;
+}
+
+::view-transition-new(app-page) {
+  animation: 210ms ease-out 60ms both vt-fade;
+}
+
+/* Into a trip or a set, and back out: a short slide that says which way */
+html[data-move='forward']::view-transition-old(app-page) {
+  --vt-slide: -60px;
+  animation: 150ms ease-in both vt-fade reverse, 400ms cubic-bezier(0.4, 0, 0.2, 1) both vt-slide reverse;
+}
+
+html[data-move='forward']::view-transition-new(app-page) {
+  --vt-slide: 60px;
+  animation: 210ms ease-out 150ms both vt-fade, 400ms cubic-bezier(0.4, 0, 0.2, 1) both vt-slide;
+}
+
+html[data-move='back']::view-transition-old(app-page) {
+  --vt-slide: 60px;
+  animation: 150ms ease-in both vt-fade reverse, 400ms cubic-bezier(0.4, 0, 0.2, 1) both vt-slide reverse;
+}
+
+html[data-move='back']::view-transition-new(app-page) {
+  --vt-slide: -60px;
+  animation: 210ms ease-out 150ms both vt-fade, 400ms cubic-bezier(0.4, 0, 0.2, 1) both vt-slide;
+}
+
+/* A trip's title glides from its card into the trip page (text morph: the new text drawn sharp, not a scaled picture) */
+html:is([data-move='forward'], [data-move='back'])::view-transition-group(trip-title) {
+  animation-duration: 400ms;
+  animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+html:is([data-move='forward'], [data-move='back'])::view-transition-old(trip-title) {
+  display: none;
+}
+
+html:is([data-move='forward'], [data-move='back'])::view-transition-new(trip-title) {
+  animation: none;
+  object-fit: none;
+  object-position: left top;
+}
+
+@keyframes vt-fade {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes vt-slide {
+  from {
+    translate: var(--vt-slide);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ::view-transition-old(*),
+  ::view-transition-new(*),
+  ::view-transition-group(*) {
+    animation-duration: 0s !important;
+    animation-delay: 0s !important;
+  }
+}
