@@ -1,0 +1,78 @@
+{
+  "generatedAt": "2026-11-08T15:25:37.445Z",
+  "scenarios": 62,
+  "failed": [],
+  "planner": {
+    "scenarios": 62,
+    "allHardConstraintsKept": {
+      "count": 62,
+      "rate": 1,
+      "ci95": [
+        0.942,
+        1
+      ]
+    },
+    "scenariosWith": {
+      "closedAtVisit": 0,
+      "pastDayEnd": 0,
+      "closedThatWeekday": 0,
+      "overBudget": 0,
+      "avoidedPlace": 0,
+      "moreThanMaxMealsADay": 0,
+      "duplicatePlace": 0
+    },
+    "mustVisitCoverage": 1,
+    "mustVisitScenarios": 10,
+    "interestHitRate": 0.78,
+    "interestScenarios": 23,
+    "stopsPerScenario": 13.4,
+    "fullness": 0.989,
+    "travelMinPerStop": 9.1,
+    "waitMinPerStop": 0.4,
+    "spendOfBudget": 0.3
+  },
+  "baseline": {
+    "scenarios": 62,
+    "allHardConstraintsKept": {
+      "count": 14,
+      "rate": 0.226,
+      "ci95": [
+        0.14,
+        0.344
+      ]
+    },
+    "scenariosWith": {
+      "closedAtVisit": 0.565,
+      "pastDayEnd": 0.435,
+      "closedThatWeekday": 0.177,
+      "overBudget": 0.081,
+      "avoidedPlace": 0.016,
+      "moreThanMaxMealsADay": 0.532,
+      "duplicatePlace": 0
+    },
+    "mustVisitCoverage": 1,
+    "mustVisitScenarios": 10,
+    "interestHitRate": 0.925,
+    "interestScenarios": 22,
+    "stopsPerScenario": 13.1,
+    "fullness": 0.968,
+    "travelMinPerStop": 21.3,
+    "waitMinPerStop": 10.6,
+    "spendOfBudget": 0.546
+  },
+  "pairedHardConstraints": {
+    "plannerOnly": 48,
+    "baselineOnly": 0,
+    "both": 14,
+    "neither": 0
+  },
+  "plannerMs": {
+    "mean": 9,
+    "p50": 4,
+    "p95": 33
+  },
+  "solverStatus": {
+    "FEASIBLE": 43,
+    "OPTIMAL": 19
+  }
+}

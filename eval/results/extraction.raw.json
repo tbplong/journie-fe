@@ -1,0 +1,3754 @@
+[
+  {
+    "id": "a01",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 3,
+        "budget_vnd": 5000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "3"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "5000000"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1733,
+        "usage": {
+          "input_tokens": 2634,
+          "output_tokens": 239,
+          "total_tokens": 2873,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1749,
+    "attempts": 1
+  },
+  {
+    "id": "a02",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": 3000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "budget_vnd",
+            "operator": "prefer",
+            "value": "3000000"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": true
+      },
+      "repairs": [],
+      "issues": [
+        {
+          "code": "missing_atom",
+          "field": "budget_vnd",
+          "severity": "error",
+          "detail": "Populated scalar lacks a corresponding factual atom."
+        }
+      ],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1509,
+        "usage": {
+          "input_tokens": 2635,
+          "output_tokens": 242,
+          "total_tokens": 2877,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1515,
+    "attempts": 1
+  },
+  {
+    "id": "a03",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 1,
+        "budget_vnd": 500000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "1"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "max",
+            "value": "500000"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1763,
+        "usage": {
+          "input_tokens": 2635,
+          "output_tokens": 238,
+          "total_tokens": 2873,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1768,
+    "attempts": 1
+  },
+  {
+    "id": "a04",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 4,
+        "budget_vnd": 6000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "4"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "6000000"
+          },
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "3 đêm"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 5759,
+        "usage": {
+          "input_tokens": 2637,
+          "output_tokens": 270,
+          "total_tokens": 2907,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 5764,
+    "attempts": 1
+  },
+  {
+    "id": "a05",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": 2000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "2000000"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2071,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 239,
+          "total_tokens": 2872,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2077,
+    "attempts": 1
+  },
+  {
+    "id": "a06",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": 2000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "2000000"
+          },
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "cuoi tuan"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1751,
+        "usage": {
+          "input_tokens": 2634,
+          "output_tokens": 271,
+          "total_tokens": 2905,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1755,
+    "attempts": 1
+  },
+  {
+    "id": "a07",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 5,
+        "budget_vnd": 10000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "5"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "10000000"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1725,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 241,
+          "total_tokens": 2874,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1730,
+    "attempts": 1
+  },
+  {
+    "id": "a08",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 1,
+        "budget_vnd": 1500000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "1"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "1500000"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1864,
+        "usage": {
+          "input_tokens": 2637,
+          "output_tokens": 239,
+          "total_tokens": 2876,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1871,
+    "attempts": 1
+  },
+  {
+    "id": "a09",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 3,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "3"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1806,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 199,
+          "total_tokens": 2830,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1811,
+    "attempts": 1
+  },
+  {
+    "id": "a10",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": 4000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "budget_vnd",
+            "operator": "max",
+            "value": "4000000"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1409,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 217,
+          "total_tokens": 2848,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1416,
+    "attempts": 1
+  },
+  {
+    "id": "a11",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "không giới hạn ngân sách"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 47707,
+        "usage": {
+          "input_tokens": 2635,
+          "output_tokens": 233,
+          "total_tokens": 2868,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 47723,
+    "attempts": 2
+  },
+  {
+    "id": "b01",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "museum"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "museum"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 33742,
+        "usage": {
+          "input_tokens": 2630,
+          "output_tokens": 215,
+          "total_tokens": 2845,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 33757,
+    "attempts": 1
+  },
+  {
+    "id": "b02",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "cafe"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1341,
+        "usage": {
+          "input_tokens": 2630,
+          "output_tokens": 215,
+          "total_tokens": 2845,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1350,
+    "attempts": 1
+  },
+  {
+    "id": "b03",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "food"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2509,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 215,
+          "total_tokens": 2846,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2515,
+    "attempts": 1
+  },
+  {
+    "id": "b04",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "park"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "park"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2284,
+        "usage": {
+          "input_tokens": 2630,
+          "output_tokens": 215,
+          "total_tokens": 2845,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2291,
+    "attempts": 1
+  },
+  {
+    "id": "b05",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "shopping"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "shopping"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1773,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 215,
+          "total_tokens": 2844,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1778,
+    "attempts": 1
+  },
+  {
+    "id": "b06",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "beach"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "beach"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1625,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 215,
+          "total_tokens": 2844,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1632,
+    "attempts": 1
+  },
+  {
+    "id": "b07",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "culture",
+          "lich su"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "culture"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "lich su"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 5170,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 252,
+          "total_tokens": 2884,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 5176,
+    "attempts": 1
+  },
+  {
+    "id": "b08",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "nature"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "nature"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1750,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 215,
+          "total_tokens": 2844,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1756,
+    "attempts": 1
+  },
+  {
+    "id": "b09",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "museum",
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "museum"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "cafe"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1788,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 250,
+          "total_tokens": 2882,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1793,
+    "attempts": 1
+  },
+  {
+    "id": "b10",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "food",
+          "shopping",
+          "park"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "shopping"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "park"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2898,
+        "usage": {
+          "input_tokens": 2634,
+          "output_tokens": 285,
+          "total_tokens": 2919,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2903,
+    "attempts": 1
+  },
+  {
+    "id": "b11",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "museum",
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "museum"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "cafe"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1628,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 250,
+          "total_tokens": 2881,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1634,
+    "attempts": 1
+  },
+  {
+    "id": "b12",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "food",
+          "culture"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "culture"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2035,
+        "usage": {
+          "input_tokens": 2630,
+          "output_tokens": 250,
+          "total_tokens": 2880,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2042,
+    "attempts": 1
+  },
+  {
+    "id": "b13",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "nature"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "nature"
+          },
+          {
+            "field": "other",
+            "operator": "prefer",
+            "value": "thích chụp ảnh"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [
+        "canonical_name",
+        "canonical_name"
+      ],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1895,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 254,
+          "total_tokens": 2886,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1902,
+    "attempts": 1
+  },
+  {
+    "id": "c01",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "hai san"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "hai san"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 38765,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 217,
+          "total_tokens": 2846,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 38772,
+    "attempts": 1
+  },
+  {
+    "id": "c02",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "tôi dị ứng đậu phộng"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1705,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 213,
+          "total_tokens": 2845,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1711,
+    "attempts": 1
+  },
+  {
+    "id": "c03",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "interests",
+            "operator": "exclude",
+            "value": "cafe"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [
+        {
+          "code": "atom_classification_mismatch",
+          "field": "interests",
+          "severity": "error",
+          "detail": "Unexpected hard_constraints operator 'exclude' for this field."
+        },
+        {
+          "code": "missing_atom",
+          "field": "interests",
+          "severity": "error",
+          "detail": "List entries lack corresponding atoms."
+        }
+      ],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1923,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 215,
+          "total_tokens": 2844,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1927,
+    "attempts": 1
+  },
+  {
+    "id": "c04",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "đi chợ"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "đi chợ"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1341,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 217,
+          "total_tokens": 2846,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1346,
+    "attempts": 1
+  },
+  {
+    "id": "c05",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "phở"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "phở"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2041,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 217,
+          "total_tokens": 2846,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2048,
+    "attempts": 1
+  },
+  {
+    "id": "c06",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "mình ăn chay, không ăn thịt"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 47463,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 214,
+          "total_tokens": 2847,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 47469,
+    "attempts": 1
+  },
+  {
+    "id": "c07",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "seafood"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "seafood"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 40834,
+        "usage": {
+          "input_tokens": 2628,
+          "output_tokens": 217,
+          "total_tokens": 2845,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 40841,
+    "attempts": 1
+  },
+  {
+    "id": "c08",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "dị ứng hải sản"
+          },
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "không ăn cay"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1499,
+        "usage": {
+          "input_tokens": 2634,
+          "output_tokens": 243,
+          "total_tokens": 2877,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1505,
+    "attempts": 1
+  },
+  {
+    "id": "c09",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "thit bo"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "thit bo"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1423,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 219,
+          "total_tokens": 2848,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1429,
+    "attempts": 1
+  },
+  {
+    "id": "c10",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "không thích đi bộ nhiều"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 3182,
+        "usage": {
+          "input_tokens": 2630,
+          "output_tokens": 211,
+          "total_tokens": 2841,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 3187,
+    "attempts": 1
+  },
+  {
+    "id": "c11",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "haisan",
+          "cho",
+          "hai sản",
+          "chợ"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "hai sản"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "chợ"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "haisan"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "cho"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [
+        "list_from_constraint",
+        "list_from_constraint",
+        "constraint_from_list",
+        "constraint_from_list"
+      ],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2018,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 253,
+          "total_tokens": 2886,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2022,
+    "attempts": 1
+  },
+  {
+    "id": "c12",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [
+          "ốc"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "ốc"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1581,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 215,
+          "total_tokens": 2844,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1587,
+    "attempts": 1
+  },
+  {
+    "id": "d01",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Chợ Bến Thành"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Chợ Bến Thành"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1525,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 225,
+          "total_tokens": 2858,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1531,
+    "attempts": 1
+  },
+  {
+    "id": "d02",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Dinh Độc Lập"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Dinh Độc Lập"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2554,
+        "usage": {
+          "input_tokens": 2637,
+          "output_tokens": 227,
+          "total_tokens": 2864,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2558,
+    "attempts": 1
+  },
+  {
+    "id": "d03",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Nhà thờ Đức Bà",
+          "Bưu điện Trung tâm"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Nhà thờ Đức Bà"
+          },
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Bưu điện Trung tâm"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 3318,
+        "usage": {
+          "input_tokens": 2636,
+          "output_tokens": 270,
+          "total_tokens": 2906,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 3323,
+    "attempts": 1
+  },
+  {
+    "id": "d04",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Bảo tàng Chứng tích Chiến tranh"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Bảo tàng Chứng tích Chiến tranh"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1844,
+        "usage": {
+          "input_tokens": 2634,
+          "output_tokens": 231,
+          "total_tokens": 2865,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1851,
+    "attempts": 1
+  },
+  {
+    "id": "d05",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Landmark 81"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Landmark 81"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1885,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 129,
+          "total_tokens": 2761,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1891,
+    "attempts": 1
+  },
+  {
+    "id": "d06",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Phố đi bộ Nguyễn Huệ"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Phố đi bộ Nguyễn Huệ"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1287,
+        "usage": {
+          "input_tokens": 2636,
+          "output_tokens": 229,
+          "total_tokens": 2865,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1293,
+    "attempts": 1
+  },
+  {
+    "id": "d07",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Ben Thanh Market",
+          "War Remnants Museum"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Ben Thanh Market"
+          },
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "War Remnants Museum"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1868,
+        "usage": {
+          "input_tokens": 2637,
+          "output_tokens": 264,
+          "total_tokens": 2901,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1875,
+    "attempts": 1
+  },
+  {
+    "id": "d08",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Chùa Bà Thiên Hậu"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Chùa Bà Thiên Hậu"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1855,
+        "usage": {
+          "input_tokens": 2632,
+          "output_tokens": 227,
+          "total_tokens": 2859,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1861,
+    "attempts": 1
+  },
+  {
+    "id": "d09",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [
+          "Nhà hát Thành phố"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Nhà hát Thành phố"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1674,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 225,
+          "total_tokens": 2856,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1679,
+    "attempts": 1
+  },
+  {
+    "id": "d10",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "other",
+            "operator": "eq",
+            "value": "ăn ở Phở Hòa Pasteur"
+          }
+        ],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1825,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 123,
+          "total_tokens": 2754,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1831,
+    "attempts": 1
+  },
+  {
+    "id": "e01",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": 3000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "museum",
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [
+          "haisan"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "3000000"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "haisan"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "museum"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "cafe"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1741,
+        "usage": {
+          "input_tokens": 2643,
+          "output_tokens": 355,
+          "total_tokens": 2998,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1745,
+    "attempts": 1
+  },
+  {
+    "id": "e02",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 3,
+        "budget_vnd": 5000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "food"
+        ],
+        "must_visit": [
+          "Dinh Độc Lập"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "3"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "5000000"
+          },
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Dinh Độc Lập"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 5641,
+        "usage": {
+          "input_tokens": 2646,
+          "output_tokens": 330,
+          "total_tokens": 2976,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 5644,
+    "attempts": 1
+  },
+  {
+    "id": "e03",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 1,
+        "budget_vnd": 1000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "culture"
+        ],
+        "must_visit": [],
+        "avoid": [
+          "chợ"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "1"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "1000000"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "chợ"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "culture"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1768,
+        "usage": {
+          "input_tokens": 2641,
+          "output_tokens": 321,
+          "total_tokens": 2962,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1774,
+    "attempts": 1
+  },
+  {
+    "id": "e04",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 4,
+        "budget_vnd": 8000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "nature",
+          "park"
+        ],
+        "must_visit": [
+          "Chợ Bến Thành"
+        ],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "4"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "8000000"
+          },
+          {
+            "field": "must_visit",
+            "operator": "include",
+            "value": "Chợ Bến Thành"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "nature"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "park"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [
+        "canonical_name",
+        "canonical_name",
+        "canonical_name"
+      ],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1940,
+        "usage": {
+          "input_tokens": 2644,
+          "output_tokens": 371,
+          "total_tokens": 3015,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1945,
+    "attempts": 1
+  },
+  {
+    "id": "e05",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": 2000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [
+          "seafood"
+        ],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "2000000"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "seafood"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "cafe"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1619,
+        "usage": {
+          "input_tokens": 2641,
+          "output_tokens": 321,
+          "total_tokens": 2962,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1625,
+    "attempts": 1
+  },
+  {
+    "id": "e06",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "food"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "other",
+            "operator": "exclude",
+            "value": "di ứng đậu phộng"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2625,
+        "usage": {
+          "input_tokens": 2640,
+          "output_tokens": 274,
+          "total_tokens": 2914,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2631,
+    "attempts": 1
+  },
+  {
+    "id": "e07",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 1,
+        "budget_vnd": 2000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "shopping",
+          "food"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "1"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "2000000"
+          },
+          {
+            "field": "other",
+            "operator": "exclude",
+            "value": "không ăn cay"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "shopping"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1686,
+        "usage": {
+          "input_tokens": 2643,
+          "output_tokens": 347,
+          "total_tokens": 2990,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1691,
+    "attempts": 1
+  },
+  {
+    "id": "e08",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 3,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "museum",
+          "culture",
+          "cafe"
+        ],
+        "must_visit": [],
+        "avoid": [
+          "cà phê"
+        ],
+        "preferred_places": [
+          "Nhà hát Thành phố"
+        ],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "3"
+          },
+          {
+            "field": "preferred_places",
+            "operator": "prefer",
+            "value": "Nhà hát Thành phố"
+          },
+          {
+            "field": "avoid",
+            "operator": "exclude",
+            "value": "cà phê"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "museum"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "culture"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "cafe"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [
+        "list_from_constraint"
+      ],
+      "issues": [
+        {
+          "code": "atom_classification_mismatch",
+          "field": "preferred_places",
+          "severity": "error",
+          "detail": "Unexpected hard_constraints operator 'prefer' for this field."
+        },
+        {
+          "code": "missing_atom",
+          "field": "preferred_places",
+          "severity": "error",
+          "detail": "List entries lack corresponding atoms."
+        }
+      ],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2414,
+        "usage": {
+          "input_tokens": 2647,
+          "output_tokens": 391,
+          "total_tokens": 3038,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2420,
+    "attempts": 1
+  },
+  {
+    "id": "e09",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 2,
+        "budget_vnd": 2500000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "park"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "2"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "max",
+            "value": "2500000"
+          },
+          {
+            "field": "other",
+            "operator": "exclude",
+            "value": "không ăn thịt bò"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "park"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 2174,
+        "usage": {
+          "input_tokens": 2644,
+          "output_tokens": 313,
+          "total_tokens": 2957,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 2177,
+    "attempts": 1
+  },
+  {
+    "id": "e10",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": 5,
+        "budget_vnd": 12000000,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [
+          "museum",
+          "food",
+          "shopping",
+          "nature"
+        ],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [
+          {
+            "field": "duration_days",
+            "operator": "eq",
+            "value": "5"
+          },
+          {
+            "field": "budget_vnd",
+            "operator": "eq",
+            "value": "12000000"
+          }
+        ],
+        "soft_constraints": [
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "museum"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "food"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "shopping"
+          },
+          {
+            "field": "interests",
+            "operator": "prefer",
+            "value": "nature"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1598,
+        "usage": {
+          "input_tokens": 2648,
+          "output_tokens": 388,
+          "total_tokens": 3036,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1604,
+    "attempts": 1
+  },
+  {
+    "id": "f01",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1314,
+        "usage": {
+          "input_tokens": 2627,
+          "output_tokens": 174,
+          "total_tokens": 2801,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1320,
+    "attempts": 1
+  },
+  {
+    "id": "f02",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1263,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 174,
+          "total_tokens": 2807,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1270,
+    "attempts": 1
+  },
+  {
+    "id": "f03",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1457,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 174,
+          "total_tokens": 2803,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1462,
+    "attempts": 1
+  },
+  {
+    "id": "f04",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1703,
+        "usage": {
+          "input_tokens": 2629,
+          "output_tokens": 174,
+          "total_tokens": 2803,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1709,
+    "attempts": 1
+  },
+  {
+    "id": "f05",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [
+          {
+            "field": "other",
+            "operator": "prefer",
+            "value": "chụp ảnh sống ảo"
+          }
+        ],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1654,
+        "usage": {
+          "input_tokens": 2631,
+          "output_tokens": 211,
+          "total_tokens": 2842,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1660,
+    "attempts": 1
+  },
+  {
+    "id": "f06",
+    "response": {
+      "extraction": {
+        "destination": null,
+        "start_date": null,
+        "end_date": null,
+        "duration_days": null,
+        "budget_vnd": null,
+        "budget_scope": null,
+        "available_start": null,
+        "available_end": null,
+        "interests": [],
+        "must_visit": [],
+        "avoid": [],
+        "preferred_places": [],
+        "hard_constraints": [],
+        "soft_constraints": [],
+        "missing_fields": [
+          "destination",
+          "travel_dates_or_duration",
+          "budget",
+          "available_time"
+        ],
+        "possible_conflicts": [],
+        "needs_clarification": false
+      },
+      "repairs": [],
+      "issues": [],
+      "meta": {
+        "model": "gemini-3.5-flash-lite",
+        "resolved_model": "gemini-3.5-flash-lite",
+        "prompt_version": "semantic-v3",
+        "processing_version": "repair-v3",
+        "diagnostics_version": "consistency-v2",
+        "reference_date": "2026-11-08",
+        "latency_ms": 1343,
+        "usage": {
+          "input_tokens": 2633,
+          "output_tokens": 174,
+          "total_tokens": 2807,
+          "reasoning_tokens": null
+        }
+      }
+    },
+    "ms": 1349,
+    "attempts": 1
+  }
+]
