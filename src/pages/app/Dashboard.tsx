@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { AnimatePresence, motion, stagger, useInView, type TargetAndTransition, type Variants } from 'motion/react'
 import { ArrowRight, CalendarClock, Compass, MapPin, Navigation, Send, Sparkles } from 'lucide-react'
@@ -75,6 +75,21 @@ function WeatherGlyph({ condition }: { condition: ReturnType<typeof weatherFor>[
   return <WeatherIcon kind={condition} size={26} />
 }
 
+function PickFrame({ tilt, children }: { tilt: boolean; children: ReactNode }) {
+  return tilt ? <Tilt className="h-60" max={4}>{children}</Tilt> : <div className="h-60">{children}</div>
+}
+
+function useMinSm() {
+  const [wide, setWide] = useState(() => window.matchMedia('(min-width: 640px)').matches)
+  useEffect(() => {
+    const query = window.matchMedia('(min-width: 640px)')
+    const sync = () => setWide(query.matches)
+    query.addEventListener('change', sync)
+    return () => query.removeEventListener('change', sync)
+  }, [])
+  return wide
+}
+
 export function Dashboard() {
   const { tr, place, language, locale } = useTr()
   const user = useAuthStore((state) => state.user)!
@@ -83,6 +98,8 @@ export function Dashboard() {
   const profile = useProfile().data ?? readProfile(user.id, user.name)
   const moment = useDiMoment()
   const { canPointerFx } = useMotionPrefs()
+  // Tilt is off in the phone row, where a card scrolls sideways under the finger.
+  const wide = useMinSm()
   const lift = canPointerFx ? { y: -5, transition: { duration: 0.25, ease: EASE_OUT } } : undefined
   const [wish, setWish] = useState('')
   const [hint, setHint] = useState(0)
@@ -278,10 +295,14 @@ export function Dashboard() {
             {tr('Khám phá thêm', 'Explore more')} <ArrowRight size={15} aria-hidden="true" />
           </Link>
         </motion.div>
-        <motion.ul variants={picksList} className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+        {/* Phone: native scroll-snap row bleeding to the screen edges; sm and up: the grid. */}
+        <motion.ul
+          variants={picksList}
+          className="-mx-4 flex snap-x snap-mandatory gap-3 overflow-x-auto scroll-px-4 px-4 pb-1 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden sm:mx-0 sm:grid sm:snap-none sm:grid-cols-2 sm:gap-4 sm:overflow-visible sm:p-0 xl:grid-cols-4"
+        >
           {recommended.map((poi) => (
-            <motion.li key={poi.id} variants={riseItem} whileHover={lift} whileTap={pressable}>
-              <Tilt className="h-60" max={4}>
+            <motion.li key={poi.id} variants={riseItem} whileHover={lift} whileTap={pressable} className="w-[78vw] shrink-0 snap-start sm:w-auto sm:shrink">
+              <PickFrame tilt={wide}>
                 <button
                   type="button"
                   onClick={() => navigate('/app/plan', { state: { wish: tr(`Một ngày ở ${cityById[poi.city].name}, nhất định phải ghé ${poi.name}.`, `One day in ${cityById[poi.city].nameEn}, I must see ${poi.name}.`) } })}
@@ -297,7 +318,7 @@ export function Dashboard() {
                     </span>
                   </span>
                 </button>
-              </Tilt>
+              </PickFrame>
             </motion.li>
           ))}
         </motion.ul>

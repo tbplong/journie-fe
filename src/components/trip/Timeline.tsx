@@ -14,8 +14,13 @@ const MODE_ICON: Record<TravelMode, typeof Bike> = { walk: Footprints, bike: Bik
 /** A wait longer than this (minutes) is free time before the place opens, not a pause on the way. */
 const LONG_WAIT = 60
 
-/** Start time of row `index` in the cascade; rows past the sixth arrive together, so a day switch or an added stop never waits long. */
-const rowDelay = (index: number) => Math.min(index, 5) * 0.045
+type Rhythm = { delay: number; step: number }
+
+/**
+ * Start time of row `index` in the cascade; rows past the sixth arrive together, so a day switch or an added stop never waits long.
+ * A fresh draft's first look plays every row on the given beat instead, in step with the map's pins.
+ */
+const rowDelay = (index: number, reveal?: Rhythm) => (reveal ? reveal.delay + index * reveal.step : Math.min(index, 5) * 0.045)
 
 type Actions = {
   onSelect?: (uid: string) => void
@@ -39,6 +44,8 @@ type Props = Actions & {
   nowMinutes?: number
   /** The day's date (ISO), so each stop shows that weekday's opening hours. */
   date?: string
+  /** First look at a fresh draft: the stops arrive in order on this beat (seconds), in step with the map's pins. */
+  reveal?: Rhythm
 }
 
 /** Lunch and dinner hours as the backend's meal windows have them, ends excluded (minutes). */
@@ -138,21 +145,30 @@ type RowProps = Omit<Actions, 'onCommit'> & {
   violation?: Violation
   state?: 'done' | 'now' | 'next'
   date?: string
+  reveal?: Rhythm
 }
 
-function StopRow({ stop, index, total, readOnly, timed, active, violation, state, date, onSelect, onHover, onMove, onDuration, onLock, onRemove, onCommit }: RowProps) {
+function StopRow({ stop, index, total, readOnly, timed, active, violation, state, date, reveal, onSelect, onHover, onMove, onDuration, onLock, onRemove, onCommit }: RowProps) {
   const { tr, place, language, price } = useTr()
   const vi = language === 'vi'
   const controls = useDragControls()
   // Undefined for a place this browser has not loaded: the row keeps its times and controls, without the place's details
   const poi = poiById[stop.poiId] as Poi | undefined
-  const d = rowDelay(index)
+  const d = rowDelay(index, reveal)
 
   const body = (
     <div
       className={`group relative flex gap-3 sm:gap-4 ${state === 'done' ? 'opacity-55' : ''}`}
+      data-stop-uid={stop.uid}
       onMouseEnter={() => onHover?.(stop.uid)}
       onMouseLeave={() => onHover?.(null)}
+      // Keyboard focus counts as hovering; a mouse click that focuses a button does not, so the map never keeps a stale highlight
+      onFocus={(event) => {
+        if (event.target.matches(':focus-visible')) onHover?.(stop.uid)
+      }}
+      onBlur={(event) => {
+        if (!event.currentTarget.contains(event.relatedTarget)) onHover?.(null)
+      }}
     >
       {timed && (
         <motion.div
@@ -345,7 +361,7 @@ function StopRow({ stop, index, total, readOnly, timed, active, violation, state
  * buttons / Alt+Arrow on touch and keyboard); the parent validates the new order against the hard
  * constraints and either commits it or springs the stop back.
  */
-export function Timeline({ stops, readOnly, timed = true, activeUid, violations = [], nowMinutes, date, ...actions }: Props) {
+export function Timeline({ stops, readOnly, timed = true, activeUid, violations = [], nowMinutes, date, reveal, ...actions }: Props) {
   const { tr } = useTr()
   const [order, setOrder] = useState(stops)
   const [seen, setSeen] = useState(stops)
@@ -379,7 +395,7 @@ export function Timeline({ stops, readOnly, timed = true, activeUid, violations 
 
   const rows = order.map((stop, index) => (
     <div key={stop.uid}>
-      {timed && index > 0 && <Leg stop={stop} prev={order[index - 1]} date={date} delay={rowDelay(index) - 0.03} />}
+      {timed && index > 0 && <Leg stop={stop} prev={order[index - 1]} date={date} delay={rowDelay(index, reveal) - 0.03} />}
       <StopRow
         stop={stop}
         index={index}
@@ -390,6 +406,7 @@ export function Timeline({ stops, readOnly, timed = true, activeUid, violations 
         violation={violationFor(stop.uid)}
         state={stateFor(stop)}
         date={date}
+        reveal={reveal}
         {...actions}
         onCommit={commit}
       />
@@ -402,7 +419,7 @@ export function Timeline({ stops, readOnly, timed = true, activeUid, violations 
     <Reorder.Group axis="y" values={order} onReorder={setOrder} className="m-0 list-none p-0">
       {order.map((stop, index) => (
         <div key={stop.uid}>
-          {timed && index > 0 && <Leg stop={stop} prev={order[index - 1]} date={date} delay={rowDelay(index) - 0.03} />}
+          {timed && index > 0 && <Leg stop={stop} prev={order[index - 1]} date={date} delay={rowDelay(index, reveal) - 0.03} />}
           <StopRow
             stop={stop}
             index={index}
@@ -412,6 +429,7 @@ export function Timeline({ stops, readOnly, timed = true, activeUid, violations 
             violation={violationFor(stop.uid)}
             state={stateFor(stop)}
             date={date}
+            reveal={reveal}
             {...actions}
             onCommit={commit}
           />

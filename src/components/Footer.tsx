@@ -1,12 +1,15 @@
 import type { PointerEvent } from 'react'
 import { motion, type Variants } from 'motion/react'
+import { heroPlace } from '../content/heroPlaces'
 import { imageCredits, siteConfig } from '../content/site'
 import { cityGallery } from '../domain/cityMedia'
 import { useLanguage } from '../hooks/useLanguage'
+import { useMotionPrefs } from '../hooks/useMotionPrefs'
 import { SPARKLE_EVENT, type SparkleDetail } from './MagicCursor'
 import { Stagger } from './motion/Stagger'
 import { EASE_OUT, riseItem } from './motion/variants'
 import { FooterSky } from './scenes/FooterSky'
+import { Birds } from './scenes/primitives'
 import { Logo } from './Logo'
 
 /** Every city photo (covers and the planning wait screen), credited after the destination photos. */
@@ -14,7 +17,30 @@ const cityCredits = Object.values(cityGallery).flat()
 
 const linkItem: Variants = {
   hidden: { opacity: 0, y: 14 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.5, ease: EASE_OUT } },
+  show: { opacity: 1, y: 0, transition: { duration: 0.72, ease: EASE_OUT } },
+}
+
+/**
+ * The landing's own drawing at night (the place the hero shows) along the foot of the page: it rises into view once, a mist drifts
+ * across it and birds cross the sky; the copy sits above it, never on it. Reduced motion keeps the drawing still.
+ */
+function FooterLandscape() {
+  const { reduced } = useMotionPrefs()
+  return (
+    <div aria-hidden="true" className="footer-landscape pointer-events-none absolute inset-x-0 bottom-0 h-[clamp(11rem,30vw,24rem)]">
+      <motion.img
+        src={heroPlace().drawingNight}
+        alt=""
+        className="footer-landscape-art"
+        initial={reduced ? false : { opacity: 0, y: 48 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        viewport={{ once: true, amount: 0.15 }}
+        transition={{ duration: 1.4, ease: EASE_OUT }}
+      />
+      <span className="footer-mist scene-hide-rm" />
+      <Birds color="rgba(247, 242, 232, 0.5)" className="footer-birds" />
+    </div>
+  )
 }
 
 function sparkleAtCenter(event: PointerEvent<HTMLElement>) {
@@ -28,10 +54,11 @@ export function Footer() {
   const { messages, language } = useLanguage()
 
   return (
-    <footer className="relative isolate overflow-hidden bg-ink py-14 text-paper">
+    <footer className="relative isolate overflow-hidden bg-ink pb-[clamp(12rem,32vw,26rem)] pt-14 text-paper">
       <FooterSky />
+      <FooterLandscape />
 
-      <Stagger inView gap={0.07} className="container-shell relative">
+      <Stagger inView gap={0.08} className="container-shell relative z-10">
         <div className="grid gap-10 border-b border-paper/12 pb-10 lg:grid-cols-[1fr_auto] lg:items-start">
           <motion.div variants={riseItem} className="max-w-md">
             <div className="relative inline-block" data-cursor onPointerEnter={sparkleAtCenter}>

@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, type FocusEvent } from 'react'
 import { Link, useNavigate } from 'react-router'
 import { useIsFetching } from '@tanstack/react-query'
 import { AnimatePresence, motion, type Variants } from 'motion/react'
@@ -17,11 +17,19 @@ import { EmptyState, LoadError, Skeleton } from '../../components/ui/primitives'
 import { citiesOf, journeyRoute, mergedPlaces } from '../../domain/journey'
 import { poiById } from '../../domain/pois'
 import { formatDate } from '../../domain/time'
+import { useMotionPrefs } from '../../hooks/useMotionPrefs'
 import { useTr } from '../../hooks/useTr'
 import { useAuthStore } from '../../store/authStore'
 import { toast } from '../../store/toastStore'
 
 const grid: Variants = { hidden: {}, show: { transition: { delayChildren: (i: number) => Math.min(i, 8) * 0.06 } } }
+const DECK_SPRING = { type: 'spring', stiffness: 320, damping: 26 } as const
+// [resting rotate, fanned rotate, fanned x, fanned y]; the first entry is the top card
+const DECK_SLOTS: Record<number, [number, number, number, number][]> = {
+  1: [[0, 0, 0, -3]],
+  2: [[0, 3, 8, -3], [-4, -8, -14, 0]],
+  3: [[0, 0, 0, -4], [-4, -8, -14, 0], [3, 8, 14, 0]],
+}
 const card: Variants = {
   hidden: { opacity: 0, y: 26, scale: 0.97 },
   show: { opacity: 1, y: 0, scale: 1, transition: { duration: 0.55, ease: EASE_OUT } },
@@ -197,19 +205,36 @@ function Sets() {
 function SetCard({ to, name, description, poiIds, updatedAt, favourite, onDelete, selecting, selected, onToggle }: { to: string; name: string; description?: string; poiIds: string[]; updatedAt?: string; favourite?: boolean; onDelete?: () => void; selecting?: boolean; selected?: boolean; onToggle?: () => void }) {
   const { tr, locale } = useTr()
   const covers = poiIds.map((id) => poiById[id]).filter(Boolean).slice(0, 3)
+  const { reduced, canPointerFx } = useMotionPrefs()
+  const [fanned, setFanned] = useState(false)
+  const fan = canPointerFx && fanned
+  const slots = DECK_SLOTS[covers.length] ?? []
   const body = (
     <>
-        <div className="relative grid h-32 grid-cols-3 gap-0.5 overflow-hidden bg-forest/10">
+        <div className="relative h-32 overflow-hidden bg-forest/10">
           {covers.length === 0 ? (
-            <span className="col-span-3 grid place-items-center text-ink/35">{favourite ? <Heart size={30} aria-hidden="true" /> : <FolderPlus size={30} aria-hidden="true" />}</span>
+            <span className="absolute inset-0 grid place-items-center text-ink/35">{favourite ? <Heart size={30} aria-hidden="true" /> : <FolderPlus size={30} aria-hidden="true" />}</span>
           ) : (
-            covers.map((poi, index) => (
-              <span key={poi.id} className={`relative block overflow-hidden ${covers.length === 1 ? 'col-span-3' : covers.length === 2 && index === 0 ? 'col-span-2' : ''}`}>
-                <PlaceImage poi={poi} />
-              </span>
-            ))
+            <motion.div className="absolute inset-0" initial={false} animate={{ y: selected ? -4 : 0 }} transition={reduced ? { duration: 0 } : DECK_SPRING}>
+              {/* Painted back to front so the first cover ends up on top */}
+              {[...covers].reverse().map((poi, r) => {
+                const i = covers.length - 1 - r
+                const [rest, rotate, x, y] = slots[i]
+                return (
+                  <motion.span
+                    key={poi.id}
+                    className="absolute inset-x-[20%] inset-y-3 block overflow-hidden rounded-lg border-2 border-paper bg-paper shadow-[0_6px_14px_-6px_rgba(20,30,20,0.45)]"
+                    initial={false}
+                    animate={fan ? { rotate, x, y } : { rotate: rest, x: 0, y: 0 }}
+                    transition={reduced ? { duration: 0 } : DECK_SPRING}
+                  >
+                    <PlaceImage poi={poi} />
+                  </motion.span>
+                )
+              })}
+            </motion.div>
           )}
-          <ArrowUpRight size={20} className="absolute right-3 top-3 text-paper drop-shadow transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
+          <ArrowUpRight size={20} className="absolute right-3 top-3 z-10 text-paper drop-shadow transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5" aria-hidden="true" />
         </div>
         <div className="p-4">
           <h2 className="h-display flex items-center gap-2 text-[1.2rem] text-forest">
@@ -225,11 +250,17 @@ function SetCard({ to, name, description, poiIds, updatedAt, favourite, onDelete
     </>
   )
   return (
-    <article className={`panel group relative h-full overflow-hidden transition-shadow ${selected ? 'ring-[3px] ring-gold' : ''}`}>
+    <article
+      className={`panel group relative h-full overflow-hidden transition-shadow ${selected ? 'ring-[3px] ring-gold' : ''}`}
+      onPointerEnter={() => setFanned(true)}
+      onPointerLeave={() => setFanned(false)}
+      onFocus={(e: FocusEvent<HTMLElement>) => e.target.matches(':focus-visible') && setFanned(true)}
+      onBlur={() => setFanned(false)}
+    >
       {selecting ? (
         <button type="button" className="block w-full text-left disabled:cursor-not-allowed disabled:opacity-50" aria-pressed={selected} disabled={!poiIds.length} onClick={onToggle} aria-label={tr(`Chọn ${name} để gộp`, `Pick ${name} to merge`)}>
           {body}
-          <span className={`absolute left-3 top-3 grid size-7 place-items-center rounded-full border-2 transition-colors ${selected ? 'border-gold bg-gold text-night' : 'border-paper bg-night/35 text-transparent'}`} aria-hidden="true">
+          <span className={`absolute left-3 top-3 z-10 grid size-7 place-items-center rounded-full border-2 transition-colors ${selected ? 'border-gold bg-gold text-night' : 'border-paper bg-night/35 text-transparent'}`} aria-hidden="true">
             <Check size={15} strokeWidth={3} />
           </span>
         </button>

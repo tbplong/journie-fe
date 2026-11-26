@@ -1,9 +1,11 @@
-import { motion, stagger, type Variants } from 'motion/react'
+import { useEffect, useRef } from 'react'
+import { animate, motion, stagger, useMotionValue, useTransform, type Variants } from 'motion/react'
 import { CalendarDays, Clock, Route, Wallet } from 'lucide-react'
 import { isScheduled } from '../../domain/planner'
 import { dayCost, tripCost, windowsOn } from '../../domain/solver'
 import { addDays, fmtMinutes, fmtTime, formatDate, weekdayOf } from '../../domain/time'
 import type { Poi, Trip } from '../../domain/types'
+import { useMotionPrefs } from '../../hooks/useMotionPrefs'
 import { useTr } from '../../hooks/useTr'
 import { EASE_OUT, riseItem } from '../motion/variants'
 import { Meter } from '../ui/primitives'
@@ -54,7 +56,49 @@ export function OpeningHours({ poi, date, at }: { poi: Poi; date?: string; at?: 
   return <span className="tabular">{(holding ? [holding] : windows).map(([open, close]) => `${fmtTime(open)}–${fmtTime(close)}`).join(', ')}</span>
 }
 
-export function Stat({ icon: Icon, label, value }: { icon: typeof Clock; label: string; value: string }) {
+type Roll = { lang: string; value: number; format: (value: number) => string; flash?: boolean }
+
+/** Rolls from the previous value to the new one when `roll.value` changes; cost also tints green on a drop and terracotta on a rise. */
+function RollingNumber({ roll }: { roll: Roll }) {
+  const { reduced } = useMotionPrefs()
+  const shown = useMotionValue(roll.value)
+  const tint = useMotionValue(0)
+  const tone = useRef<'down' | 'up'>('down')
+  const last = useRef(roll.value)
+  // The formatter is read through a ref so a new closure each render does not restart the roll
+  const format = useRef(roll.format)
+  useEffect(() => {
+    format.current = roll.format
+  }, [roll.format])
+  const text = useTransform(shown, (latest) => format.current(latest))
+  const color = useTransform(tint, (amount) => `color-mix(in srgb, var(${tone.current === 'down' ? '--color-firuze' : '--color-terracotta'}) ${amount * 100}%, var(--color-ink))`)
+
+  useEffect(() => {
+    const from = last.current
+    last.current = roll.value
+    if (from === roll.value) return
+    if (reduced) {
+      shown.set(roll.value)
+      return
+    }
+    const rolling = animate(shown, roll.value, { duration: 0.5, ease: EASE_OUT })
+    let fading: ReturnType<typeof animate> | undefined
+    if (roll.flash) {
+      tone.current = roll.value < from ? 'down' : 'up'
+      tint.set(1)
+      fading = animate(tint, 0, { duration: 0.6, ease: 'easeOut' })
+    }
+    return () => {
+      rolling.stop()
+      fading?.stop()
+    }
+  }, [roll.value, roll.flash, reduced, shown, tint])
+
+  if (reduced) return <>{roll.format(roll.value)}</>
+  return <motion.span style={roll.flash ? { color } : undefined}>{text}</motion.span>
+}
+
+export function Stat({ icon: Icon, label, value, roll }: { icon: typeof Clock; label: string; value: string; roll?: Roll }) {
   return (
     <motion.div className="flex items-center gap-3" variants={riseItem}>
       <span className="grid size-10 place-items-center rounded-xl bg-lapis/10 text-lapis" aria-hidden="true">
@@ -62,10 +106,16 @@ export function Stat({ icon: Icon, label, value }: { icon: typeof Clock; label: 
       </span>
       <div>
         <p className="text-[0.7rem] font-medium text-ink/50">{label}</p>
-        {/* Keyed by value so an edit to the trip visibly ticks the number. */}
-        <motion.p key={value} className="tabular text-[0.95rem] font-bold text-ink" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: EASE_OUT }}>
-          {value}
-        </motion.p>
+        {roll ? (
+          <p className="tabular text-[0.95rem] font-bold text-ink">
+            <RollingNumber key={roll.lang} roll={roll} />
+          </p>
+        ) : (
+          // Keyed by value so an edit to the trip visibly ticks the number.
+          <motion.p key={value} className="tabular text-[0.95rem] font-bold text-ink" initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.35, ease: EASE_OUT }}>
+            {value}
+          </motion.p>
+        )}
       </div>
     </motion.div>
   )
@@ -83,14 +133,14 @@ export function TripStats({ trip, dayIndex }: { trip: Trip; dayIndex?: number })
   return (
     <div className="space-y-4">
       <motion.div className="grid grid-cols-2 gap-x-4 gap-y-4" variants={statGrid} initial="hidden" animate="show">
-        <Stat icon={CalendarDays} label={tr('Số điểm', 'Stops')} value={`${stops.length}`} />
+        <Stat icon={CalendarDays} label={tr('Số điểm', 'Stops')} value={`${stops.length}`} roll={{ lang: language, value: stops.length, format: (v) => `${Math.round(v)}` }} />
         {isScheduled(trip) && (
           <>
-            <Stat icon={Clock} label={tr('Di chuyển', 'Travel time')} value={fmtMinutes(travel, language === 'vi')} />
+            <Stat icon={Clock} label={tr('Di chuyển', 'Travel time')} value={fmtMinutes(travel, language === 'vi')} roll={{ lang: language, value: travel, format: (v) => fmtMinutes(Math.round(v), language === 'vi') }} />
             <Stat icon={Route} label={tr('Quãng đường', 'Distance')} value={`${km.toFixed(1)} km`} />
           </>
         )}
-        <Stat icon={Wallet} label={tr('Chi phí ước tính', 'Estimated cost')} value={money(spend)} />
+        <Stat icon={Wallet} label={tr('Chi phí ước tính', 'Estimated cost')} value={money(spend)} roll={{ lang: language, value: spend, format: (v) => money(Math.round(v)), flash: true }} />
       </motion.div>
       <div>
         <div className="mb-1.5 flex justify-between text-[0.72rem] font-medium text-ink/55">

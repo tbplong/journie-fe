@@ -6,6 +6,7 @@ import { categories } from '../../domain/categories'
 import { poiById } from '../../domain/pois'
 import { useMotionPrefs } from '../../hooks/useMotionPrefs'
 import { useTr } from '../../hooks/useTr'
+import { EASE_OUT } from '../motion/variants'
 import type { Poi, Stop } from '../../domain/types'
 
 type Props = {
@@ -27,7 +28,14 @@ type Props = {
   recenterKey?: number
   /** The route before a proposed change, drawn as a grey dashed line under the new one so the two can be compared. */
   ghost?: Stop[]
+  /** The stop hovered or focused in the timeline: its pin pulses and the leg to the next stop is drawn over the route. */
+  hoverUid?: string | null
+  /** First look at a fresh draft: the pins drop in stop order on this beat (seconds), in step with the timeline. */
+  reveal?: { delay: number; step: number }
 }
+
+/** The drawn route in day order, kept so a hovered leg can be cut out of it. */
+type RouteShape = { uids: string[]; latlngs: [number, number][]; road: [number, number][] | null }
 
 const OSRM = 'https://router.project-osrm.org/route/v1/driving'
 
@@ -59,11 +67,53 @@ async function roadGeometry(coords: { lat: number; lng: number }[], signal: Abor
 }
 
 /**
+ * The hop from a stop to the next one, along the road line when it has arrived: each stop is matched to the nearest road point at or
+ * after the previous stop's, so the piece lies exactly on the drawn route.
+ */
+function legOf(shape: RouteShape, uid: string): [number, number][] | null {
+  const at = shape.uids.indexOf(uid)
+  if (at < 0 || at >= shape.uids.length - 1) return null
+  const hop = [shape.latlngs[at], shape.latlngs[at + 1]]
+  const road = shape.road
+  if (!road) return hop
+  const marks: number[] = []
+  let from = 0
+  for (const [lat, lng] of shape.latlngs.slice(0, at + 2)) {
+    let best = from
+    let bestDistance = Infinity
+    for (let i = from; i < road.length; i++) {
+      const distance = (road[i][0] - lat) ** 2 + (road[i][1] - lng) ** 2
+      if (distance < bestDistance) {
+        bestDistance = distance
+        best = i
+      }
+    }
+    marks.push(best)
+    from = best
+  }
+  const piece = road.slice(marks[at], marks[at + 1] + 1)
+  return piece.length > 1 ? piece : hop
+}
+
+/** Puts the hovered leg on top of the route; `draw` traces it from the stop toward the next one. */
+function drawLeg(instance: L.Map, piece: [number, number][], draw: boolean) {
+  const line = { lineCap: 'round', lineJoin: 'round', interactive: false } as const
+  // A dark casing under the gold, so the leg stands out from the map's own yellow main roads
+  const casing = L.polyline(piece, { ...line, color: '#173f35', weight: 9, opacity: 0.45 })
+  const gold = L.polyline(piece, { ...line, color: '#f0b94b', weight: 5, opacity: 1, className: 'route-leg' })
+  const leg = L.featureGroup([casing, gold]).addTo(instance)
+  const paths = [casing.getElement(), gold.getElement()].filter((path): path is Element => !!path)
+  // pathLength is normalised to 1, so the trace stays whole when the map zooms mid-way
+  if (draw && paths.length) animate(paths, { pathLength: [0, 1] }, { duration: 0.55, ease: EASE_OUT })
+  return leg
+}
+
+/**
  * Leaflet map of a day's route. Stops are numbered pins coloured by category; the line between them
  * is the OSRM road geometry when the public demo server answers, otherwise a straight hop, so the
  * map is always legible offline.
  */
-export function RouteMap({ stops, activeUid, onSelect, me, className = '', extras, onExtraClick, fitKey, center, meAccuracy, recenterKey, ghost }: Props) {
+export function RouteMap({ stops, activeUid, onSelect, me, className = '', extras, onExtraClick, fitKey, center, meAccuracy, recenterKey, ghost, hoverUid, reveal }: Props) {
   const { tr } = useTr()
   const { reduced } = useMotionPrefs()
   const host = useRef<HTMLDivElement>(null)
@@ -76,6 +126,10 @@ export function RouteMap({ stops, activeUid, onSelect, me, className = '', extra
   const onSelectRef = useRef(onSelect)
   const onExtraRef = useRef(onExtraClick)
   const reducedRef = useRef(reduced)
+  const revealRef = useRef(reveal)
+  const hoverRef = useRef(hoverUid)
+  const legLine = useRef<L.FeatureGroup | null>(null)
+  const route = useRef<RouteShape>({ uids: [], latlngs: [], road: null })
   /** Stops whose pins are already on the map; only new stops drop in, so reordering does not replay every pin. */
   const dropped = useRef(new Set<string>())
 
@@ -83,6 +137,7 @@ export function RouteMap({ stops, activeUid, onSelect, me, className = '', extra
     onSelectRef.current = onSelect
     onExtraRef.current = onExtraClick
     reducedRef.current = reduced
+    revealRef.current = reveal
   })
 
   useEffect(() => {
@@ -125,8 +180,14 @@ export function RouteMap({ stops, activeUid, onSelect, me, className = '', extra
     const latlngs = points.map((poi) => [poi.lat, poi.lng] as [number, number])
 
     const straight = L.polyline(latlngs, { color: '#173f35', weight: 3, opacity: 0.6, dashArray: '2 9', lineCap: 'round', className: 'route-line' }).addTo(group)
+    // A redraw adds the base line last; the hovered leg stays above it
+    legLine.current?.bringToFront()
+
+    const shape: RouteShape = { uids: placed.map(({ stop }) => stop.uid), latlngs, road: null }
+    route.current = shape
 
     const drops: AnimationPlaybackControls[] = []
+    const rhythm = revealRef.current
     const seen = dropped.current
     dropped.current = new Set()
     let current = true
@@ -149,7 +210,12 @@ export function RouteMap({ stops, activeUid, onSelect, me, className = '', extra
         dropped.current.add(stop.uid)
         return
       }
-      const drop = animate(holder, { y: [-26, 0], scale: [0.4, 1], opacity: [0, 1] }, { duration: 0.55, delay: 0.25 + Math.min(entering++, 8) * 0.07, ease: [0.34, 1.56, 0.64, 1] })
+      const beat = rhythm ? rhythm.delay + index * rhythm.step : undefined
+      const drop =
+        beat !== undefined
+          ? // A fresh draft: each pin drops a short way on a soft spring, one beat after the stop before it
+            animate(holder, { y: [-14, 0], opacity: [0, 1] }, { y: { type: 'spring', stiffness: 260, damping: 18, delay: beat }, opacity: { duration: 0.2, delay: beat } })
+          : animate(holder, { y: [-26, 0], scale: [0.4, 1], opacity: [0, 1] }, { duration: 0.55, delay: 0.25 + Math.min(entering++, 8) * 0.07, ease: [0.34, 1.56, 0.64, 1] })
       // A drop cut short by a redraw counts as not shown, so the redrawn pin drops again.
       drop.then(() => current && dropped.current.add(stop.uid))
       drops.push(drop)
@@ -171,6 +237,12 @@ export function RouteMap({ stops, activeUid, onSelect, me, className = '', extra
         if (!line || controller.signal.aborted || !group.hasLayer(straight)) return
         straight.setLatLngs(line)
         straight.setStyle({ opacity: 0.8, weight: 4 })
+        // A leg hovered before the road arrived moves onto it, already drawn
+        shape.road = line
+        const piece = hoverRef.current ? legOf(shape, hoverRef.current) : null
+        if (!piece) return
+        legLine.current?.remove()
+        legLine.current = drawLeg(instance, piece, false)
       })
     }
     return () => {
@@ -192,6 +264,19 @@ export function RouteMap({ stops, activeUid, onSelect, me, className = '', extra
       if (marker && map.current) map.current.panTo(marker.getLatLng(), { animate: true, duration: 0.6 })
     }
   }, [activeUid, stopKey])
+
+  // The stop hovered in the timeline: a pulsing pin and its leg to the next stop.
+  useEffect(() => {
+    hoverRef.current = hoverUid
+    markers.current.forEach((marker, uid) => {
+      marker.getElement()?.querySelector('.map-pin')?.setAttribute('data-hover', String(uid === hoverUid))
+    })
+    legLine.current?.remove()
+    legLine.current = null
+    const instance = map.current
+    const piece = instance && hoverUid ? legOf(route.current, hoverUid) : null
+    if (instance && piece) legLine.current = drawLeg(instance, piece, !reducedRef.current)
+  }, [hoverUid, stopKey])
 
   // The route before a proposed change.
   const ghostKey = ghost?.map((stop) => stop.uid).join('|') ?? ''

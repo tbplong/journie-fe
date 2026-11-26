@@ -33,6 +33,7 @@ import { addDays, dayEndAfter, daysBetween, dayWindowProblem, fmtMinutes, fmtSpa
 import { MAX_TRIP_DAYS } from '../../domain/nlp'
 import { adjustItinerary, saigonToday } from '../../api/planner'
 import type { Stop, Trip } from '../../domain/types'
+import { useMotionPrefs } from '../../hooks/useMotionPrefs'
 import { useTr } from '../../hooks/useTr'
 import { useAuthStore } from '../../store/authStore'
 import { toast } from '../../store/toastStore'
@@ -53,6 +54,31 @@ const dayPane: Variants = {
 }
 const noteIn = { initial: { opacity: 0, x: -18 }, animate: { opacity: 1, x: 0, transition: { duration: 0.5, delay: 0.12, ease: EASE_OUT } }, exit: { opacity: 0, x: -10, transition: { duration: 0.15 } } }
 const tap = { scale: 0.96 }
+
+/** A fresh draft's first look: its pins and timeline stops arrive one by one on this beat (seconds), after the panels have risen. */
+const REVEAL = { delay: 0.5, step: 0.12 }
+/** Long enough for the first day's pins and rows to mount with the beat; anything shown after it (another day, an added stop) arrives as usual. */
+const REVEAL_WINDOW = 1200
+/** Drafts this tab has already opened (sessionStorage), so the reveal plays once per draft. */
+const REVEALED_KEY = 'journie-revealed'
+
+function revealedDrafts(): string[] {
+  try {
+    const ids: unknown = JSON.parse(sessionStorage.getItem(REVEALED_KEY) ?? '[]')
+    return Array.isArray(ids) ? ids.filter((id): id is string => typeof id === 'string') : []
+  } catch {
+    return []
+  }
+}
+
+function rememberRevealed(id: string) {
+  try {
+    const ids = revealedDrafts()
+    if (!ids.includes(id)) sessionStorage.setItem(REVEALED_KEY, JSON.stringify([...ids, id]))
+  } catch {
+    // Storage may be blocked; the reveal then simply plays again next time
+  }
+}
 
 const ADJUST_IDEAS: [string, string][] = [
   ['Bớt đi bộ, ưu tiên xe máy', 'Less walking, prefer a motorbike'],
@@ -88,6 +114,7 @@ export function TripPage() {
   const mine = useTrips().data
   const profile = useProfile().data ?? readProfile(user.id, user.name)
   const { activeDay, setActiveDay, activeUid, setActiveUid, openPoi } = useUiStore()
+  const { reduced } = useMotionPrefs()
 
   const [undo, setUndo] = useState<Trip[]>([])
   const [addOpen, setAddOpen] = useState(false)
@@ -117,6 +144,18 @@ export function TripPage() {
   // Which way the day content slides: from the right for a later day, from the left for an earlier one.
   const [dayShift, setDayShift] = useState({ from: dayIndex, dir: 0 })
   if (dayShift.from !== dayIndex) setDayShift({ from: dayIndex, dir: dayIndex > dayShift.from ? 1 : -1 })
+
+  // A just-planned draft opens in rhythm the first time this tab shows it; a saved trip, a second visit or reduced motion shows it at once.
+  const [reveal, setReveal] = useState<{ id: string; on: boolean } | null>(null)
+  if (trip && reveal?.id !== trip.id) setReveal({ id: trip.id, on: trip.status === 'draft' && !reduced && !revealedDrafts().includes(trip.id) })
+  const revealing = !!trip && reveal?.id === trip.id && reveal.on
+  const tripId = trip?.id
+  useEffect(() => {
+    if (!revealing || !tripId) return
+    rememberRevealed(tripId)
+    const timer = window.setTimeout(() => setReveal((current) => current && { ...current, on: false }), REVEAL_WINDOW)
+    return () => window.clearTimeout(timer)
+  }, [revealing, tripId])
 
   const adjust = useMutation({
     mutationFn: ({ text, ...options }: { text: string; stopsPerDay?: number; dayStart?: number; dayEnd?: number; startDate?: string; days?: number }) => adjustItinerary(trip!, text, profile, options),
@@ -245,6 +284,13 @@ export function TripPage() {
     // The old content goes back on top of the version saved now, so the backend does not take the undo for a stale copy (409)
     save.mutate({ ...previous, version: trip.version })
     toast('info', tr('Đã hoàn tác', 'Undone'))
+  }
+
+  // A pin picked on the map selects its stop and brings it to the middle of the timeline.
+  const showStop = (uid: string) => {
+    setActiveUid(uid)
+    const row = timelineRef.current?.querySelector(`[data-stop-uid="${CSS.escape(uid)}"]`)
+    row?.scrollIntoView({ behavior: reduced ? 'instant' : 'smooth', block: 'center' })
   }
 
   const move = (uid: string, direction: -1 | 1) => {
@@ -455,6 +501,7 @@ export function TripPage() {
                     timed={scheduled}
                     date={addDays(trip.startDate, dayIndex)}
                     activeUid={activeUid ?? hover}
+                    reveal={revealing ? REVEAL : undefined}
                     violations={live?.violations}
                     onSelect={(uid) => {
                       setActiveUid(uid)
@@ -482,7 +529,7 @@ export function TripPage() {
 
         <motion.div variants={sideColumn} className="space-y-5 xl:sticky xl:top-6">
           <motion.div variants={riseItem} className="panel overflow-hidden">
-            <RouteMap stops={day.stops} center={city} activeUid={activeUid ?? hover} onSelect={(uid) => { setActiveUid(uid) }} className="h-[21rem] w-full" />
+            <RouteMap stops={day.stops} center={city} activeUid={activeUid ?? hover} hoverUid={hover} reveal={revealing ? REVEAL : undefined} onSelect={showStop} className="h-[21rem] w-full" />
           </motion.div>
 
           <motion.section variants={riseItem} className="panel-night p-5" aria-labelledby="adjust-title">
