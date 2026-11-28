@@ -1,0 +1,26 @@
+/** Flat, risograph-like palette for place illustrations: Journie's own colours plus a few earthy neighbours. */
+export const INK = '#173f35'
+export const C = {
+  paper: '#f7f2e8',
+  cream: '#fbf1d6',
+  white: '#fffaf0',
+  sun: '#f0b94b',
+  sunD: '#e0982f',
+  terra: '#d96745',
+  terraD: '#a8442a',
+  jade: '#4fb8a4',
+  jadeD: '#2f8f7c',
+  forest: '#1f5a4b',
+  dusk: '#705cc4',
+  cocoa: '#8a5a3b',
+  wood: '#a0693a',
+  wall: '#f1c968',
+  stone: '#d8d0bb',
+  stoneD: '#b3aa92',
+  brick: '#b8553d',
+  leaf: '#5aa36b',
+  leafD: '#3d8456',
+  water: '#7fd0c3',
+  sea: '#4aa9c4',
+  gold: '#f4cf6a',
+} as const

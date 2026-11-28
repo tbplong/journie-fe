@@ -1,0 +1,62 @@
+{"id":"a01","group":"A","text":"đi 3 ngày ngân sách 5 triệu","gold":{"days":3,"budget":5000000}}
+{"id":"a02","group":"A","text":"chuyến 2 ngày, tầm 3 triệu","gold":{"days":2,"budget":3000000}}
+{"id":"a03","group":"A","text":"đi một ngày thôi, 500k","gold":{"days":1,"budget":500000}}
+{"id":"a04","group":"A","text":"4 ngày 3 đêm, ngân sách 6 triệu đồng","gold":{"days":4,"budget":6000000}}
+{"id":"a05","group":"A","text":"2 days, budget 2 million VND","gold":{"days":2,"budget":2000000}}
+{"id":"a06","group":"A","text":"đi cuối tuần hai ngày với 2tr","gold":{"days":2,"budget":2000000}}
+{"id":"a07","group":"A","text":"5 ngày, budget 10 triệu","gold":{"days":5,"budget":10000000}}
+{"id":"a08","group":"A","text":"ngân sách 1,5 triệu cho 1 ngày","gold":{"days":1,"budget":1500000}}
+{"id":"a09","group":"A","text":"tôi có 3 ngày","gold":{"days":3,"budget":null}}
+{"id":"a10","group":"A","text":"tối đa 4 triệu","gold":{"days":null,"budget":4000000}}
+{"id":"a11","group":"A","text":"không giới hạn ngân sách, đi 2 ngày","gold":{"days":2,"budget":null}}
+{"id":"b01","group":"B","text":"thích bảo tàng","gold":{"interests":["museum"]}}
+{"id":"b02","group":"B","text":"mình mê cà phê","gold":{"interests":["cafe"]}}
+{"id":"b03","group":"B","text":"muốn ăn uống thật nhiều","gold":{"interests":["food"]}}
+{"id":"b04","group":"B","text":"thích đi công viên","gold":{"interests":["park"]}}
+{"id":"b05","group":"B","text":"đi mua sắm","gold":{"interests":["shopping"]}}
+{"id":"b06","group":"B","text":"muốn đi biển","gold":{"interests":["beach"]}}
+{"id":"b07","group":"B","text":"thích văn hoá và lịch sử","gold":{"interests":["culture"]}}
+{"id":"b08","group":"B","text":"thích thiên nhiên","gold":{"interests":["nature"]}}
+{"id":"b09","group":"B","text":"bảo tàng và cà phê","gold":{"interests":["museum","cafe"]}}
+{"id":"b10","group":"B","text":"ăn uống, mua sắm, công viên","gold":{"interests":["food","shopping","park"]}}
+{"id":"b11","group":"B","text":"I love museums and coffee shops","gold":{"interests":["museum","cafe"]}}
+{"id":"b12","group":"B","text":"like street food and culture","gold":{"interests":["food","culture"]}}
+{"id":"b13","group":"B","text":"thích chụp ảnh và thiên nhiên","gold":{"interests":["nature"]}}
+{"id":"c01","group":"C","text":"không ăn hải sản","gold":{"avoid":["hải sản"]}}
+{"id":"c02","group":"C","text":"tôi dị ứng đậu phộng","gold":{"avoid":["đậu phộng"]}}
+{"id":"c03","group":"C","text":"không uống cà phê","gold":{"avoid":["cà phê"]}}
+{"id":"c04","group":"C","text":"ghét đi chợ","gold":{"avoid":["chợ"]}}
+{"id":"c05","group":"C","text":"không ăn phở","gold":{"avoid":["phở"]}}
+{"id":"c06","group":"C","text":"mình ăn chay, không ăn thịt","gold":{"avoid":["thịt"]}}
+{"id":"c07","group":"C","text":"no seafood please","gold":{"avoid":["seafood"]}}
+{"id":"c08","group":"C","text":"dị ứng hải sản, không ăn cay","gold":{"avoid":["hải sản","cay"]}}
+{"id":"c09","group":"C","text":"không ăn thịt bò","gold":{"avoid":["thịt bò"]}}
+{"id":"c10","group":"C","text":"không thích đi bộ nhiều","gold":{"avoid":[]}}
+{"id":"c11","group":"C","text":"không ăn hải sản và không đi chợ","gold":{"avoid":["hải sản","chợ"]}}
+{"id":"c12","group":"C","text":"không ăn ốc","gold":{"avoid":["ốc"]}}
+{"id":"d01","group":"D","text":"muốn đi Chợ Bến Thành","gold":{"must":["Chợ Bến Thành"]}}
+{"id":"d02","group":"D","text":"nhất định phải ghé Dinh Độc Lập","gold":{"must":["Dinh Độc Lập"]}}
+{"id":"d03","group":"D","text":"đi Nhà thờ Đức Bà và Bưu điện Trung tâm","gold":{"must":["Nhà thờ Đức Bà","Bưu điện Trung tâm"]}}
+{"id":"d04","group":"D","text":"ghé Bảo tàng Chứng tích Chiến tranh","gold":{"must":["Bảo tàng Chứng tích Chiến tranh"]}}
+{"id":"d05","group":"D","text":"muốn đi Landmark 81","gold":{"must":["Landmark 81"]}}
+{"id":"d06","group":"D","text":"Phố đi bộ Nguyễn Huệ là điểm bắt buộc","gold":{"must":["Phố đi bộ Nguyễn Huệ"]}}
+{"id":"d07","group":"D","text":"want to visit Ben Thanh Market and the War Remnants Museum","gold":{"must":["Ben Thanh Market","War Remnants Museum"]}}
+{"id":"d08","group":"D","text":"đi Chùa Bà Thiên Hậu","gold":{"must":["Chùa Bà Thiên Hậu"]}}
+{"id":"d09","group":"D","text":"ghé Nhà hát Thành phố","gold":{"must":["Nhà hát Thành phố"]}}
+{"id":"d10","group":"D","text":"ăn ở Phở Hòa Pasteur","gold":{"must":["Phở Hòa Pasteur"]}}
+{"id":"e01","group":"E","text":"2 ngày 3 triệu, thích bảo tàng và cà phê, không ăn hải sản","gold":{"days":2,"budget":3000000,"interests":["museum","cafe"],"avoid":["hải sản"]}}
+{"id":"e02","group":"E","text":"3 ngày, ngân sách 5 triệu, muốn đi Dinh Độc Lập, thích ăn uống","gold":{"days":3,"budget":5000000,"interests":["food"],"must":["Dinh Độc Lập"]}}
+{"id":"e03","group":"E","text":"đi 1 ngày, 1 triệu, mê văn hoá, không đi chợ","gold":{"days":1,"budget":1000000,"interests":["culture"],"avoid":["chợ"]}}
+{"id":"e04","group":"E","text":"4 ngày 8 triệu, thiên nhiên và công viên, ghé Chợ Bến Thành","gold":{"days":4,"budget":8000000,"interests":["nature","park"],"must":["Chợ Bến Thành"]}}
+{"id":"e05","group":"E","text":"Trip for 2 days, 2 million VND, love coffee, no seafood","gold":{"days":2,"budget":2000000,"interests":["cafe"],"avoid":["seafood"]}}
+{"id":"e06","group":"E","text":"dị ứng đậu phộng, thích ăn uống, đi 2 ngày","gold":{"days":2,"interests":["food"],"avoid":["đậu phộng"]}}
+{"id":"e07","group":"E","text":"đi mua sắm và ăn uống 1 ngày với 2 triệu, không ăn cay","gold":{"days":1,"budget":2000000,"interests":["shopping","food"],"avoid":["cay"]}}
+{"id":"e08","group":"E","text":"3 ngày, thích bảo tàng, văn hoá, ghé Nhà hát Thành phố, không uống cà phê","gold":{"days":3,"interests":["museum","culture"],"avoid":["cà phê"],"must":["Nhà hát Thành phố"]}}
+{"id":"e09","group":"E","text":"2 ngày, tối đa 2,5 triệu, thích công viên, không ăn thịt bò","gold":{"days":2,"budget":2500000,"interests":["park"],"avoid":["thịt bò"]}}
+{"id":"e10","group":"E","text":"5 ngày 12 triệu thích mọi thứ: bảo tàng, ăn uống, mua sắm, thiên nhiên","gold":{"days":5,"budget":12000000,"interests":["museum","food","shopping","nature"]}}
+{"id":"f01","group":"F","text":"tham quan","gold":{"interests":[]}}
+{"id":"f02","group":"F","text":"thêm các địa điểm tham quan vào","gold":{"interests":[]}}
+{"id":"f03","group":"F","text":"đi chơi vui vẻ","gold":{"interests":[]}}
+{"id":"f04","group":"F","text":"asdf qwer","gold":{"days":null,"budget":null,"interests":[],"avoid":[],"must":[]}}
+{"id":"f05","group":"F","text":"thích chụp ảnh sống ảo","gold":{"interests":[]}}
+{"id":"f06","group":"F","text":"cho mình một chuyến đi thật đặc biệt","gold":{"interests":[]}}

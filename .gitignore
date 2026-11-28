@@ -22,3 +22,10 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# PDFs of related papers for reading (not part of the app)
+docs/papers/
+
+# Python bytecode from the test scripts
+__pycache__/

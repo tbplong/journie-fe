@@ -1,0 +1,58 @@
+ok   name-exact
+ok   name-unaccented
+ok   name-english-alias
+ok   name-typo
+ok   name-partial
+ok   name-ambiguous
+ok   name-not-found
+ok   interest-museum
+       museum: P@5=0.40 nDCG@5=0.32 top=['quang-san-art-museum-a719b8', 'tomuralee-gallery-fabda5', 'bao-tang-luc-luong-vu-trang-mien-dong-na-af47f7', 'bao-tang-chien-dich-ho-chi-minh-c7cfd8', 'vin-gallery-4a7a76']
+FAIL interest-cafe-no-bars
+       must_not_contain present: ['allez-boo-1a398f']
+       cafe: P@5=0.00 nDCG@5=0.00 top=['cai-to-chim-1e64e9', 'cheese-coffee-2c704e', 'cloud-vape-and-coffee-f79db7', 'ca-phe-a-dor-4cbc69', 'ca-phe-anh-phan-810267']
+ok   food-plus-pho
+ok   cafe-pho-culture
+ok   keyword-michelin
+       kw:michelin: P@5=0.20 nDCG@5=0.23 top=['nen-light-aac080', 'coco-dining-56185f', 'oc-ba-co-loc-coc-840d27', 'pho-hung-256207', 'hoi-an-sense-cf69d3']
+ok   keyword-sao-michelin
+ok   keyword-vegetarian
+       food: P@5=0.00 nDCG@5=0.00 top=['gotcha-saigon-44911c', 'quan-chay-thoi-ke-a23a1b', 'nha-hang-chay-phat-hoa-7493ee', 'hashtag-cafe-b0eac7', 'quan-chay-sala-cc9a5b']
+ok   keyword-bar
+       nightlife: P@5=0.20 nDCG@5=0.47 top=['go2-bar-9cec48', 'king-beer-85-3ad3a0', 'terroir-wine-bar-36dddd', 'original-f7c68e', 'little-bear-wine-bar-00a51d']
+ok   keyword-seafood-vn
+       kw:seafood: P@5=0.00 nDCG@5=0.00 top=['hai-san-phu-loc-0f4c6b', 'oc-binh-dan-210c36', 'hai-san-giang-ghe-0e347f', 'quan-an-duong-thanh-08711d', 'hai-san-binh-thuan-dbfa5b']
+ok   keyword-banh-mi
+       kw:sandwich: P@5=0.40 nDCG@5=0.32 top=['gotcha-saigon-44911c', 'an-an-b0728d', 'banh-mi-huynh-hoa-c31355', 'banh-mi-hong-hoa-0c2f9c', 'ca-phe-hochi-838d2b']
+ok   other-atom-michelin
+       food: P@5=0.20 nDCG@5=0.25 top=['nen-light-aac080', 'coco-dining-56185f', 'oc-ba-co-loc-coc-840d27', 'pho-hung-256207', 'hoi-an-sense-cf69d3']
+ok   hours-early-morning-sat
+       food: P@5=0.00 nDCG@5=0.00 top=['cai-to-chim-1e64e9', 'cheese-coffee-2c704e', 'gotcha-saigon-44911c', 'quan-mi-nam-b9f64b', 'hu-tieu-lien-b7b0a9']
+ok   hours-late-night-sat
+       food: P@5=0.00 nDCG@5=0.00 top=['quan-an-co-ba-7d4967', 'gotcha-saigon-44911c', 'shamoji-robata-yaki-4ac287', 'quan-oc-minh-huong-501794', 'banh-canh-cua-hai-cua-0b2ddc']
+       nightlife: P@5=0.20 nDCG@5=0.47 top=['go2-bar-9cec48', 'king-beer-85-3ad3a0', 'terroir-wine-bar-36dddd', 'original-f7c68e', 'malt-saigon-bar-354bc7']
+ok   hours-monday-museums
+ok   avoid-kind
+       culture: P@5=0.00 nDCG@5=0.00 top=['giao-xu-thanh-phaolo-267b4d', 'chua-phung-son-0bf12c', 'chua-minh-duc-138868', 'chua-tam-son-ec97e3', 'chua-thien-hoa-c9587c']
+ok   avoid-name
+       shopping: P@5=0.20 nDCG@5=0.47 top=['cho-dem-hanh-thong-tay-d637ef', 'cho-phu-lam-17c9b3', 'tttm-romea-fdb0a5', 'takashimaya-89cd4a', 'vincom-megamall-thao-dien-8104ce']
+FAIL avoid-bar
+       must_not_contain present: ['allez-boo-1a398f', 'banana-mama-rooftop-bar-kitchen-saigon-c807bd']
+ok   preferred-boost
+       food: P@5=0.20 nDCG@5=1.00 top=['cuc-gach-quan-807d0d', 'cai-to-chim-1e64e9', 'quan-an-co-ba-7d4967', 'gangnam-bbq-house-fb10a1', 'cheese-coffee-2c704e']
+ok   beach-no-data
+ok   nature-required
+       nature: P@5=0.20 nDCG@5=1.00 top=['cong-vien-chi-lang-c6eb96', 'cong-vien-phuc-an-khang-cac110', 'cong-vien-gia-dinh-da0418', 'cong-vien-nguyen-sy-sach-eef10a', 'cong-vien-thanh-da-3842a7']
+ok   no-interest-defaults
+ok   unsupported-destination
+ok   empty-extraction
+
+| metric | value |
+|---|---|
+| cases passing all checks | 28/30 |
+| name resolution accuracy | 9/9 |
+| mean P@5 (20 sections) | 0.280 |
+| mean nDCG@5 | 0.383 |
+| sections with a relevant top-5 item | 0.700 |
+| famous share of top 6 (37 sections) | 0.171 |
+| distinct wards in top 6 | 4.59 |
+| must_not_contain violations | 3 |

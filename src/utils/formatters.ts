@@ -13,12 +13,9 @@ export function formatDuration(minutes: number, language: Language) {
   return parts.join(' ')
 }
 
+/** An amount written in full with the ISO code (`40.000 VND`), never `đ`, `k` or a tilde. */
 export function formatCost(amount: number, locale: string) {
-  return `~${new Intl.NumberFormat(locale, {
-    style: 'currency',
-    currency: 'VND',
-    maximumFractionDigits: 0,
-  }).format(amount)}`
+  return `${new Intl.NumberFormat(locale, { maximumFractionDigits: 0 }).format(amount)} VND`
 }
 
 export function formatDistance(distanceKm: number, locale: string) {
@@ -29,4 +26,8 @@ export function formatDistance(distanceKm: number, locale: string) {
         unit: 'kilometer',
         maximumFractionDigits: 1,
       }).format(distanceKm)
+}
+
+export function formatCoordinates(latitude: number, longitude: number) {
+  return `${latitude.toFixed(4)}° N, ${longitude.toFixed(4)}° E`
 }

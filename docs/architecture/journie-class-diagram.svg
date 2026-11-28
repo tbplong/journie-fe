@@ -1,0 +1,874 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2840" height="2080" viewBox="0 0 2840 2080" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ahd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/></marker><marker id="tri" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="13" markerHeight="13" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11 z" fill="#ffffff" stroke="#1f2933" stroke-width="1"/></marker><marker id="dia" viewBox="0 0 16 10" refX="1" refY="5" markerWidth="16" markerHeight="10" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,5 L8,1 L15,5 L8,9 z" fill="#1f2933"/></marker><marker id="diao" viewBox="0 0 16 10" refX="1" refY="5" markerWidth="16" markerHeight="10" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,5 L8,1 L15,5 L8,9 z" fill="#ffffff" stroke="#1f2933" stroke-width="1"/></marker><marker id="opn" viewBox="0 0 12 12" refX="11" refY="6" markerWidth="11" markerHeight="11" orient="auto-start-reverse" markerUnits="userSpaceOnUse"><path d="M1,1 L11,6 L1,11" fill="none" stroke="#4b5563" stroke-width="1.2"/></marker></defs>
+<rect width="2840" height="2080" fill="#ffffff"/>
+<rect x="15" y="15" width="2810" height="1165" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="30" y="36.0" text-anchor="start" font-size="13" font-weight="bold" fill="#1f2933">Domain model — frontend (src/domain, src/api, src/store)</text>
+<rect x="15" y="1200" width="1320" height="865" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="30" y="1221.0" text-anchor="start" font-size="13" font-weight="bold" fill="#1f2933">Planning pipeline — frontend</text>
+<rect x="1355" y="1200" width="1470" height="865" rx="0" fill="#ffffff" stroke="#9ca3af" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="1370" y="1221.0" text-anchor="start" font-size="13" font-weight="bold" fill="#1f2933">Planning pipeline — backend (FastAPI, journie-be)</text>
+<text x="40" y="1985.0" text-anchor="start" font-size="11" font-weight="bold" fill="#1f2933">Legend</text>
+<text x="110" y="2011.0" text-anchor="start" font-size="10" font-weight="normal" fill="#1f2933">association</text>
+<text x="300" y="2011.0" text-anchor="start" font-size="10" font-weight="normal" fill="#1f2933">composition</text>
+<text x="490" y="2011.0" text-anchor="start" font-size="10" font-weight="normal" fill="#1f2933">aggregation</text>
+<text x="110" y="2037.0" text-anchor="start" font-size="10" font-weight="normal" fill="#1f2933">inheritance</text>
+<text x="300" y="2037.0" text-anchor="start" font-size="10" font-weight="normal" fill="#1f2933">dependency / call</text>
+<text x="620" y="2011.0" text-anchor="start" font-size="10" font-weight="normal" fill="#4b5563">Operations in an entity box are the functions in src/api, src/store or src/domain that act</text>
+<text x="620" y="2023.5" text-anchor="start" font-size="10" font-weight="normal" fill="#4b5563">on that type (TypeScript types have no methods). Persistence today: browser localStorage;</text>
+<text x="620" y="2036.0" text-anchor="start" font-size="10" font-weight="normal" fill="#4b5563">only pois lives in the backend database (loaded offline by scripts/import_parquet.py, with embeddings).</text>
+<path d="M330.0,300.0 L105.0,149.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="204.4" y="211.5" width="26.2" height="12" fill="#ffffff"/>
+<text x="217.5" y="220.5" text-anchor="middle" font-size="9" fill="#374151">role</text>
+<text x="321.2" y="287.4" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="113.8" y="167.6" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M426.7,300.0 L442.2,231.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="423.9" y="252.5" width="21.1" height="12" fill="#ffffff"/>
+<text x="434.5" y="261.5" text-anchor="middle" font-size="9" fill="#374151">has</text>
+<text x="438.1" y="289.1" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="430.9" y="247.9" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M437.1,600.0 L420.4,494.0" fill="none" stroke="#1f2933" stroke-width="1" marker-end="url(#tri)"/>
+<path d="M673.6,600.0 L480.0,453.7" fill="none" stroke="#1f2933" stroke-width="1" marker-end="url(#tri)"/>
+<path d="M330.0,374.8 L210.0,339.2" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="246.8" y="344.0" width="46.3" height="12" fill="#ffffff"/>
+<text x="270.0" y="353.0" text-anchor="middle" font-size="9" fill="#374151">receives</text>
+<text x="316.9" y="365.6" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<text x="223.1" y="354.4" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M330.0,428.8 L170.0,496.5" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="236.9" y="449.6" width="26.2" height="12" fill="#ffffff"/>
+<text x="250.0" y="458.6" text-anchor="middle" font-size="9" fill="#374151">logs</text>
+<text x="312.1" y="430.6" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<text x="187.9" y="500.6" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M330.0,481.6 L180.7,650.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="214.5" y="552.8" width="81.6" height="12" fill="#ffffff"/>
+<text x="255.3" y="561.8" text-anchor="middle" font-size="9" fill="#374151">toggles (admin)</text>
+<path d="M330.0,771.8 L283.8,800.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="278.7" y="772.9" width="56.4" height="12" fill="#ffffff"/>
+<text x="306.9" y="781.9" text-anchor="middle" font-size="9" fill="#374151">issued_for</text>
+<text x="312.2" y="776.3" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="301.6" y="801.5" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M449.1,794.0 L445.2,905.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="411.4" y="836.5" width="71.5" height="12" fill="#ffffff"/>
+<text x="447.2" y="845.5" text-anchor="middle" font-size="9" fill="#374151">sends (admin)</text>
+<text x="440.5" y="812.7" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="453.8" y="892.3" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M755.7,860.0 L763.1,742.0" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#diao)"/>
+<rect x="738.7" y="788.0" width="41.3" height="12" fill="#ffffff"/>
+<text x="759.4" y="797.0" text-anchor="middle" font-size="9" fill="#374151">employs</text>
+<text x="764.7" y="847.5" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="754.1" y="760.5" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M643.8,860.0 L566.3,794.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="581.9" y="814.0" width="46.3" height="12" fill="#ffffff"/>
+<text x="605.1" y="823.0" text-anchor="middle" font-size="9" fill="#374151">owned_by</text>
+<text x="636.8" y="846.5" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<text x="573.3" y="813.5" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M818.0,1041.0 L900.0,1150.0 L1700.0,1150.0 L1801.3,716.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1493.0" y="1137.0" width="61.4" height="12" fill="#ffffff"/>
+<text x="1523.7" y="1146.0" text-anchor="middle" font-size="9" fill="#374151">owns places</text>
+<text x="821.3" y="1061.6" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="1789.9" y="732.8" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M480.0,406.9 L990.0,474.3" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="719.4" y="427.6" width="31.2" height="12" fill="#ffffff"/>
+<text x="735.0" y="436.6" text-anchor="middle" font-size="9" fill="#374151">plans</text>
+<text x="494.8" y="419.9" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="975.2" y="467.2" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M1076.1,330.0 L1077.0,202.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1050.9" y="253.0" width="51.4" height="12" fill="#ffffff"/>
+<text x="1076.5" y="262.0" text-anchor="middle" font-size="9" fill="#374151">shared_by</text>
+<text x="1084.2" y="317.1" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1068.9" y="220.9" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M1160.0,478.4 L1330.0,464.3" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#dia)"/>
+<rect x="1221.8" y="458.4" width="46.3" height="12" fill="#ffffff"/>
+<text x="1245.0" y="467.4" text-anchor="middle" font-size="9" fill="#374151">contains</text>
+<text x="1176.6" y="488.1" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1313.4" y="460.7" text-anchor="middle" font-size="9" fill="#1f2933">1..*</text>
+<path d="M1410.4,497.0 L1438.3,600.0" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#dia)"/>
+<rect x="1401.2" y="535.5" width="46.3" height="12" fill="#ffffff"/>
+<text x="1424.4" y="544.5" text-anchor="middle" font-size="9" fill="#374151">contains</text>
+<text x="1406.9" y="517.5" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1441.8" y="585.5" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M1585.0,644.3 L1760.0,607.7" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1654.4" y="613.0" width="36.2" height="12" fill="#ffffff"/>
+<text x="1672.5" y="622.0" text-anchor="middle" font-size="9" fill="#374151">visits</text>
+<text x="1602.3" y="651.9" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="1742.7" y="606.1" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M1090.6,641.0 L1098.5,720.0" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#dia)"/>
+<text x="1084.2" y="660.7" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1104.9" y="706.3" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M1160.0,386.3 L1340.3,176.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1221.9" y="268.2" width="56.4" height="12" fill="#ffffff"/>
+<text x="1250.1" y="277.2" text-anchor="middle" font-size="9" fill="#374151">live state</text>
+<text x="1176.5" y="382.4" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1323.8" y="185.9" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M1480.0,120.0 L1610.0,122.8" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#dia)"/>
+<rect x="1524.4" y="108.4" width="41.3" height="12" fill="#ffffff"/>
+<text x="1545.0" y="117.4" text-anchor="middle" font-size="9" fill="#374151">pending</text>
+<text x="1495.8" y="131.3" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1594.2" y="117.5" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M1760.0,123.1 L1900.0,120.4" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#dia)"/>
+<text x="1776.2" y="133.8" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1883.8" y="115.7" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M1160.0,619.2 L1260.0,619.0 L1260.0,1100.0 L2180.0,1100.0 L2181.5,985.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1620.4" y="1087.0" width="56.4" height="12" fill="#ffffff"/>
+<text x="1648.6" y="1096.0" text-anchor="middle" font-size="9" fill="#374151">travels_in</text>
+<text x="1176.0" y="630.2" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="2173.3" y="1003.9" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M1900.0,655.5 L2110.0,842.8" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1976.8" y="736.1" width="56.4" height="12" fill="#ffffff"/>
+<text x="2005.0" y="745.1" text-anchor="middle" font-size="9" fill="#374151">located_in</text>
+<text x="1906.6" y="675.1" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="2103.4" y="829.2" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M480.0,340.4 L560.0,280.0 L2140.0,280.0 L2122.6,260.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1726.7" y="267.0" width="26.2" height="12" fill="#ffffff"/>
+<text x="1739.8" y="276.0" text-anchor="middle" font-size="9" fill="#374151">owns</text>
+<text x="497.6" y="340.1" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="2127.1" y="280.3" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M2110.0,425.0 L1900.0,551.0" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#diao)"/>
+<rect x="1989.4" y="475.0" width="31.2" height="12" fill="#ffffff"/>
+<text x="2005.0" y="484.0" text-anchor="middle" font-size="9" fill="#374151">saves</text>
+<text x="2092.2" y="429.4" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="1917.8" y="552.6" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M480.0,315.5 L615.0,315.0 L615.0,30.0 L2701.0,30.0 L2701.0,520.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="2571.2" y="17.0" width="41.3" height="12" fill="#ffffff"/>
+<text x="2591.8" y="26.0" text-anchor="middle" font-size="9" fill="#374151">submits</text>
+<text x="496.0" y="326.5" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="2709.0" y="507.0" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M2440.0,601.9 L1900.0,594.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="2154.4" y="585.0" width="31.2" height="12" fill="#ffffff"/>
+<text x="2170.0" y="594.0" text-anchor="middle" font-size="9" fill="#374151">about</text>
+<text x="2424.1" y="596.7" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="1915.9" y="605.3" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M1330.0,859.2 L1160.0,625.5" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1229.4" y="729.3" width="31.2" height="12" fill="#ffffff"/>
+<text x="1245.0" y="738.3" text-anchor="middle" font-size="9" fill="#374151">edits</text>
+<path d="M2250.0,110.5 L2200.0,112.2" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2204.4" y="98.4" width="41.3" height="12" fill="#ffffff"/>
+<text x="2225.0" y="107.4" text-anchor="middle" font-size="9" fill="#374151">handles</text>
+<path d="M2420.0,149.0 L2420.0,250.0 L1120.0,250.0 L1120.0,330.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1833.9" y="237.0" width="41.3" height="12" fill="#ffffff"/>
+<text x="1854.5" y="246.0" text-anchor="middle" font-size="9" fill="#374151">replans</text>
+<path d="M595.0,196.0 L700.0,240.0 L1820.0,240.0 L1826.5,470.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1741.7" y="227.0" width="31.2" height="12" fill="#ffffff"/>
+<text x="1757.3" y="236.0" text-anchor="middle" font-size="9" fill="#374151">saved</text>
+<text x="606.7" y="212.6" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="1834.1" y="456.8" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M990.0,631.7 L930.0,632.0 L930.0,1185.0 L150.0,1185.0 L150.0,1250.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="861.2" y="1172.0" width="51.4" height="12" fill="#ffffff"/>
+<text x="886.9" y="1181.0" text-anchor="middle" font-size="9" fill="#374151">read_from</text>
+<text x="974.0" y="626.8" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="158.0" y="1237.0" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M790.5,1440.0 L781.5,1339.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="775.4" y="1376.5" width="21.1" height="12" fill="#ffffff"/>
+<text x="786.0" y="1385.5" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M640.0,1315.1 L515.0,1333.9" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="559.4" y="1311.5" width="36.2" height="12" fill="#ffffff"/>
+<text x="577.5" y="1320.5" text-anchor="middle" font-size="9" fill="#374151">create</text>
+<path d="M340.0,1355.0 L260.0,1362.4" fill="none" stroke="#1f2933" stroke-width="1"/>
+<text x="323.3" y="1351.5" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<text x="276.7" y="1371.9" text-anchor="middle" font-size="9" fill="#1f2933">0..1</text>
+<path d="M876.0,1440.0 L1057.1,1326.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="956.0" y="1370.0" width="21.1" height="12" fill="#ffffff"/>
+<text x="966.6" y="1379.0" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M950.0,1499.6 L980.0,1501.3" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="954.4" y="1487.5" width="21.1" height="12" fill="#ffffff"/>
+<text x="965.0" y="1496.5" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M867.1,1542.0 L1033.8,1660.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="939.9" y="1588.0" width="21.1" height="12" fill="#ffffff"/>
+<text x="950.4" y="1597.0" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M796.1,1542.0 L799.0,1680.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="787.0" y="1598.0" width="21.1" height="12" fill="#ffffff"/>
+<text x="797.6" y="1607.0" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M733.4,1542.0 L518.4,1720.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="615.3" y="1618.0" width="21.1" height="12" fill="#ffffff"/>
+<text x="625.9" y="1627.0" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M646.0,1542.0 L470.0,1602.2" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="539.9" y="1559.1" width="36.2" height="12" fill="#ffffff"/>
+<text x="558.0" y="1568.1" text-anchor="middle" font-size="9" fill="#374151">create</text>
+<path d="M410.2,1560.0 L419.6,1444.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<text x="419.5" y="1547.7" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="410.4" y="1462.3" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M340.0,1611.6 L320.0,1612.0 L320.0,1192.0 L955.0,1192.0 L955.0,560.0 L990.0,560.1" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="301.9" y="1444.8" width="36.2" height="12" fill="#ffffff"/>
+<text x="320.0" y="1453.8" text-anchor="middle" font-size="9" fill="#374151">result</text>
+<text x="323.8" y="1606.9" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="974.0" y="555.1" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<path d="M1253.4,1581.0 L1385.0,1666.6" fill="none" stroke="#1f2933" stroke-width="1"/>
+<rect x="1301.1" y="1610.8" width="36.2" height="12" fill="#ffffff"/>
+<text x="1319.2" y="1619.8" text-anchor="middle" font-size="9" fill="#374151">caches</text>
+<text x="1262.5" y="1599.4" text-anchor="middle" font-size="9" fill="#1f2933">1</text>
+<text x="1375.9" y="1654.2" text-anchor="middle" font-size="9" fill="#1f2933">0..*</text>
+<path d="M1310.0,1545.8 L1345.0,1546.0 L1345.0,1190.0 L1865.0,1190.0 L1865.0,716.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1796.5" y="980.0" width="137.0" height="12" fill="#ffffff"/>
+<text x="1865.0" y="989.0" text-anchor="middle" font-size="9" fill="#374151">poiFromCard → registerPois</text>
+<path d="M1099.2,1660.0 L1123.4,1581.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1093.1" y="1607.5" width="36.2" height="12" fill="#ffffff"/>
+<text x="1111.3" y="1616.5" text-anchor="middle" font-size="9" fill="#374151">cardOf</text>
+<path d="M1255.0,1320.0 L1385.0,1350.3" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1291.8" y="1322.1" width="56.4" height="12" fill="#ffffff"/>
+<text x="1320.0" y="1331.1" text-anchor="middle" font-size="9" fill="#374151">POST /chat</text>
+<path d="M1310.0,1459.8 L1385.0,1436.7" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1306.7" y="1435.2" width="81.6" height="12" fill="#ffffff"/>
+<text x="1347.5" y="1444.2" text-anchor="middle" font-size="9" fill="#374151">POST /retrieval</text>
+<path d="M1195.0,1698.0 L1360.0,1698.0 L1410.6,1445.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1268.5" y="1685.0" width="106.8" height="12" fill="#ffffff"/>
+<text x="1321.9" y="1694.0" text-anchor="middle" font-size="9" fill="#374151">POST /routing(/days)</text>
+<path d="M1705.0,1354.7 L1760.0,1343.5" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1721.9" y="1336.1" width="21.1" height="12" fill="#ffffff"/>
+<text x="1732.5" y="1345.1" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M1705.0,1437.2 L1760.0,1454.3" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1721.9" y="1432.8" width="21.1" height="12" fill="#ffffff"/>
+<text x="1732.5" y="1441.8" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M1608.7,1445.0 L1869.1,1680.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1728.3" y="1549.5" width="21.1" height="12" fill="#ffffff"/>
+<text x="1738.9" y="1558.5" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M2175.0,1301.2 L2250.0,1301.3" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2176.7" y="1288.3" width="71.5" height="12" fill="#ffffff"/>
+<text x="2212.5" y="1297.3" text-anchor="middle" font-size="9" fill="#374151">generate_json</text>
+<path d="M1657.0,1330.0 L1657.0,1234.0 L2300.0,1234.0 L2300.0,1250.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1907.7" y="1221.0" width="137.0" height="12" fill="#ffffff"/>
+<text x="1976.3" y="1230.0" text-anchor="middle" font-size="9" fill="#374151">get_gemini_client → create</text>
+<path d="M2080.0,1491.6 L2250.0,1478.4" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2154.4" y="1472.0" width="21.1" height="12" fill="#ffffff"/>
+<text x="2165.0" y="1481.0" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M1705.0,1376.0 L2530.0,1376.0 L2530.0,1412.0 L2550.0,1412.2" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2126.1" y="1363.0" width="127.0" height="12" fill="#ffffff"/>
+<text x="2189.6" y="1372.0" text-anchor="middle" font-size="9" fill="#374151">get_embedder → embed_all</text>
+<path d="M2080.0,1565.6 L2250.0,1631.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2154.4" y="1585.3" width="21.1" height="12" fill="#ffffff"/>
+<text x="2165.0" y="1594.3" text-anchor="middle" font-size="9" fill="#374151">SQL</text>
+<path d="M1802.3,1568.0 L1600.0,1678.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1683.0" y="1610.0" width="36.2" height="12" fill="#ffffff"/>
+<text x="1701.2" y="1619.0" text-anchor="middle" font-size="9" fill="#374151">create</text>
+<path d="M1934.7,1680.0 L1925.3,1568.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1838.8" y="1611.0" width="182.4" height="12" fill="#ffffff"/>
+<text x="1930.0" y="1620.0" text-anchor="middle" font-size="9" fill="#374151">candidates.fetch_by_ids, Poi, hours</text>
+<path d="M2120.0,1765.3 L2550.0,1816.1" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2314.4" y="1777.7" width="41.3" height="12" fill="#ffffff"/>
+<text x="2335.0" y="1786.7" text-anchor="middle" font-size="9" fill="#374151">road_km</text>
+<path d="M1933.8,1808.0 L1924.9,1900.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1913.8" y="1841.0" width="31.2" height="12" fill="#ffffff"/>
+<text x="1929.4" y="1850.0" text-anchor="middle" font-size="9" fill="#374151">solve</text>
+<path d="M2080.0,1951.2 L2250.0,1951.4" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2154.4" y="1938.3" width="21.1" height="12" fill="#ffffff"/>
+<text x="2165.0" y="1947.3" text-anchor="middle" font-size="9" fill="#374151">use</text>
+<path d="M2074.9,1808.0 L2268.9,1900.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="2128.6" y="1841.0" width="86.6" height="12" fill="#ffffff"/>
+<text x="2171.9" y="1850.0" text-anchor="middle" font-size="9" fill="#374151">create (prepare)</text>
+<path d="M1792.0,1808.0 L1625.5,1880.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1685.6" y="1831.0" width="46.3" height="12" fill="#ffffff"/>
+<text x="1708.7" y="1840.0" text-anchor="middle" font-size="9" fill="#374151">validate</text>
+<path d="M1760.0,1943.2 L1630.0,1936.9" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="1664.3" y="1927.1" width="61.4" height="12" fill="#ffffff"/>
+<text x="1695.0" y="1936.1" text-anchor="middle" font-size="9" fill="#374151">tour_errors</text>
+<path d="M40.0,2007.0 L100.0,2007.0" fill="none" stroke="#1f2933" stroke-width="1"/>
+<path d="M230.0,2007.0 L290.0,2007.0" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#dia)"/>
+<path d="M420.0,2007.0 L480.0,2007.0" fill="none" stroke="#1f2933" stroke-width="1" marker-start="url(#diao)"/>
+<path d="M40.0,2033.0 L100.0,2033.0" fill="none" stroke="#1f2933" stroke-width="1" marker-end="url(#tri)"/>
+<path d="M230.0,2033.0 L290.0,2033.0" fill="none" stroke="#4b5563" stroke-width="1" stroke-dasharray="5 4" marker-end="url(#opn)"/>
+<rect x="40" y="60" width="130" height="89" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="40.55" y="60.55" width="128.9" height="33.45" fill="#eef2f7"/>
+<text x="105.0" y="75" text-anchor="middle" font-size="9.5" fill="#4b5563">«enumeration»</text>
+<text x="105.0" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Role</text>
+<line x1="40" y1="94" x2="170" y2="94" stroke="#1f2933" stroke-width="1"/>
+<line x1="40" y1="141" x2="170" y2="141" stroke="#1f2933" stroke-width="1"/>
+<text x="46" y="108" font-size="10" fill="#1f2933">- traveler</text>
+<text x="46" y="121" font-size="10" fill="#1f2933">- admin</text>
+<text x="46" y="134" font-size="10" fill="#1f2933">- business</text>
+<rect x="330" y="300" width="150" height="194" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="330.55" y="300.55" width="148.9" height="21.45" fill="#eef2f7"/>
+<text x="405.0" y="315" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">SessionUser</text>
+<line x1="330" y1="322" x2="480" y2="322" stroke="#1f2933" stroke-width="1"/>
+<line x1="330" y1="447" x2="480" y2="447" stroke="#1f2933" stroke-width="1"/>
+<text x="336" y="336" font-size="10" fill="#1f2933">- id: string</text>
+<text x="336" y="349" font-size="10" fill="#1f2933">- name: string</text>
+<text x="336" y="362" font-size="10" fill="#1f2933">- email: string</text>
+<text x="336" y="375" font-size="10" fill="#1f2933">- phone?: string</text>
+<text x="336" y="388" font-size="10" fill="#1f2933">- role: Role</text>
+<text x="336" y="401" font-size="10" fill="#1f2933">- status?: AccountStatus</text>
+<text x="336" y="414" font-size="10" fill="#1f2933">- avatarUrl?: string</text>
+<text x="336" y="427" font-size="10" fill="#1f2933">- businessId?: string</text>
+<text x="336" y="440" font-size="10" fill="#1f2933">- staffRole?: StaffRole</text>
+<text x="336" y="461" font-size="10" fill="#1f2933">+ signIn(user, options)</text>
+<text x="336" y="474" font-size="10" fill="#1f2933">+ updateUser(user)</text>
+<text x="336" y="487" font-size="10" fill="#1f2933">+ signOut()</text>
+<rect x="330" y="50" width="265" height="181" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="330.55" y="50.55" width="263.9" height="21.45" fill="#eef2f7"/>
+<text x="462.5" y="65" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Profile</text>
+<line x1="330" y1="72" x2="595" y2="72" stroke="#1f2933" stroke-width="1"/>
+<line x1="330" y1="184" x2="595" y2="184" stroke="#1f2933" stroke-width="1"/>
+<text x="336" y="86" font-size="10" fill="#1f2933">- userId: string</text>
+<text x="336" y="99" font-size="10" fill="#1f2933">- pace: Pace</text>
+<text x="336" y="112" font-size="10" fill="#1f2933">- interests: Interests</text>
+<text x="336" y="125" font-size="10" fill="#1f2933">- dietary: string[]</text>
+<text x="336" y="138" font-size="10" fill="#1f2933">- transport: TransportPref</text>
+<text x="336" y="151" font-size="10" fill="#1f2933">- alerts: {traffic, weather, closure, delay}</text>
+<text x="336" y="164" font-size="10" fill="#1f2933">- saved: string[]</text>
+<text x="336" y="177" font-size="10" fill="#1f2933">- autoAdjust: boolean</text>
+<text x="336" y="198" font-size="10" fill="#1f2933">+ getProfile(userId, name)</text>
+<text x="336" y="211" font-size="10" fill="#1f2933">+ saveProfile(profile)</text>
+<text x="336" y="224" font-size="10" fill="#1f2933">+ saveOnboarding(userId, interests)</text>
+<rect x="40" y="230" width="170" height="168" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="40.55" y="230.55" width="168.9" height="21.45" fill="#eef2f7"/>
+<text x="125.0" y="245" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">AppNotification</text>
+<line x1="40" y1="252" x2="210" y2="252" stroke="#1f2933" stroke-width="1"/>
+<line x1="40" y1="351" x2="210" y2="351" stroke="#1f2933" stroke-width="1"/>
+<text x="46" y="266" font-size="10" fill="#1f2933">- id: string</text>
+<text x="46" y="279" font-size="10" fill="#1f2933">- kind: NotificationKind</text>
+<text x="46" y="292" font-size="10" fill="#1f2933">- vi: string</text>
+<text x="46" y="305" font-size="10" fill="#1f2933">- en: string</text>
+<text x="46" y="318" font-size="10" fill="#1f2933">- at: string</text>
+<text x="46" y="331" font-size="10" fill="#1f2933">- read: boolean</text>
+<text x="46" y="344" font-size="10" fill="#1f2933">- userId?: string</text>
+<text x="46" y="365" font-size="10" fill="#1f2933">+ listInbox(userId)</text>
+<text x="46" y="378" font-size="10" fill="#1f2933">+ markInboxRead(userId, id)</text>
+<text x="46" y="391" font-size="10" fill="#1f2933">+ removeInbox(userId, id)</text>
+<rect x="40" y="440" width="130" height="168" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="40.55" y="440.55" width="128.9" height="21.45" fill="#eef2f7"/>
+<text x="105.0" y="455" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">AnalyticsEvent</text>
+<line x1="40" y1="462" x2="170" y2="462" stroke="#1f2933" stroke-width="1"/>
+<line x1="40" y1="574" x2="170" y2="574" stroke="#1f2933" stroke-width="1"/>
+<text x="46" y="476" font-size="10" fill="#1f2933">- t: string</text>
+<text x="46" y="489" font-size="10" fill="#1f2933">- type: EventType</text>
+<text x="46" y="502" font-size="10" fill="#1f2933">- userId?: string</text>
+<text x="46" y="515" font-size="10" fill="#1f2933">- city?: CityId</text>
+<text x="46" y="528" font-size="10" fill="#1f2933">- tripId?: string</text>
+<text x="46" y="541" font-size="10" fill="#1f2933">- poiId?: string</text>
+<text x="46" y="554" font-size="10" fill="#1f2933">- detail?: string</text>
+<text x="46" y="567" font-size="10" fill="#1f2933">- sent?: boolean</text>
+<text x="46" y="588" font-size="10" fill="#1f2933">+ track(event)</text>
+<text x="46" y="601" font-size="10" fill="#1f2933">+ readEvents()</text>
+<rect x="40" y="650" width="190" height="103" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="40.55" y="650.55" width="188.9" height="21.45" fill="#eef2f7"/>
+<text x="135.0" y="665" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">SystemModule</text>
+<line x1="40" y1="672" x2="230" y2="672" stroke="#1f2933" stroke-width="1"/>
+<line x1="40" y1="719" x2="230" y2="719" stroke="#1f2933" stroke-width="1"/>
+<text x="46" y="686" font-size="10" fill="#1f2933">- id: ModuleId</text>
+<text x="46" y="699" font-size="10" fill="#1f2933">- enabled: boolean</text>
+<text x="46" y="712" font-size="10" fill="#1f2933">- updatedAt?: string</text>
+<text x="46" y="733" font-size="10" fill="#1f2933">+ listModules()</text>
+<text x="46" y="746" font-size="10" fill="#1f2933">+ setModuleEnabled(id, enabled)</text>
+<rect x="330" y="600" width="245" height="194" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="330.55" y="600.55" width="243.9" height="21.45" fill="#eef2f7"/>
+<text x="452.5" y="615" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Account</text>
+<line x1="330" y1="622" x2="575" y2="622" stroke="#1f2933" stroke-width="1"/>
+<line x1="330" y1="682" x2="575" y2="682" stroke="#1f2933" stroke-width="1"/>
+<text x="336" y="636" font-size="10" fill="#1f2933">- password: string</text>
+<text x="336" y="649" font-size="10" fill="#1f2933">- createdAt?: string</text>
+<text x="336" y="662" font-size="10" fill="#1f2933">- lastActiveAt?: string</text>
+<text x="336" y="675" font-size="10" fill="#1f2933">- blockedReason?: string</text>
+<text x="336" y="696" font-size="10" fill="#1f2933">+ login(input: LoginInput): Session</text>
+<text x="336" y="709" font-size="10" fill="#1f2933">+ register(input: RegisterInput): Session</text>
+<text x="336" y="722" font-size="10" fill="#1f2933">+ logout()</text>
+<text x="336" y="735" font-size="10" fill="#1f2933">+ updateAccount(input)</text>
+<text x="336" y="748" font-size="10" fill="#1f2933">+ changePassword(input)</text>
+<text x="336" y="761" font-size="10" fill="#1f2933">+ uploadAvatar(id, file, dataUrl)</text>
+<text x="336" y="774" font-size="10" fill="#1f2933">+ requestPasswordReset(email)</text>
+<text x="336" y="787" font-size="10" fill="#1f2933">+ resetPassword(token, password)</text>
+<rect x="640" y="600" width="255" height="142" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="640.55" y="600.55" width="253.9" height="21.45" fill="#eef2f7"/>
+<text x="767.5" y="615" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Employee</text>
+<line x1="640" y1="622" x2="895" y2="622" stroke="#1f2933" stroke-width="1"/>
+<line x1="640" y1="669" x2="895" y2="669" stroke="#1f2933" stroke-width="1"/>
+<text x="646" y="636" font-size="10" fill="#1f2933">- resources: Resource[]</text>
+<text x="646" y="649" font-size="10" fill="#1f2933">- createdAt?: string</text>
+<text x="646" y="662" font-size="10" fill="#1f2933">- lastActiveAt?: string</text>
+<text x="646" y="683" font-size="10" fill="#1f2933">+ listEmployees(businessId, query)</text>
+<text x="646" y="696" font-size="10" fill="#1f2933">+ createEmployee(input)</text>
+<text x="646" y="709" font-size="10" fill="#1f2933">+ updateEmployee(businessId, id, patch)</text>
+<text x="646" y="722" font-size="10" fill="#1f2933">+ setEmployeeStatus(businessId, id, status)</text>
+<text x="646" y="735" font-size="10" fill="#1f2933">+ deleteEmployee(businessId, id)</text>
+<rect x="40" y="800" width="255" height="142" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="40.55" y="800.55" width="253.9" height="21.45" fill="#eef2f7"/>
+<text x="167.5" y="815" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">LinkToken</text>
+<line x1="40" y1="822" x2="295" y2="822" stroke="#1f2933" stroke-width="1"/>
+<line x1="40" y1="908" x2="295" y2="908" stroke="#1f2933" stroke-width="1"/>
+<text x="46" y="836" font-size="10" fill="#1f2933">- token: string</text>
+<text x="46" y="849" font-size="10" fill="#1f2933">- userId: string</text>
+<text x="46" y="862" font-size="10" fill="#1f2933">- purpose: &#x27;reset&#x27; | &#x27;invite&#x27; | &#x27;email&#x27;</text>
+<text x="46" y="875" font-size="10" fill="#1f2933">- email: string</text>
+<text x="46" y="888" font-size="10" fill="#1f2933">- expiresAt: string</text>
+<text x="46" y="901" font-size="10" fill="#1f2933">- usedAt?: string</text>
+<text x="46" y="922" font-size="10" fill="#1f2933">+ newToken(userId, purpose, email, minutes)</text>
+<text x="46" y="935" font-size="10" fill="#1f2933">+ checkLink(token)</text>
+<rect x="330" y="905" width="225" height="155" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="330.55" y="905.55" width="223.9" height="21.45" fill="#eef2f7"/>
+<text x="442.5" y="920" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">SentNotification</text>
+<line x1="330" y1="927" x2="555" y2="927" stroke="#1f2933" stroke-width="1"/>
+<line x1="330" y1="1026" x2="555" y2="1026" stroke="#1f2933" stroke-width="1"/>
+<text x="336" y="941" font-size="10" fill="#1f2933">- id: string</text>
+<text x="336" y="954" font-size="10" fill="#1f2933">- channel: ChannelId</text>
+<text x="336" y="967" font-size="10" fill="#1f2933">- audience: Audience</text>
+<text x="336" y="980" font-size="10" fill="#1f2933">- titleVi / titleEn: string</text>
+<text x="336" y="993" font-size="10" fill="#1f2933">- at: string</text>
+<text x="336" y="1006" font-size="10" fill="#1f2933">- delivered: number</text>
+<text x="336" y="1019" font-size="10" fill="#1f2933">- senderId: string</text>
+<text x="336" y="1040" font-size="10" fill="#1f2933">+ sendNotification(message, senderId)</text>
+<text x="336" y="1053" font-size="10" fill="#1f2933">+ listSent()</text>
+<rect x="640" y="860" width="220" height="181" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="640.55" y="860.55" width="218.9" height="21.45" fill="#eef2f7"/>
+<text x="750.0" y="875" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Business</text>
+<line x1="640" y1="882" x2="860" y2="882" stroke="#1f2933" stroke-width="1"/>
+<line x1="640" y1="981" x2="860" y2="981" stroke="#1f2933" stroke-width="1"/>
+<text x="646" y="896" font-size="10" fill="#1f2933">- id: string</text>
+<text x="646" y="909" font-size="10" fill="#1f2933">- name: string</text>
+<text x="646" y="922" font-size="10" fill="#1f2933">- ownerId: string</text>
+<text x="646" y="935" font-size="10" fill="#1f2933">- ownerEmail: string</text>
+<text x="646" y="948" font-size="10" fill="#1f2933">- plan: &#x27;starter&#x27; | &#x27;pro&#x27;</text>
+<text x="646" y="961" font-size="10" fill="#1f2933">- status: AccountStatus</text>
+<text x="646" y="974" font-size="10" fill="#1f2933">- employees: number</text>
+<text x="646" y="995" font-size="10" fill="#1f2933">+ listBusinesses()</text>
+<text x="646" y="1008" font-size="10" fill="#1f2933">+ createBusiness(input)</text>
+<text x="646" y="1021" font-size="10" fill="#1f2933">+ listOwnedPlaces(businessId)</text>
+<text x="646" y="1034" font-size="10" fill="#1f2933">+ setOwnedPlaces(businessId, poiIds)</text>
+<rect x="990" y="330" width="170" height="311" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="990.55" y="330.55" width="168.9" height="21.45" fill="#eef2f7"/>
+<text x="1075.0" y="345" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Trip</text>
+<line x1="990" y1="352" x2="1160" y2="352" stroke="#1f2933" stroke-width="1"/>
+<line x1="990" y1="568" x2="1160" y2="568" stroke="#1f2933" stroke-width="1"/>
+<text x="996" y="366" font-size="10" fill="#1f2933">- id: string</text>
+<text x="996" y="379" font-size="10" fill="#1f2933">- userId: string</text>
+<text x="996" y="392" font-size="10" fill="#1f2933">- title: string</text>
+<text x="996" y="405" font-size="10" fill="#1f2933">- city: CityId</text>
+<text x="996" y="418" font-size="10" fill="#1f2933">- startDate: string</text>
+<text x="996" y="431" font-size="10" fill="#1f2933">- days: Day[]</text>
+<text x="996" y="444" font-size="10" fill="#1f2933">- budget: number</text>
+<text x="996" y="457" font-size="10" fill="#1f2933">- dayStart / dayEnd: number</text>
+<text x="996" y="470" font-size="10" fill="#1f2933">- pace: Pace</text>
+<text x="996" y="483" font-size="10" fill="#1f2933">- transport: TransportPref</text>
+<text x="996" y="496" font-size="10" fill="#1f2933">- status: TripStatus</text>
+<text x="996" y="509" font-size="10" fill="#1f2933">- interests: Interests</text>
+<text x="996" y="522" font-size="10" fill="#1f2933">- mustInclude: string[]</text>
+<text x="996" y="535" font-size="10" fill="#1f2933">- extraction?: Extraction</text>
+<text x="996" y="548" font-size="10" fill="#1f2933">- routing?: RoutingInfo</text>
+<text x="996" y="561" font-size="10" fill="#1f2933">- version: number</text>
+<text x="996" y="582" font-size="10" fill="#1f2933">+ listTrips(userId)</text>
+<text x="996" y="595" font-size="10" fill="#1f2933">+ getTrip(id, userId)</text>
+<text x="996" y="608" font-size="10" fill="#1f2933">+ createTrip(trip)</text>
+<text x="996" y="621" font-size="10" fill="#1f2933">+ saveTrip(trip)</text>
+<text x="996" y="634" font-size="10" fill="#1f2933">+ deleteTrip(id)</text>
+<rect x="990" y="60" width="175" height="142" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="990.55" y="60.55" width="173.9" height="21.45" fill="#eef2f7"/>
+<text x="1077.5" y="75" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Share</text>
+<line x1="990" y1="82" x2="1165" y2="82" stroke="#1f2933" stroke-width="1"/>
+<line x1="990" y1="142" x2="1165" y2="142" stroke="#1f2933" stroke-width="1"/>
+<text x="996" y="96" font-size="10" fill="#1f2933">- token: string</text>
+<text x="996" y="109" font-size="10" fill="#1f2933">- tripId: string</text>
+<text x="996" y="122" font-size="10" fill="#1f2933">- createdAt: string</text>
+<text x="996" y="135" font-size="10" fill="#1f2933">- ownerName: string</text>
+<text x="996" y="156" font-size="10" fill="#1f2933">+ shareTrip(trip, ownerName)</text>
+<text x="996" y="169" font-size="10" fill="#1f2933">+ getShareFor(tripId)</text>
+<text x="996" y="182" font-size="10" fill="#1f2933">+ revokeShare(tripId)</text>
+<text x="996" y="195" font-size="10" fill="#1f2933">+ openShare(token)</text>
+<rect x="990" y="720" width="230" height="129" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="990.55" y="720.55" width="228.9" height="21.45" fill="#eef2f7"/>
+<text x="1105.0" y="735" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">RoutingInfo</text>
+<line x1="990" y1="742" x2="1220" y2="742" stroke="#1f2933" stroke-width="1"/>
+<line x1="990" y1="828" x2="1220" y2="828" stroke="#1f2933" stroke-width="1"/>
+<text x="996" y="756" font-size="10" fill="#1f2933">- unscheduled: {poiId, name, reason}[]</text>
+<text x="996" y="769" font-size="10" fill="#1f2933">- warnings: string[]</text>
+<text x="996" y="782" font-size="10" fill="#1f2933">- openDates?: Record&lt;string, string[]&gt;</text>
+<text x="996" y="795" font-size="10" fill="#1f2933">- load?: {busy, capacity}[]</text>
+<text x="996" y="808" font-size="10" fill="#1f2933">- travelSource?: &#x27;osrm&#x27; | &#x27;estimated&#x27;</text>
+<text x="996" y="821" font-size="10" fill="#1f2933">- timed?: boolean</text>
+<text x="996" y="842" font-size="10" fill="#1f2933">+ retimedRouting(trip, dayIndex, days)</text>
+<rect x="1300" y="60" width="180" height="116" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1300.55" y="60.55" width="178.9" height="21.45" fill="#eef2f7"/>
+<text x="1390.0" y="75" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">TripLive</text>
+<line x1="1300" y1="82" x2="1480" y2="82" stroke="#1f2933" stroke-width="1"/>
+<line x1="1300" y1="155" x2="1480" y2="155" stroke="#1f2933" stroke-width="1"/>
+<text x="1306" y="96" font-size="10" fill="#1f2933">- mode: &#x27;gps&#x27; | &#x27;demo&#x27;</text>
+<text x="1306" y="109" font-size="10" fill="#1f2933">- clock: number | null</text>
+<text x="1306" y="122" font-size="10" fill="#1f2933">- pending: EditRequest | null</text>
+<text x="1306" y="135" font-size="10" fill="#1f2933">- suppressed: string[]</text>
+<text x="1306" y="148" font-size="10" fill="#1f2933">- snoozedUntil?: number</text>
+<text x="1306" y="169" font-size="10" fill="#1f2933">+ liveOf(trips, tripId)</text>
+<rect x="1610" y="60" width="150" height="129" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1610.55" y="60.55" width="148.9" height="21.45" fill="#eef2f7"/>
+<text x="1685.0" y="75" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">EditRequest</text>
+<line x1="1610" y1="82" x2="1760" y2="82" stroke="#1f2933" stroke-width="1"/>
+<line x1="1610" y1="181" x2="1760" y2="181" stroke="#1f2933" stroke-width="1"/>
+<text x="1616" y="96" font-size="10" fill="#1f2933">- id: string</text>
+<text x="1616" y="109" font-size="10" fill="#1f2933">- tripId: string</text>
+<text x="1616" y="122" font-size="10" fill="#1f2933">- dayIndex: number</text>
+<text x="1616" y="135" font-size="10" fill="#1f2933">- disruption: Disruption</text>
+<text x="1616" y="148" font-size="10" fill="#1f2933">- at: number</text>
+<text x="1616" y="161" font-size="10" fill="#1f2933">- createdAt: string</text>
+<text x="1616" y="174" font-size="10" fill="#1f2933">- expiresAt: string</text>
+<rect x="1900" y="60" width="300" height="115" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1900.55" y="60.55" width="298.9" height="33.45" fill="#eef2f7"/>
+<text x="2050.0" y="75" text-anchor="middle" font-size="9.5" fill="#4b5563">«union»</text>
+<text x="2050.0" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Disruption</text>
+<line x1="1900" y1="94" x2="2200" y2="94" stroke="#1f2933" stroke-width="1"/>
+<line x1="1900" y1="167" x2="2200" y2="167" stroke="#1f2933" stroke-width="1"/>
+<text x="1906" y="108" font-size="10" fill="#1f2933">- kind: &#x27;traffic&#x27; | &#x27;closure&#x27; | &#x27;weather&#x27; | &#x27;delay&#x27;</text>
+<text x="1906" y="121" font-size="10" fill="#1f2933">- minutes?: number</text>
+<text x="1906" y="134" font-size="10" fill="#1f2933">- poiId?: string</text>
+<text x="1906" y="147" font-size="10" fill="#1f2933">- until?: number</text>
+<text x="1906" y="160" font-size="10" fill="#1f2933">- label?: string</text>
+<rect x="1330" y="420" width="140" height="77" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1330.55" y="420.55" width="138.9" height="21.45" fill="#eef2f7"/>
+<text x="1400.0" y="435" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Day</text>
+<line x1="1330" y1="442" x2="1470" y2="442" stroke="#1f2933" stroke-width="1"/>
+<line x1="1330" y1="476" x2="1470" y2="476" stroke="#1f2933" stroke-width="1"/>
+<text x="1336" y="456" font-size="10" fill="#1f2933">- index: number</text>
+<text x="1336" y="469" font-size="10" fill="#1f2933">- stops: Stop[]</text>
+<text x="1336" y="490" font-size="10" fill="#1f2933">+ dayCost(day): number</text>
+<rect x="1330" y="600" width="255" height="142" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1330.55" y="600.55" width="253.9" height="21.45" fill="#eef2f7"/>
+<text x="1457.5" y="615" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Stop</text>
+<line x1="1330" y1="622" x2="1585" y2="622" stroke="#1f2933" stroke-width="1"/>
+<line x1="1330" y1="734" x2="1585" y2="734" stroke="#1f2933" stroke-width="1"/>
+<text x="1336" y="636" font-size="10" fill="#1f2933">- uid: string</text>
+<text x="1336" y="649" font-size="10" fill="#1f2933">- poiId: string</text>
+<text x="1336" y="662" font-size="10" fill="#1f2933">- start / end: number</text>
+<text x="1336" y="675" font-size="10" fill="#1f2933">- visit: number</text>
+<text x="1336" y="688" font-size="10" fill="#1f2933">- travelMin / travelKm / travelCost: number</text>
+<text x="1336" y="701" font-size="10" fill="#1f2933">- mode: TravelMode</text>
+<text x="1336" y="714" font-size="10" fill="#1f2933">- wait: number</text>
+<text x="1336" y="727" font-size="10" fill="#1f2933">- locked: boolean</text>
+<rect x="1330" y="850" width="330" height="115" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1330.55" y="850.55" width="328.9" height="33.45" fill="#eef2f7"/>
+<text x="1495.0" y="865" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · domain/edit.ts»</text>
+<text x="1495.0" y="877" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">edit</text>
+<line x1="1330" y1="884" x2="1660" y2="884" stroke="#1f2933" stroke-width="1"/>
+<line x1="1330" y1="892" x2="1660" y2="892" stroke="#1f2933" stroke-width="1"/>
+<text x="1336" y="906" font-size="10" fill="#1f2933">+ reorderDay(trip, dayIndex, order): EditResult</text>
+<text x="1336" y="919" font-size="10" fill="#1f2933">+ changeDuration(trip, dayIndex, uid, delta): EditResult</text>
+<text x="1336" y="932" font-size="10" fill="#1f2933">+ removeStop(trip, dayIndex, uid): EditResult</text>
+<text x="1336" y="945" font-size="10" fill="#1f2933">+ addStop(trip, dayIndex, poiId): EditResult</text>
+<text x="1336" y="958" font-size="10" fill="#1f2933">+ toggleLock(trip, dayIndex, uid): Trip</text>
+<rect x="1760" y="470" width="140" height="246" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1760.55" y="470.55" width="138.9" height="21.45" fill="#eef2f7"/>
+<text x="1830.0" y="485" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Poi</text>
+<line x1="1760" y1="492" x2="1900" y2="492" stroke="#1f2933" stroke-width="1"/>
+<line x1="1760" y1="682" x2="1900" y2="682" stroke="#1f2933" stroke-width="1"/>
+<text x="1766" y="506" font-size="10" fill="#1f2933">- id: string</text>
+<text x="1766" y="519" font-size="10" fill="#1f2933">- city: CityId</text>
+<text x="1766" y="532" font-size="10" fill="#1f2933">- name: string</text>
+<text x="1766" y="545" font-size="10" fill="#1f2933">- cat: CategoryId</text>
+<text x="1766" y="558" font-size="10" fill="#1f2933">- lat / lng: number</text>
+<text x="1766" y="571" font-size="10" fill="#1f2933">- open / close: number</text>
+<text x="1766" y="584" font-size="10" fill="#1f2933">- closedDays: number[]</text>
+<text x="1766" y="597" font-size="10" fill="#1f2933">- visit: number</text>
+<text x="1766" y="610" font-size="10" fill="#1f2933">- cost: number</text>
+<text x="1766" y="623" font-size="10" fill="#1f2933">- quality: number</text>
+<text x="1766" y="636" font-size="10" fill="#1f2933">- indoor: boolean</text>
+<text x="1766" y="649" font-size="10" fill="#1f2933">- tags: string[]</text>
+<text x="1766" y="662" font-size="10" fill="#1f2933">- address: string</text>
+<text x="1766" y="675" font-size="10" fill="#1f2933">- hours: string</text>
+<text x="1766" y="696" font-size="10" fill="#1f2933">+ registerPois(list)</text>
+<text x="1766" y="709" font-size="10" fill="#1f2933">+ poisByCity(city)</text>
+<rect x="2110" y="830" width="145" height="155" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2110.55" y="830.55" width="143.9" height="21.45" fill="#eef2f7"/>
+<text x="2182.5" y="845" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">City</text>
+<line x1="2110" y1="852" x2="2255" y2="852" stroke="#1f2933" stroke-width="1"/>
+<line x1="2110" y1="951" x2="2255" y2="951" stroke="#1f2933" stroke-width="1"/>
+<text x="2116" y="866" font-size="10" fill="#1f2933">- id: CityId</text>
+<text x="2116" y="879" font-size="10" fill="#1f2933">- name / nameEn: string</text>
+<text x="2116" y="892" font-size="10" fill="#1f2933">- destination: string</text>
+<text x="2116" y="905" font-size="10" fill="#1f2933">- aliases: string[]</text>
+<text x="2116" y="918" font-size="10" fill="#1f2933">- lat / lng: number</text>
+<text x="2116" y="931" font-size="10" fill="#1f2933">- roadKmh: number</text>
+<text x="2116" y="944" font-size="10" fill="#1f2933">- radiusKm: number</text>
+<text x="2116" y="965" font-size="10" fill="#1f2933">+ cityNamed(text)</text>
+<text x="2116" y="978" font-size="10" fill="#1f2933">+ nearestCity(lat, lng)</text>
+<rect x="2110" y="260" width="205" height="207" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2110.55" y="260.55" width="203.9" height="21.45" fill="#eef2f7"/>
+<text x="2212.5" y="275" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">PoiSet</text>
+<line x1="2110" y1="282" x2="2315" y2="282" stroke="#1f2933" stroke-width="1"/>
+<line x1="2110" y1="368" x2="2315" y2="368" stroke="#1f2933" stroke-width="1"/>
+<text x="2116" y="296" font-size="10" fill="#1f2933">- id: string</text>
+<text x="2116" y="309" font-size="10" fill="#1f2933">- userId: string</text>
+<text x="2116" y="322" font-size="10" fill="#1f2933">- name: string</text>
+<text x="2116" y="335" font-size="10" fill="#1f2933">- description: string</text>
+<text x="2116" y="348" font-size="10" fill="#1f2933">- poiIds: string[]</text>
+<text x="2116" y="361" font-size="10" fill="#1f2933">- createdAt / updatedAt: string</text>
+<text x="2116" y="382" font-size="10" fill="#1f2933">+ listSets(userId)</text>
+<text x="2116" y="395" font-size="10" fill="#1f2933">+ createSet(input)</text>
+<text x="2116" y="408" font-size="10" fill="#1f2933">+ updateSet(patch)</text>
+<text x="2116" y="421" font-size="10" fill="#1f2933">+ addToSet(userId, id, poiIds)</text>
+<text x="2116" y="434" font-size="10" fill="#1f2933">+ removeFromSet(userId, id, poiId)</text>
+<text x="2116" y="447" font-size="10" fill="#1f2933">+ deleteSet(userId, id)</text>
+<text x="2116" y="460" font-size="10" fill="#1f2933">+ restoreSet(userId, id)</text>
+<rect x="2440" y="520" width="290" height="168" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2440.55" y="520.55" width="288.9" height="21.45" fill="#eef2f7"/>
+<text x="2585.0" y="535" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">PoiReport</text>
+<line x1="2440" y1="542" x2="2730" y2="542" stroke="#1f2933" stroke-width="1"/>
+<line x1="2440" y1="641" x2="2730" y2="641" stroke="#1f2933" stroke-width="1"/>
+<text x="2446" y="556" font-size="10" fill="#1f2933">- id: string</text>
+<text x="2446" y="569" font-size="10" fill="#1f2933">- poiId: string</text>
+<text x="2446" y="582" font-size="10" fill="#1f2933">- userId: string</text>
+<text x="2446" y="595" font-size="10" fill="#1f2933">- type: &#x27;closed&#x27; | &#x27;hours&#x27; | &#x27;address&#x27; | &#x27;other&#x27;</text>
+<text x="2446" y="608" font-size="10" fill="#1f2933">- note: string</text>
+<text x="2446" y="621" font-size="10" fill="#1f2933">- at: string</text>
+<text x="2446" y="634" font-size="10" fill="#1f2933">- status: &#x27;open&#x27; | &#x27;resolved&#x27;</text>
+<text x="2446" y="655" font-size="10" fill="#1f2933">+ reportPoi(input)</text>
+<text x="2446" y="668" font-size="10" fill="#1f2933">+ listReports()</text>
+<text x="2446" y="681" font-size="10" fill="#1f2933">+ resolveReport(id)</text>
+<rect x="40" y="1250" width="220" height="245" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="40.55" y="1250.55" width="218.9" height="33.45" fill="#eef6ff"/>
+<text x="150.0" y="1265" text-anchor="middle" font-size="9.5" fill="#4b5563">«schema (shared FE/BE)»</text>
+<text x="150.0" y="1277" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Extraction</text>
+<line x1="40" y1="1284" x2="260" y2="1284" stroke="#1f2933" stroke-width="1"/>
+<line x1="40" y1="1487" x2="260" y2="1487" stroke="#1f2933" stroke-width="1"/>
+<text x="46" y="1298" font-size="10" fill="#1f2933">- destination: str | None</text>
+<text x="46" y="1311" font-size="10" fill="#1f2933">- start_date / end_date: str | None</text>
+<text x="46" y="1324" font-size="10" fill="#1f2933">- duration_days: int | None</text>
+<text x="46" y="1337" font-size="10" fill="#1f2933">- budget_vnd: int | None</text>
+<text x="46" y="1350" font-size="10" fill="#1f2933">- budget_scope: Literal[...] | None</text>
+<text x="46" y="1363" font-size="10" fill="#1f2933">- available_start / end: str | None</text>
+<text x="46" y="1376" font-size="10" fill="#1f2933">- interests: list[str]</text>
+<text x="46" y="1389" font-size="10" fill="#1f2933">- must_visit: list[str]</text>
+<text x="46" y="1402" font-size="10" fill="#1f2933">- avoid: list[str]</text>
+<text x="46" y="1415" font-size="10" fill="#1f2933">- preferred_places: list[str]</text>
+<text x="46" y="1428" font-size="10" fill="#1f2933">- hard_constraints: list[Constraint]</text>
+<text x="46" y="1441" font-size="10" fill="#1f2933">- soft_constraints: list[Constraint]</text>
+<text x="46" y="1454" font-size="10" fill="#1f2933">- missing_fields: list[...]</text>
+<text x="46" y="1467" font-size="10" fill="#1f2933">- possible_conflicts: list[...]</text>
+<text x="46" y="1480" font-size="10" fill="#1f2933">- needs_clarification: bool</text>
+<rect x="340" y="1250" width="175" height="194" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="340.55" y="1250.55" width="173.9" height="21.45" fill="#eef6ff"/>
+<text x="427.5" y="1265" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Intent</text>
+<line x1="340" y1="1272" x2="515" y2="1272" stroke="#1f2933" stroke-width="1"/>
+<line x1="340" y1="1436" x2="515" y2="1436" stroke="#1f2933" stroke-width="1"/>
+<text x="346" y="1286" font-size="10" fill="#1f2933">- city?: CityId</text>
+<text x="346" y="1299" font-size="10" fill="#1f2933">- days?: number</text>
+<text x="346" y="1312" font-size="10" fill="#1f2933">- budget?: number</text>
+<text x="346" y="1325" font-size="10" fill="#1f2933">- interests: Interests</text>
+<text x="346" y="1338" font-size="10" fill="#1f2933">- keywords: string[]</text>
+<text x="346" y="1351" font-size="10" fill="#1f2933">- pace?: Pace</text>
+<text x="346" y="1364" font-size="10" fill="#1f2933">- avoidTags: string[]</text>
+<text x="346" y="1377" font-size="10" fill="#1f2933">- mustInclude: string[]</text>
+<text x="346" y="1390" font-size="10" fill="#1f2933">- transport?: TransportPref</text>
+<text x="346" y="1403" font-size="10" fill="#1f2933">- dayStart / dayEnd?: number</text>
+<text x="346" y="1416" font-size="10" fill="#1f2933">- extraction?: Extraction</text>
+<text x="346" y="1429" font-size="10" fill="#1f2933">- chips: IntentChip[]</text>
+<rect x="640" y="1250" width="275" height="89" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="640.55" y="1250.55" width="273.9" height="33.45" fill="#eef6ff"/>
+<text x="777.5" y="1265" text-anchor="middle" font-size="9.5" fill="#4b5563">«module»</text>
+<text x="777.5" y="1277" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">intentFromExtraction</text>
+<line x1="640" y1="1284" x2="915" y2="1284" stroke="#1f2933" stroke-width="1"/>
+<line x1="640" y1="1292" x2="915" y2="1292" stroke="#1f2933" stroke-width="1"/>
+<text x="646" y="1306" font-size="10" fill="#1f2933">+ intentFromExtraction(response, city): Intent</text>
+<text x="646" y="1319" font-size="10" fill="#1f2933">+ forRetrieval(e: Extraction): Extraction</text>
+<text x="646" y="1332" font-size="10" fill="#1f2933">+ wishParts(value): WishPart[]</text>
+<rect x="640" y="1440" width="310" height="102" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="640.55" y="1440.55" width="308.9" height="33.45" fill="#eef6ff"/>
+<text x="795.0" y="1455" text-anchor="middle" font-size="9.5" fill="#4b5563">«module (facade) · api/planner.ts»</text>
+<text x="795.0" y="1467" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">planner API</text>
+<line x1="640" y1="1474" x2="950" y2="1474" stroke="#1f2933" stroke-width="1"/>
+<line x1="640" y1="1482" x2="950" y2="1482" stroke="#1f2933" stroke-width="1"/>
+<text x="646" y="1496" font-size="10" fill="#1f2933">+ analyzeRequest(text, form?, touched, city): Intent</text>
+<text x="646" y="1509" font-size="10" fill="#1f2933">+ buildInput(request, intent): PlanInput</text>
+<text x="646" y="1522" font-size="10" fill="#1f2933">+ generateItinerary(request, intent): PlanReport</text>
+<text x="646" y="1535" font-size="10" fill="#1f2933">+ adjustItinerary(trip, extraText, profile): Trip</text>
+<rect x="340" y="1560" width="130" height="129" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="340.55" y="1560.55" width="128.9" height="21.45" fill="#eef6ff"/>
+<text x="405.0" y="1575" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">PlanReport</text>
+<line x1="340" y1="1582" x2="470" y2="1582" stroke="#1f2933" stroke-width="1"/>
+<line x1="340" y1="1681" x2="470" y2="1681" stroke="#1f2933" stroke-width="1"/>
+<text x="346" y="1596" font-size="10" fill="#1f2933">- intent: Intent</text>
+<text x="346" y="1609" font-size="10" fill="#1f2933">- weather: Weather</text>
+<text x="346" y="1622" font-size="10" fill="#1f2933">- considered: number</text>
+<text x="346" y="1635" font-size="10" fill="#1f2933">- excluded: number</text>
+<text x="346" y="1648" font-size="10" fill="#1f2933">- trip: Trip</text>
+<text x="346" y="1661" font-size="10" fill="#1f2933">- notFound: string[]</text>
+<text x="346" y="1674" font-size="10" fill="#1f2933">- warnings: string[]</text>
+<rect x="640" y="1680" width="320" height="89" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="640.55" y="1680.55" width="318.9" height="33.45" fill="#eef6ff"/>
+<text x="800.0" y="1695" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · domain/planner.ts + solver.ts»</text>
+<text x="800.0" y="1707" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">planner</text>
+<line x1="640" y1="1714" x2="960" y2="1714" stroke="#1f2933" stroke-width="1"/>
+<line x1="640" y1="1735" x2="960" y2="1735" stroke="#1f2933" stroke-width="1"/>
+<text x="646" y="1728" font-size="10" fill="#1f2933">- CANDIDATES_PER_DAY = 9</text>
+<text x="646" y="1749" font-size="10" fill="#1f2933">+ planTrip(input: PlanInput, candidates?: Poi[]): Trip</text>
+<text x="646" y="1762" font-size="10" fill="#1f2933">+ solveDay(problem: DayProblem): DayResult</text>
+<rect x="2250" y="60" width="340" height="89" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2250.55" y="60.55" width="338.9" height="33.45" fill="#eef2f7"/>
+<text x="2420.0" y="75" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · domain/replan.ts»</text>
+<text x="2420.0" y="87" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">replan</text>
+<line x1="2250" y1="94" x2="2590" y2="94" stroke="#1f2933" stroke-width="1"/>
+<line x1="2250" y1="115" x2="2590" y2="115" stroke="#1f2933" stroke-width="1"/>
+<text x="2256" y="108" font-size="10" fill="#1f2933">- LAMBDAS: LambdaSpec[]</text>
+<text x="2256" y="129" font-size="10" fill="#1f2933">+ replanDay(trip, dayIndex, now, disruption): ReplanResult</text>
+<text x="2256" y="142" font-size="10" fill="#1f2933">+ applyReplan(trip, dayIndex, completed, option): Trip</text>
+<rect x="980" y="1250" width="275" height="76" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="980.55" y="1250.55" width="273.9" height="33.45" fill="#eef6ff"/>
+<text x="1117.5" y="1265" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · api/extraction.ts»</text>
+<text x="1117.5" y="1277" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">extraction client</text>
+<line x1="980" y1="1284" x2="1255" y2="1284" stroke="#1f2933" stroke-width="1"/>
+<line x1="980" y1="1305" x2="1255" y2="1305" stroke="#1f2933" stroke-width="1"/>
+<text x="986" y="1298" font-size="10" fill="#1f2933">- llmEnabled: boolean</text>
+<text x="986" y="1319" font-size="10" fill="#1f2933">+ extractConstraints(text): ExtractionResponse</text>
+<rect x="980" y="1440" width="330" height="141" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="980.55" y="1440.55" width="328.9" height="33.45" fill="#eef6ff"/>
+<text x="1145.0" y="1455" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · api/catalog.ts»</text>
+<text x="1145.0" y="1467" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">catalog client</text>
+<line x1="980" y1="1474" x2="1310" y2="1474" stroke="#1f2933" stroke-width="1"/>
+<line x1="980" y1="1508" x2="1310" y2="1508" stroke="#1f2933" stroke-width="1"/>
+<text x="986" y="1488" font-size="10" fill="#1f2933">- PAGE_SIZE = 20</text>
+<text x="986" y="1501" font-size="10" fill="#1f2933">- cardById: Map&lt;string, PoiCard&gt;</text>
+<text x="986" y="1522" font-size="10" fill="#1f2933">+ retrievePlaces(extraction, options): RetrievalResponse</text>
+<text x="986" y="1535" font-size="10" fill="#1f2933">+ takePlaces(response, city): FoundPlaces</text>
+<text x="986" y="1548" font-size="10" fill="#1f2933">+ loadCatalog(city): number</text>
+<text x="986" y="1561" font-size="10" fill="#1f2933">+ loadPlaces(ids)</text>
+<text x="986" y="1574" font-size="10" fill="#1f2933">+ cardOf(id): PoiCard</text>
+<rect x="980" y="1660" width="215" height="76" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="980.55" y="1660.55" width="213.9" height="33.45" fill="#eef6ff"/>
+<text x="1087.5" y="1675" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · api/routing.ts»</text>
+<text x="1087.5" y="1687" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">routing client</text>
+<line x1="980" y1="1694" x2="1195" y2="1694" stroke="#1f2933" stroke-width="1"/>
+<line x1="980" y1="1702" x2="1195" y2="1702" stroke="#1f2933" stroke-width="1"/>
+<text x="986" y="1716" font-size="10" fill="#1f2933">+ routeDraft(trip, pinLocked): Trip</text>
+<text x="986" y="1729" font-size="10" fill="#1f2933">+ routeSchedule(trip): Trip</text>
+<rect x="1385" y="1330" width="320" height="115" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1385.55" y="1330.55" width="318.9" height="33.45" fill="#eefaf3"/>
+<text x="1545.0" y="1345" text-anchor="middle" font-size="9.5" fill="#4b5563">«FastAPI · app/api/routes»</text>
+<text x="1545.0" y="1357" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">APIRouter</text>
+<line x1="1385" y1="1364" x2="1705" y2="1364" stroke="#1f2933" stroke-width="1"/>
+<line x1="1385" y1="1372" x2="1705" y2="1372" stroke="#1f2933" stroke-width="1"/>
+<text x="1391" y="1386" font-size="10" fill="#1f2933">+ chat(body: ExtractionRequest): ExtractionResponse</text>
+<text x="1391" y="1399" font-size="10" fill="#1f2933">+ retrieval(body: RetrievalRequest): RetrievalResponse</text>
+<text x="1391" y="1412" font-size="10" fill="#1f2933">+ routing(body: RoutingRequest): RoutingResponse</text>
+<text x="1391" y="1425" font-size="10" fill="#1f2933">+ routing_days(body: RoutingRequest): DaysResponse</text>
+<text x="1391" y="1438" font-size="10" fill="#1f2933">+ health_check(): dict</text>
+<rect x="1385" y="1640" width="215" height="193" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1385.55" y="1640.55" width="213.9" height="33.45" fill="#eefaf3"/>
+<text x="1492.5" y="1655" text-anchor="middle" font-size="9.5" fill="#4b5563">«schema · app/schemas/retrieval.py»</text>
+<text x="1492.5" y="1667" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">PoiCard</text>
+<line x1="1385" y1="1674" x2="1600" y2="1674" stroke="#1f2933" stroke-width="1"/>
+<line x1="1385" y1="1825" x2="1600" y2="1825" stroke="#1f2933" stroke-width="1"/>
+<text x="1391" y="1688" font-size="10" fill="#1f2933">- id: str</text>
+<text x="1391" y="1701" font-size="10" fill="#1f2933">- name: str</text>
+<text x="1391" y="1714" font-size="10" fill="#1f2933">- kind: str</text>
+<text x="1391" y="1727" font-size="10" fill="#1f2933">- category: str | None</text>
+<text x="1391" y="1740" font-size="10" fill="#1f2933">- ward / address: str | None</text>
+<text x="1391" y="1753" font-size="10" fill="#1f2933">- lat / lon: float | None</text>
+<text x="1391" y="1766" font-size="10" fill="#1f2933">- score: float</text>
+<text x="1391" y="1779" font-size="10" fill="#1f2933">- score_parts: dict[str, float]</text>
+<text x="1391" y="1792" font-size="10" fill="#1f2933">- reasons: list[str]</text>
+<text x="1391" y="1805" font-size="10" fill="#1f2933">- flags: list[str]</text>
+<text x="1391" y="1818" font-size="10" fill="#1f2933">- opening_hours_raw: str | None</text>
+<rect x="1760" y="1250" width="415" height="102" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1760.55" y="1250.55" width="413.9" height="33.45" fill="#eefaf3"/>
+<text x="1967.5" y="1265" text-anchor="middle" font-size="9.5" fill="#4b5563">«package · services/extraction»</text>
+<text x="1967.5" y="1277" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">extraction service</text>
+<line x1="1760" y1="1284" x2="2175" y2="1284" stroke="#1f2933" stroke-width="1"/>
+<line x1="1760" y1="1305" x2="2175" y2="1305" stroke="#1f2933" stroke-width="1"/>
+<text x="1766" y="1298" font-size="10" fill="#1f2933">- TIMEZONE = Asia/Ho_Chi_Minh</text>
+<text x="1766" y="1319" font-size="10" fill="#1f2933">+ extract_constraints(client, text, reference_date): ExtractionResponse</text>
+<text x="1766" y="1332" font-size="10" fill="#1f2933">+ processing.repair_extraction(extraction)</text>
+<text x="1766" y="1345" font-size="10" fill="#1f2933">+ processing.consistency_issues(extraction)</text>
+<rect x="1760" y="1440" width="320" height="128" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1760.55" y="1440.55" width="318.9" height="33.45" fill="#eefaf3"/>
+<text x="1920.0" y="1455" text-anchor="middle" font-size="9.5" fill="#4b5563">«package · services/retrieval»</text>
+<text x="1920.0" y="1467" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">retrieval service</text>
+<line x1="1760" y1="1474" x2="2080" y2="1474" stroke="#1f2933" stroke-width="1"/>
+<line x1="1760" y1="1508" x2="2080" y2="1508" stroke="#1f2933" stroke-width="1"/>
+<text x="1766" y="1488" font-size="10" fill="#1f2933">- RETRIEVAL_VERSION = &#x27;retrieval-v2&#x27;</text>
+<text x="1766" y="1501" font-size="10" fill="#1f2933">- SUPPORTED_DESTINATION = &#x27;Ho Chi Minh City&#x27;</text>
+<text x="1766" y="1522" font-size="10" fill="#1f2933">+ retrieve(connect, request, embed): RetrievalResponse</text>
+<text x="1766" y="1535" font-size="10" fill="#1f2933">+ names.lookup(conn, query): NameMatch</text>
+<text x="1766" y="1548" font-size="10" fill="#1f2933">+ candidates.keyword_hits(conn, request, params)</text>
+<text x="1766" y="1561" font-size="10" fill="#1f2933">+ semantic.semantic_hits(conn, vector, params)</text>
+<rect x="1760" y="1680" width="360" height="128" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1760.55" y="1680.55" width="358.9" height="33.45" fill="#eefaf3"/>
+<text x="1940.0" y="1695" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · services/routing/service.py»</text>
+<text x="1940.0" y="1707" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">routing service</text>
+<line x1="1760" y1="1714" x2="2120" y2="1714" stroke="#1f2933" stroke-width="1"/>
+<line x1="1760" y1="1748" x2="2120" y2="1748" stroke="#1f2933" stroke-width="1"/>
+<text x="1766" y="1728" font-size="10" fill="#1f2933">- ROUTING_VERSION = &#x27;routing-v2&#x27;</text>
+<text x="1766" y="1741" font-size="10" fill="#1f2933">- WALK_THRESHOLD_KM = 1.0</text>
+<text x="1766" y="1762" font-size="10" fill="#1f2933">+ plan(connect, client, settings, request): RoutingResponse</text>
+<text x="1766" y="1775" font-size="10" fill="#1f2933">+ plan_days(connect, client, settings, request): DaysResponse</text>
+<text x="1766" y="1788" font-size="10" fill="#1f2933">+ prepare(connect, client, settings, request): Prepared</text>
+<text x="1766" y="1801" font-size="10" fill="#1f2933">+ solve(prep, time_limit_s): Tours</text>
+<rect x="2250" y="1250" width="410" height="103" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2250.55" y="1250.55" width="408.9" height="21.45" fill="#eefaf3"/>
+<text x="2455.0" y="1265" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">GeminiClient</text>
+<line x1="2250" y1="1272" x2="2660" y2="1272" stroke="#1f2933" stroke-width="1"/>
+<line x1="2250" y1="1332" x2="2660" y2="1332" stroke="#1f2933" stroke-width="1"/>
+<text x="2256" y="1286" font-size="10" fill="#1f2933">- _http: httpx.AsyncClient</text>
+<text x="2256" y="1299" font-size="10" fill="#1f2933">- _settings: Settings</text>
+<text x="2256" y="1312" font-size="10" fill="#1f2933">- _headers: dict</text>
+<text x="2256" y="1325" font-size="10" fill="#1f2933">- model: str {property}</text>
+<text x="2256" y="1346" font-size="10" fill="#1f2933">+ generate_json(system_prompt, user_text, response_schema): Generation</text>
+<rect x="2550" y="1400" width="260" height="102" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2550.55" y="1400.55" width="258.9" height="33.45" fill="#eefaf3"/>
+<text x="2680.0" y="1415" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · services/gemini.py»</text>
+<text x="2680.0" y="1427" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">gemini embeddings</text>
+<line x1="2550" y1="1434" x2="2810" y2="1434" stroke="#1f2933" stroke-width="1"/>
+<line x1="2550" y1="1468" x2="2810" y2="1468" stroke="#1f2933" stroke-width="1"/>
+<text x="2556" y="1448" font-size="10" fill="#1f2933">- EMBEDDING_DIMENSIONS = 768</text>
+<text x="2556" y="1461" font-size="10" fill="#1f2933">- EMBED_BATCH_LIMIT = 100</text>
+<text x="2556" y="1482" font-size="10" fill="#1f2933">+ embed_texts(http, settings, texts, keys)</text>
+<text x="2556" y="1495" font-size="10" fill="#1f2933">+ embed_all(http, settings, texts, keys)</text>
+<rect x="2250" y="1430" width="255" height="77" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2250.55" y="1430.55" width="253.9" height="21.45" fill="#eefaf3"/>
+<text x="2377.5" y="1445" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">QueryCache</text>
+<line x1="2250" y1="1452" x2="2505" y2="1452" stroke="#1f2933" stroke-width="1"/>
+<line x1="2250" y1="1486" x2="2505" y2="1486" stroke="#1f2933" stroke-width="1"/>
+<text x="2256" y="1466" font-size="10" fill="#1f2933">- _size: int</text>
+<text x="2256" y="1479" font-size="10" fill="#1f2933">- _items: OrderedDict[str, list[float]]</text>
+<text x="2256" y="1500" font-size="10" fill="#1f2933">+ get_many(texts, embed): dict[str, list[float]]</text>
+<rect x="2250" y="1590" width="255" height="180" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2250.55" y="1590.55" width="253.9" height="33.45" fill="#eefaf3"/>
+<text x="2377.5" y="1605" text-anchor="middle" font-size="9.5" fill="#4b5563">«table · PostgreSQL»</text>
+<text x="2377.5" y="1617" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">pois</text>
+<line x1="2250" y1="1624" x2="2505" y2="1624" stroke="#1f2933" stroke-width="1"/>
+<line x1="2250" y1="1762" x2="2505" y2="1762" stroke="#1f2933" stroke-width="1"/>
+<text x="2256" y="1638" font-size="10" fill="#1f2933">- id: text PK</text>
+<text x="2256" y="1651" font-size="10" fill="#1f2933">- name: text</text>
+<text x="2256" y="1664" font-size="10" fill="#1f2933">- kind: text</text>
+<text x="2256" y="1677" font-size="10" fill="#1f2933">- category: text</text>
+<text x="2256" y="1690" font-size="10" fill="#1f2933">- latitude / longitude: double</text>
+<text x="2256" y="1703" font-size="10" fill="#1f2933">- opening_hours: jsonb</text>
+<text x="2256" y="1716" font-size="10" fill="#1f2933">- description: text</text>
+<text x="2256" y="1729" font-size="10" fill="#1f2933">- name_lex / search_lex: tsvector</text>
+<text x="2256" y="1742" font-size="10" fill="#1f2933">- embedding: vector(768)</text>
+<text x="2256" y="1755" font-size="10" fill="#1f2933">- embedding_hash: text</text>
+<rect x="1760" y="1900" width="320" height="102" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1760.55" y="1900.55" width="318.9" height="33.45" fill="#eefaf3"/>
+<text x="1920.0" y="1915" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · Iterated Local Search»</text>
+<text x="1920.0" y="1927" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">ils</text>
+<line x1="1760" y1="1934" x2="2080" y2="1934" stroke="#1f2933" stroke-width="1"/>
+<line x1="1760" y1="1955" x2="2080" y2="1955" stroke="#1f2933" stroke-width="1"/>
+<text x="1766" y="1948" font-size="10" fill="#1f2933">- MAX_NO_IMPROVE = 150</text>
+<text x="1766" y="1969" font-size="10" fill="#1f2933">+ solve(inst, time_limit_s, seed, ...): (Tours, Trace)</text>
+<text x="1766" y="1982" font-size="10" fill="#1f2933">+ rebalance(inst, tours, cost, deadline): Tours</text>
+<text x="1766" y="1995" font-size="10" fill="#1f2933">+ fill(inst, tours, cost, deadline): Tours</text>
+<rect x="2250" y="1900" width="255" height="103" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2250.55" y="1900.55" width="253.9" height="21.45" fill="#eefaf3"/>
+<text x="2377.5" y="1915" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Instance</text>
+<line x1="2250" y1="1922" x2="2505" y2="1922" stroke="#1f2933" stroke-width="1"/>
+<line x1="2250" y1="1982" x2="2505" y2="1982" stroke="#1f2933" stroke-width="1"/>
+<text x="2256" y="1936" font-size="10" fill="#1f2933">- nodes: tuple[Node, ...]</text>
+<text x="2256" y="1949" font-size="10" fill="#1f2933">- travel: tuple[tuple[int, ...], ...]</text>
+<text x="2256" y="1962" font-size="10" fill="#1f2933">- tours: tuple[Window, ...]</text>
+<text x="2256" y="1975" font-size="10" fill="#1f2933">- no_adjacent: frozenset[str]</text>
+<text x="2256" y="1996" font-size="10" fill="#1f2933">+ clash(a, b): bool</text>
+<rect x="340" y="1720" width="265" height="76" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="340.55" y="1720.55" width="263.9" height="33.45" fill="#eef6ff"/>
+<text x="472.5" y="1735" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · domain/mergeExtraction.ts»</text>
+<text x="472.5" y="1747" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">mergeExtraction</text>
+<line x1="340" y1="1754" x2="605" y2="1754" stroke="#1f2933" stroke-width="1"/>
+<line x1="340" y1="1762" x2="605" y2="1762" stroke="#1f2933" stroke-width="1"/>
+<text x="346" y="1776" font-size="10" fill="#1f2933">+ mergeExtraction(first, second): Extraction</text>
+<text x="346" y="1789" font-size="10" fill="#1f2933">+ applyForm(read, form, city): Extraction</text>
+<rect x="1385" y="1880" width="245" height="102" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="1385.55" y="1880.55" width="243.9" height="33.45" fill="#eefaf3"/>
+<text x="1507.5" y="1895" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · routing/validate.py + rules.py»</text>
+<text x="1507.5" y="1907" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">validate</text>
+<line x1="1385" y1="1914" x2="1630" y2="1914" stroke="#1f2933" stroke-width="1"/>
+<line x1="1385" y1="1948" x2="1630" y2="1948" stroke="#1f2933" stroke-width="1"/>
+<text x="1391" y="1928" font-size="10" fill="#1f2933">- Tours = list[list[int]]</text>
+<text x="1391" y="1941" font-size="10" fill="#1f2933">- RULES: Rules (rules.py)</text>
+<text x="1391" y="1962" font-size="10" fill="#1f2933">+ validate(instance, tours): Check</text>
+<text x="1391" y="1975" font-size="10" fill="#1f2933">+ tour_errors(instance, tour, day)</text>
+<rect x="2550" y="1800" width="260" height="63" fill="#ffffff" stroke="#1f2933" stroke-width="1.1"/>
+<rect x="2550.55" y="1800.55" width="258.9" height="33.45" fill="#eefaf3"/>
+<text x="2680.0" y="1815" text-anchor="middle" font-size="9.5" fill="#4b5563">«module · routing/osrm.py»</text>
+<text x="2680.0" y="1827" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">osrm</text>
+<line x1="2550" y1="1834" x2="2810" y2="1834" stroke="#1f2933" stroke-width="1"/>
+<line x1="2550" y1="1842" x2="2810" y2="1842" stroke="#1f2933" stroke-width="1"/>
+<text x="2556" y="1856" font-size="10" fill="#1f2933">+ road_km(client, base_url, points, timeout_s)</text>
+</svg>

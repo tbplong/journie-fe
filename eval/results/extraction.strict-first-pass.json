@@ -1,0 +1,189 @@
+{
+  "generatedAt": "2026-11-08T15:13:59.762Z",
+  "model": "gemini-3.5-flash-lite",
+  "promptVersion": "semantic-v3",
+  "queries": 62,
+  "answered": 62,
+  "failed": [],
+  "callsPerQuery": 1.02,
+  "latencyMs": {
+    "mean": 5246,
+    "p50": 1811,
+    "p95": 38772
+  },
+  "days": {
+    "stated": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1
+    },
+    "absent": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1
+    }
+  },
+  "budget": {
+    "stated": {
+      "n": 17,
+      "correct": 17,
+      "accuracy": 1
+    },
+    "absent": {
+      "n": 3,
+      "correct": 3,
+      "accuracy": 1
+    }
+  },
+  "interests": {
+    "queries": 29,
+    "tp": 35,
+    "fp": 2,
+    "fn": 0,
+    "precision": 0.946,
+    "recall": 1,
+    "f1": 0.972,
+    "exactMatch": 0.931
+  },
+  "avoid": {
+    "queries": 20,
+    "tp": 15,
+    "fp": 4,
+    "fn": 5,
+    "precision": 0.789,
+    "recall": 0.75,
+    "f1": 0.769,
+    "exactMatch": 0.65
+  },
+  "mustVisit": {
+    "queries": 14,
+    "tp": 13,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1,
+    "recall": 0.867,
+    "f1": 0.929,
+    "exactMatch": 0.857
+  },
+  "misses": [
+    {
+      "id": "b07",
+      "text": "thích văn hoá và lịch sử",
+      "field": "interests",
+      "gold": [
+        "culture"
+      ],
+      "predicted": [
+        "culture",
+        "lich su"
+      ]
+    },
+    {
+      "id": "c02",
+      "text": "tôi dị ứng đậu phộng",
+      "field": "avoid",
+      "gold": [
+        "đậu phộng"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "c03",
+      "text": "không uống cà phê",
+      "field": "avoid",
+      "gold": [
+        "cà phê"
+      ],
+      "predicted": [
+        "cafe"
+      ]
+    },
+    {
+      "id": "c06",
+      "text": "mình ăn chay, không ăn thịt",
+      "field": "avoid",
+      "gold": [
+        "thịt"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "c08",
+      "text": "dị ứng hải sản, không ăn cay",
+      "field": "avoid",
+      "gold": [
+        "hải sản",
+        "cay"
+      ],
+      "predicted": [
+        "không ăn cay"
+      ]
+    },
+    {
+      "id": "c10",
+      "text": "không thích đi bộ nhiều",
+      "field": "avoid",
+      "gold": [],
+      "predicted": [
+        "không thích đi bộ nhiều"
+      ]
+    },
+    {
+      "id": "c11",
+      "text": "không ăn hải sản và không đi chợ",
+      "field": "avoid",
+      "gold": [
+        "hải sản",
+        "chợ"
+      ],
+      "predicted": [
+        "haisan",
+        "cho",
+        "hai sản"
+      ]
+    },
+    {
+      "id": "d10",
+      "text": "ăn ở Phở Hòa Pasteur",
+      "field": "must",
+      "gold": [
+        "Phở Hòa Pasteur"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "e01",
+      "text": "2 ngày 3 triệu, thích bảo tàng và cà phê, không ăn hải sản",
+      "field": "avoid",
+      "gold": [
+        "hải sản"
+      ],
+      "predicted": [
+        "haisan"
+      ]
+    },
+    {
+      "id": "e08",
+      "text": "3 ngày, thích bảo tàng, văn hoá, ghé Nhà hát Thành phố, không uống cà phê",
+      "field": "interests",
+      "gold": [
+        "museum",
+        "culture"
+      ],
+      "predicted": [
+        "museum",
+        "culture",
+        "cafe"
+      ]
+    },
+    {
+      "id": "e08",
+      "text": "3 ngày, thích bảo tàng, văn hoá, ghé Nhà hát Thành phố, không uống cà phê",
+      "field": "must",
+      "gold": [
+        "Nhà hát Thành phố"
+      ],
+      "predicted": []
+    }
+  ]
+}

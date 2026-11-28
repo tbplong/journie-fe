@@ -1,0 +1,2812 @@
+{
+ "counts": {
+  "places": 138,
+  "valued": 35,
+  "disputes": 12,
+  "contested": 0
+ },
+ "verifier_summaries": [
+  "The researcher was careful about leaving places null, applied the show-plus-15 rule correctly, and handled the Golden Bridge gateway case well. Their sourcing was weaker than their notes suggest. (1) They labelled vietnamtourism.com as the Vietnam National Authority of Tourism, a government source. Its own legal page says it is an independent private travel media outlet with no government link, no named operator and unsigned articles. They relied on it for Cung An Định, Lăng Bác, Thiên Hậu, Làng hương, the Military History Museum and the Opera House. (2) Several values rest on templated or AI-style sites the rules exclude: offpeaktrip.com (no byline, boilerplate text), kupi.com (an image credited to \"Kupi.com AI\"), nomadotravel.app, travelsetu.com and nomads-travel-guide.com. (3) Three citations do not say what was claimed. The Traveloka page on Bến Thành gives no duration. The LocalVietnam page on Phu Văn Lâu calls it only a quick stop, with no 20-40 minute figure. The vietnamtourism.com Opera House page says 60-90 minutes, not 70 (VnExpress does confirm 70). (4) They missed some status changes. The HCMC Ho Chi Minh Museum at Nhà Rồng closed for renovation from 7 May 2026, and I found no confirmed reopening. Part of Công viên 23/9 has been fenced since late October 2026 for the Bến Thành–Cần Giờ rail station. Only the base and first level of Cột cờ are open to visitors. Snow Town's official website domain no longer resolves. (5) They described tiNiWorld Gigamall as a miniature world; it is a children's indoor playground chain. Of the 27 values they proposed, I accept 19 (some with small changes inside the agreement margin) and reject 8: FITO, Tiniworld Gigamall, Bến Thành, Vietopia, Bình Tây, the Da Nang Fine Arts Museum, the Hanoi HCM Museum and Cầu Mống. I agree with their null for all 42 null places, and I add status or category notes to 5 of them.",
+  "I accept 65 of the 69 entries and reject 4. I opened the cited sources for all 15 places where the researcher gave minutes, plus extra searches for the high-impact null places. Most quoted figures do match the page text, but the source quality is weaker than the researcher implies. (1) vietnamtourism.com is not a government site. Its legal notice calls it independent travel media with no tie to the national tourism authority, and its articles are unsigned. Six values rest wholly or partly on it, and the Women's Museum entry wrongly names it as the government body. (2) Nomado Travel is an unsigned guide with affiliate links. Three values that sit well above the category value rest on it alone: Ngọc Hoàng at 70, Helio at 120 and the HCMC History Museum at 120. I reject all three. The Nomado pagoda page even contradicts itself (\"less than an hour\" in its own text), and Frommer's gives one to two hours for the History Museum. (3) Two citations are wrong: the Headout Skydeck page gives no visit length (Civitatis lists 1 hour), and north-vietnam.com says 1-2 hours for Hỏa Lò, not 60-90 minutes. Neither changes the value. (4) The researcher missed three things: the 70-minute run time of Mơ Show at the Phú Thọ circus (Sài Gòn Giải Phóng), which gives 85 minutes; the summer-only season of the Hồ Tây water park; and the fact that Vin Gallery, like TomuraLee, is a gallery filed as a museum. The many null decisions were cautious and almost all sound. Category changes I back: TomuraLee and Vin Gallery to attraction.gallery, Kỳ Đài Quang Trung to food.street_food. I would not move Nhà hát Thành phố to performing arts, because daytime visitors see only the outside. TripAdvisor (403) and Trip.com (432) pages could not be opened, so those claims are unverified."
+ ],
+ "disputes": [
+  {
+   "id": "bao-tang-fito-a44647",
+   "name": "Bảo Tàng FITO",
+   "researcher": 150,
+   "verifier": 60,
+   "verifier_reason": "The Trip.com link is blocked by a captcha, and its URL is labelled Chánh Phú Hòa (Bình Dương), not District 10. LocalVietnam (signed) gives a suggested visit of 1 hour, including a 15-min film. Three-hour figures elsewhere are half-day tours that cover other stops."
+  },
+  {
+   "id": "tiniworld-fd8a99",
+   "name": "Tiniworld",
+   "researcher": 90,
+   "verifier": null,
+   "verifier_reason": "The only source, offpeaktrip.com, is templated with no byline; it even labels the place an outdoor 'other'. tiNiWorld is a children's indoor playground chain, not a miniature world. No reliable duration, so keep the category value."
+  },
+  {
+   "id": "cho-ben-thanh-68e3af",
+   "name": "Chợ Bến Thành",
+   "researcher": 120,
+   "verifier": 90,
+   "verifier_reason": "The Traveloka page states no visit length, so that citation is wrong. Nomads Travel Guide (templated, no author) says 1-2 hours. vietnamtourism.com says 1.5-2 hours with a meal, 30 min rushed. A typical browse is about 90 min; 120 is the meal-included upper end. The market is open (Tết 2026 facelift)."
+  },
+  {
+   "id": "vietopia-b1dcf1",
+   "name": "Vietopia",
+   "researcher": 90,
+   "verifier": null,
+   "verifier_reason": "The only source is offpeaktrip.com, which is templated with no byline. The official site is live (Christmas event Dec 2026) but states no play time. A kids' role-play city plausibly needs longer than 90 min. Keep the category value until a reliable figure exists."
+  },
+  {
+   "id": "cho-binh-tay-116947",
+   "name": "Chợ Bình Tây",
+   "researcher": 90,
+   "verifier": null,
+   "verifier_reason": "The only source is Nomads Travel Guide, templated with no author; it does say 1-2 hours. I found nothing stronger, and a non-shopping tourist browse is closer to an hour. Keep the category value of 60."
+  },
+  {
+   "id": "bao-tang-my-thuat-da-nang-43e70a",
+   "name": "Bảo tàng Mỹ thuật Đà Nẵng",
+   "researcher": 120,
+   "verifier": null,
+   "verifier_reason": "TravelSetu and OffPeakTrip are content-farm or templated sites, and OffPeakTrip actually says 1.5h, not 2-3h. Signed blogs such as Expatolife and You in Da Nang give about 1.5h (1-2h). That matches the category value of 90, so 120 is too high."
+  },
+  {
+   "id": "bao-tang-ho-chi-minh-2dd70a",
+   "name": "Bảo tàng Hồ Chí Minh",
+   "researcher": 120,
+   "verifier": null,
+   "verifier_reason": "Nomadotravel (1.5-2.5h) has no byline, is affiliate-driven and reads as templated. LocalVietnam (signed) says reserve a maximum of two hours, and other guides say 1-2 hours. A typical visit is about 90, the current value."
+  },
+  {
+   "id": "cau-mong-dbb4a4",
+   "name": "Cầu Mống",
+   "researcher": 65,
+   "verifier": null,
+   "verifier_reason": "The 45-90 min figure is for the whole Bến Nghé canal walk. The same page suggests about 20 min at mid-bridge. This is not the gateway case (no larger visit is needed to reach it), and the source is weak. Keep the category value or go shorter."
+  },
+  {
+   "id": "chua-ngoc-hoang-dd6109",
+   "name": "Chùa Ngọc Hoàng",
+   "researcher": 70,
+   "verifier": null,
+   "verifier_reason": "Rejected. The only source is Nomado Travel, an unsigned guide with affiliate links. It does list 45-90 minutes, but its own text says the temple can be seen thoroughly in under an hour. No guide, airline page or news source I checked gives a figure. The category value of 40 fits a compact pagoda."
+  },
+  {
+   "id": "rap-xiec-va-bieu-dien-da-nang-phu-tho-8dc8dd",
+   "name": "Rạp Xiếc và Biểu diễn đa năng Phú Thọ",
+   "researcher": null,
+   "verifier": 85,
+   "verifier_reason": "The researcher missed the show length. Sài Gòn Giải Phóng (12 Jun 2026) says Mơ Show runs 70 minutes; adding 15 to be seated gives 85. The regular run is 10:00 Saturday and Sunday mornings, with extra Mid-Autumn shows reported by Tuổi Trẻ."
+  },
+  {
+   "id": "cho-dem-helio-b8cf16",
+   "name": "Chợ đêm Helio",
+   "researcher": 120,
+   "verifier": 90,
+   "verifier_reason": "The Nomado page does say 1.5-2.5 hours, but it is unsigned and is the only source given. Offpeaktrip, an automated guide, says 1.5 hours, and others say at least 30 minutes. For a night food market where people eat dinner, 90 minutes is the defensible centre; 120 is too high."
+  },
+  {
+   "id": "bao-tang-lich-su-thanh-pho-ho-chi-minh-e64ec0",
+   "name": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh",
+   "researcher": 120,
+   "verifier": null,
+   "verifier_reason": "Rejected 120. The only source is Nomado, which is unsigned. Frommer's says an hour or two will do for most casual visitors, so the current 90 fits. I confirm the address issue: Frommer's gives 2 Nguyễn Bỉnh Khiêm, while the stored address is the zoo's. Open in 2026; no closure found."
+  }
+ ],
+ "decisions": [
+  {
+   "id": "bao-tang-fito-a44647",
+   "minutes": 60,
+   "winner": "verifier",
+   "reason": "Checked LocalVietnam (signed, Marnick Schoonderwoerd, 41 Hoàng Dư Khương, D10): it suggests a 1-hour visit. The Trip.com figure was unverifiable and for a mislabelled listing. 60 replaces the museum category value of 90.",
+   "contested": false
+  },
+  {
+   "id": "tiniworld-fd8a99",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "The only source is a templated, unsigned offpeaktrip page that misdescribes the venue (a children's indoor playground). No reliable duration, so keep the category value.",
+   "contested": false
+  },
+  {
+   "id": "cho-ben-thanh-68e3af",
+   "minutes": 90,
+   "winner": "verifier",
+   "reason": "Checked vietnamtourism.com: 1.5–2h including a meal, and 90 min for a meal plus a look around. Nomads says 1–2h. The Traveloka citation gave no length. 90 is the typical browse; 120 is the shopping or meal upper end.",
+   "contested": false
+  },
+  {
+   "id": "vietopia-b1dcf1",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "The only figure comes from an unsigned templated offpeaktrip page, and the official site states no play time. Keep the category value.",
+   "contested": false
+  },
+  {
+   "id": "cho-binh-tay-116947",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "There is one unsigned, templated source (Nomads, 1–2h) and nothing stronger. For a sightseeing browse of a wholesale market, the market category value of 60 stands.",
+   "contested": false
+  },
+  {
+   "id": "bao-tang-my-thuat-da-nang-43e70a",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "TravelSetu is a content farm, and OffPeakTrip actually says 1.5h. Signed blogs (Expatolife, You in Da Nang) give about 1.5h, which equals the museum category value of 90.",
+   "contested": false
+  },
+  {
+   "id": "bao-tang-ho-chi-minh-2dd70a",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "Checked LocalVietnam (signed): reserve a maximum of two hours. Nomadotravel is unsigned. A typical visit sits at about 90, the current category value.",
+   "contested": false
+  },
+  {
+   "id": "cau-mong-dbb4a4",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "The 45–90 min figure covers the whole Bến Nghé canal walk, not the 128 m bridge. This is not a gateway case and the source is unsigned, so keep the category value.",
+   "contested": false
+  },
+  {
+   "id": "chua-ngoc-hoang-dd6109",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "The only source is unsigned Nomado, and its own text says the temple can be seen in under an hour. No guide or news source gives a figure. Keep the pagoda value of 40.",
+   "contested": false
+  },
+  {
+   "id": "rap-xiec-va-bieu-dien-da-nang-phu-tho-8dc8dd",
+   "minutes": 85,
+   "winner": "verifier",
+   "reason": "Checked SGGP (12 Jun 2026): Mơ Show runs 70 min at Phú Thọ circus, HCMC, so 70 + 15 to be seated gives 85. Tuổi Trẻ shows it still active in Sep–Nov 2026. Keep show_schedule_only. The 'da-nang' in the id is misleading.",
+   "contested": false
+  },
+  {
+   "id": "cho-dem-helio-b8cf16",
+   "minutes": 90,
+   "winner": "verifier",
+   "reason": "Checked Nomado: 1.5–2.5h (unsigned), and offpeaktrip says 1.5h. Both are weak but agree on at least 90, and this is a dinner-plus-stroll night food market. 90 is the defensible centre and 120 is too high. Low confidence; replace if a signed source appears.",
+   "contested": false
+  },
+  {
+   "id": "bao-tang-lich-su-thanh-pho-ho-chi-minh-e64ec0",
+   "minutes": null,
+   "winner": "verifier",
+   "reason": "Checked Frommer's: most casual visitors need 'an hour or two', so the category value of 90 fits. Separately, the stored address is wrong: Frommer's gives 2 Nguyễn Bỉnh Khiêm, D1 (zoo grounds), and it should be fixed.",
+   "contested": false
+  }
+ ],
+ "fable": [],
+ "final": [
+  {
+   "id": "cau-song-han-han-river-bridge-bb50c0",
+   "name": "Cầu Sông Hàn (Han River Bridge)",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Only SEO/travel-blog pages found (weekend-night swing show ~1 h per old schedules); no reliable per-visit duration, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-apec-12dab7",
+   "name": "Công viên Apec",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source gives a visit length for this free riverside park; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "thap-nuoc-hang-dau-975dcc",
+   "name": "Tháp nước Hàng Đậu",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [
+    {
+     "url": "https://www.sggp.org.vn/sau-gan-130-nam-thap-nuoc-hang-dau-da-mo-cua-thu-hut-du-khach-post714537.html",
+     "publisher": "Sài Gòn Giải Phóng",
+     "says": "Opened to public only during Hà Nội design festival, 17-26 Nov 2023; no duration."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.sggp.org.vn/sau-gan-130-nam-thap-nuoc-hang-dau-da-mo-cua-thu-hut-du-khach-post714537.html"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Tower opened only as a temporary 2023 festival exhibit (reports of 5-10 min per entry unattributed); current access unclear, so no value.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-cong-binh-efd149",
+   "name": "Bảo tàng Công binh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source states a suggested duration; only hours and a ~600 m2 outdoor display mentioned.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-lich-su-quan-su-viet-nam-7906fc",
+   "name": "Bảo tàng Lịch sử Quân sự Việt Nam",
+   "minutes": 150,
+   "low": 120,
+   "high": 180,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/places/hanoi/vietnam-military-history-museum",
+     "publisher": "Vietnam National Authority of Tourism",
+     "says": "Allow two to three hours; treat as half-day outing."
+    },
+    {
+     "url": "https://north-vietnam.com/vietnam-military-history-museum/",
+     "publisher": "north-vietnam.com (travel guide)",
+     "says": "Suggested visit 2-3 hours including indoor galleries and outdoor machinery."
+    },
+    {
+     "url": "https://vietcetera.com/en/visiting-the-vietnam-military-history-museum-for-the-first-time-heres-what-you-should-know",
+     "publisher": "Vietcetera",
+     "says": "Closed Mondays and Fridays; no duration stated."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/places/hanoi/vietnam-military-history-museum",
+    "https://north-vietnam.com/vietnam-military-history-museum/",
+    "https://www.vietnamtourism.com/en/legal"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Six indoor galleries plus outdoor aircraft and tanks; guides say 2-3 h, so 150 vs current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-thien-nhien-viet-nam-c28c76",
+   "name": "Bảo tàng Thiên nhiên Việt Nam",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [
+    {
+     "url": "https://news.laodong.vn/y-kien-ban-doc/bao-tang-thien-nhien-viet-nam-dong-cua-sua-chua-sau-phan-anh-cua-lao-dong-1651682.ldo",
+     "publisher": "Lao Động",
+     "says": "Headline says museum closed for repair after reader complaints; date not verified."
+    }
+   ],
+   "verifier_urls": [
+    "https://news.laodong.vn/y-kien-ban-doc/bao-tang-thien-nhien-viet-nam-dong-cua-sua-chua-sau-phan-anh-cua-lao-dong-1651682.ldo",
+    "https://vietnamnet.vn/bao-tang-thien-nhien-viet-nam-dong-duc-ngay-cuoi-tuan-2046889.html"
+   ],
+   "suggested_category": null,
+   "status_flag": "check status: possible closure for repair (unverified); walk-in visitors reportedly Thu-Sun only",
+   "note": "No duration found; a Lao Động headline reports closure for repair (date and reopening unverified, page did not load). Check status.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "binh-minh-jazz-club-b0317e",
+   "name": "Binh Minh Jazz Club",
+   "minutes": 150,
+   "low": 135,
+   "high": 150,
+   "basis": "official",
+   "sources": [
+    {
+     "url": "https://minhjazzvietnam.com/contact-us/",
+     "publisher": "Binh Minh Jazz Club (official site)",
+     "says": "Live music nightly 9 PM to 11:15 PM."
+    },
+    {
+     "url": "https://www.frommers.com/destinations/hanoi/nightlife/binh-minh-jazz-club",
+     "publisher": "Frommer's",
+     "says": "Evening sets run roughly 9 to 11 pm."
+    }
+   ],
+   "verifier_urls": [
+    "https://minhjazzvietnam.com/contact-us/",
+    "https://www.frommers.com/destinations/hanoi/nightlife/binh-minh-jazz-club"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Show about 2 h 15 min per club site plus ~15 min seating; venue hours field (05:00-23:00) is not the show time.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-thong-nhat-d95601",
+   "name": "Công viên Thống Nhất",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "~50 ha park with Bảy Mẫu lake; no source gives a typical visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "annam-gallery-4904a2",
+   "name": "Annam Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Only exhibition listings and ticket prices found; no suggested duration.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-truyen-thong-chien-khu-an-phu-dong-289a1c",
+   "name": "Nhà truyền thống chiến khu An Phú Đông",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Local memorial house; Sài Gòn Giải Phóng articles give no hours or visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "chung-cu-42-nguyen-hue-8316ee",
+   "name": "Chung cư 42 Nguyễn Huệ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Apartment block of cafes and shops; no source gives a visit length (varies with cafe stop).",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-thanh-pho-4dd21b",
+   "name": "Nhà hát Thành phố",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [
+    {
+     "url": "https://www.tripadvisor.com/--d454974.html",
+     "publisher": "TripAdvisor",
+     "says": "Lists duration 1-2 hours, likely for performance visits."
+    }
+   ],
+   "verifier_urls": [
+    "https://vinwonders.com/vi/wonderpedia/news/nha-hat-thanh-pho-tphcm/"
+   ],
+   "suggested_category": "entertainment.performing_arts",
+   "status_flag": null,
+   "note": "Interior reportedly open mainly to ticket holders at performances; figures mix show and exterior visits, so none given.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-dia-chat-4c502a",
+   "name": "Bảo Tàng Địa Chất",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "~13,000 specimens but no duration source; opening days also conflict between sources.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-luc-luong-vu-trang-mien-dong-na-af47f7",
+   "name": "Bảo tàng Lực Lượng vũ trang miền Đông Nam Bộ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "hai-an-gallery-369e91",
+   "name": "Hải An Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": "attraction.gallery",
+   "status_flag": null,
+   "note": "Search found only the Hải An bookstore; no gallery duration. Name suggests gallery, not museum.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "tomuralee-gallery-fabda5",
+   "name": "TomuraLee Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": "attraction.gallery",
+   "status_flag": null,
+   "note": "Small commercial art gallery with free entry; no duration source. Filed as museum but is a gallery.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "tiniworld-396198",
+   "name": "tiNiWorld",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://baodanang.vn/english/useful-infomation/entertainment/201402/tiniworld-fascinating-for-children-2308202"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Kids play centre; only a different branch had a 1.5 h guide figure, none for Hòa Hảo. Not a classic theme park.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "chua-ngoc-hoang-dd6109",
+   "name": "Chùa Ngọc Hoàng",
+   "minutes": null,
+   "low": 45,
+   "high": 90,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/vi/attractions/jade-emperor-pagoda",
+     "publisher": "Nomado Travel",
+     "says": "Visit estimated at 45 to 90 minutes; free entry."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomadotravel.app/vi/attractions/jade-emperor-pagoda",
+    "https://www.vietnamairlines.com/en/useful-information/travel-guide/jade-emperor-pagoda"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Single travel-guide estimate, higher than the 40 min category value; includes incense and halls.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "The only source is unsigned Nomado, and its own text says the temple can be seen in under an hour. No guide or news source gives a figure. Keep the pagoda value of 40."
+  },
+  {
+   "id": "nha-hat-ca-mua-ca-nhac-dan-toc-bong-sen-a0386a",
+   "name": "Nhà Hát Ca Múa Ca Nhạc Dân Tộc Bông Sen",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No show length found; programme changes by event, and the 108 Hai Bà Trưng address was not confirmed.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "rap-xiec-va-bieu-dien-da-nang-phu-tho-8dc8dd",
+   "name": "Rạp Xiếc và Biểu diễn đa năng Phú Thọ",
+   "minutes": 85,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://www.sggp.org.vn/lan-dau-cong-dien-vo-xiec-roi-mo-show-hoanh-trang-dac-sac-post857148.html",
+    "https://tuoitre.vn/mo-show.html"
+   ],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "New venue opened 30 Apr 2026 with Mơ Show; news pages give no show length.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "Checked SGGP (12 Jun 2026): Mơ Show runs 70 min at Phú Thọ circus, HCMC, so 70 + 15 to be seated gives 85. Tuổi Trẻ shows it still active in Sep–Nov 2026. Keep show_schedule_only. The 'da-nang' in the id is misleading."
+  },
+  {
+   "id": "the-golden-dragon-water-puppet-theater-c852b4",
+   "name": "The Golden Dragon Water Puppet Theater",
+   "minutes": 65,
+   "low": 60,
+   "high": 75,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://localvietnam.com/ho-chi-minh-city/water-puppet-show-in-ho-chi-minh-city/",
+     "publisher": "Local Vietnam",
+     "says": "Show runs roughly fifty minutes."
+    },
+    {
+     "url": "https://www.kkday.com/en-au/product/133461-golden-water-puppet-admission-ticket-ho-chi-minh-city",
+     "publisher": "KKday",
+     "says": "Duration 50 minutes; FAQ says 50-60."
+    }
+   ],
+   "verifier_urls": [
+    "https://localvietnam.com/ho-chi-minh-city/water-puppet-show-in-ho-chi-minh-city/",
+    "https://www.kkday.com/en-au/product/133461-golden-water-puppet-admission-ticket-ho-chi-minh-city"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Show 45-50 min (venue slot 18:30-19:15) plus ~15 min seating, far below the 120 category value.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-gia-dinh-da0418",
+   "name": "Công viên Gia Định",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "~32 ha park for exercise; no source gives a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-le-van-tam-55a1f9",
+   "name": "Công viên Lê Văn Tám",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No coverage found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-vo-van-kiet-7e78bd",
+   "name": "Công viên Võ Văn Kiệt",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No coverage found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-ba-chieu-6cc0b8",
+   "name": "Chợ Bà Chiểu",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "~8,500 m2 market, ~800 stalls; no source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-phu-lam-17c9b3",
+   "name": "Chợ Phú Lâm",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Mostly a wholesale/local market; no tourist visit-length source found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cung-an-dinh-61819c",
+   "name": "Cung An Định",
+   "minutes": 65,
+   "low": 45,
+   "high": 90,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/vi/cung-an-dinh-o-hue-lich-su-diem-tham-quan-va-cach-di-lai",
+     "publisher": "Vietnam National Authority of Tourism",
+     "says": "Estimated visit 45 to 90 minutes, about one hour suggested."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/vi/cung-an-dinh-o-hue-lich-su-diem-tham-quan-va-cach-di-lai",
+    "https://www.vietnamtourism.com/en/legal"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Government tourism estimate 45-90 min vs current 45; only one source found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-co-vat-cung-dinh-hue-f30976",
+   "name": "Bảo tàng Cổ vật Cung đình Huế",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://tuoitre.vn/thu-tuong-de-nghi-xay-moi-bao-tang-co-vat-cung-dinh-hue-tra-lai-nguyen-trang-di-tich-dien-long-an-20230325191615966.htm"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source gives a duration (only hours, tickets, ~700 items on display).",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cau-vang-golden-bridge-95390b",
+   "name": "Cầu Vàng (Golden Bridge)",
+   "minutes": 360,
+   "low": 300,
+   "high": 480,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://hoiandaytrip.com/how-long-to-spend-at-golden-bridge-da-nang/",
+     "publisher": "Hoi An Day Trip (tour operator)",
+     "says": "Bridge sits inside Ba Na Hills; visit is a half to full day."
+    }
+   ],
+   "verifier_urls": [
+    "https://hoiandaytrip.com/how-long-to-spend-at-golden-bridge-da-nang/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Bridge only reachable inside Ba Na Hills resort; value is the whole resort visit travellers make (5-7h), not the bridge alone.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-dem-helio-b8cf16",
+   "name": "Chợ đêm Helio",
+   "minutes": 90,
+   "low": 90,
+   "high": 150,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/vi/attractions/helio-night-market",
+     "publisher": "Nomado Travel",
+     "says": "Suggests about 1.5 to 2.5 hours to walk the whole market."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomadotravel.app/vi/attractions/helio-night-market",
+    "https://offpeaktrip.com/en/guide/danang/helio-night-market"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Night food-and-shopping market; one guide gives 1.5-2.5h, longer than current 60.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "Checked Nomado: 1.5–2.5h (unsigned), and offpeaktrip says 1.5h. Both are weak but agree on at least 90, and this is a dinner-plus-stroll night food market. 90 is the defensible centre and 120 is too high. Low confidence; replace if a signed source appears."
+  },
+  {
+   "id": "cau-long-bien-f49f98",
+   "name": "Cầu Long Biên",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source gave a visit length; only walk distance (about 1.7 km) found, so category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-dan-toc-hoc-viet-nam-68f9e4",
+   "name": "Bảo tàng Dân tộc học Việt Nam",
+   "minutes": 150,
+   "low": 120,
+   "high": 180,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/vietnam-museum-of-ethnology-in-hanoi-tickets-opening-hours-and-what-not-to-miss",
+     "publisher": "Vietnam Tourism guide",
+     "says": "Plan two to three hours for indoor exhibition and outdoor architecture garden."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/vietnam-museum-of-ethnology-in-hanoi-tickets-opening-hours-and-what-not-to-miss",
+    "https://www.vietnamtourism.com/en/legal",
+    "https://offpeaktrip.com/en/guide/hanoi/vietnam-museum-of-ethnology"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Indoor galleries plus open-air house garden; 2-3h, above current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-luc-luong-tang-thiet-giap-0b9097",
+   "name": "Bảo tàng Lực lượng Tăng - Thiết giáp",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source states a visit duration; only size (3,800 m2) and hours found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-tu-hoa-lo-b7b35c",
+   "name": "Nhà tù Hỏa Lò",
+   "minutes": 90,
+   "low": 60,
+   "high": 120,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://north-vietnam.com/hoa-lo-prison-museum/",
+     "publisher": "North Vietnam travel guide",
+     "says": "Most visitors spend 60 to 90 minutes."
+    },
+    {
+     "url": "https://www.vietnamtourism.com/en/hoa-lo-prison-in-hanoi-a-visitor-s-guide-to-the-hanoi-hilton",
+     "publisher": "Vietnam Tourism guide",
+     "says": "Day visit listed at 60 to 120 minutes."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/hoa-lo-prison-in-hanoi-a-visitor-s-guide-to-the-hanoi-hilton",
+    "https://north-vietnam.com/hoa-lo-prison-museum/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Self-guided museum visit of 1-2h; confirms current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-lon-ha-noi-d8749a",
+   "name": "Nhà hát Lớn Hà Nội",
+   "minutes": 70,
+   "low": 60,
+   "high": 90,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/hanoi-opera-house-tours-tickets-and-how-to-see-a-performance",
+     "publisher": "Vietnam Tourism guide",
+     "says": "Standard interior tour lasts 70 minutes; performance tour 90."
+    },
+    {
+     "url": "https://m.hanoitimes.vn/explore-hanoi-opera-house-from-inside-7823.html",
+     "publisher": "Hanoi Times",
+     "says": "Public interior tours of the opera house offered."
+    }
+   ],
+   "verifier_urls": [
+    "https://e.vnexpress.net/news/travel/places/hanoi-opera-house-4827570.html",
+    "https://www.vietnamtourism.com/en/hanoi-opera-house-tours-tickets-and-how-to-see-a-performance"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Typical visit is the 70-min interior tour (not on Fridays); a show visit would be show length plus 15; current 120 too long for a tour.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-yen-so-18ea01",
+   "name": "Công viên Yên Sở",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "323 ha lakeside park for picnics and camping; no source gives a typical visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "green-palm-gallery-40bcbf",
+   "name": "Green Palm Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Four-floor private gallery; no source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bitexco-financial-tower-6e8261",
+   "name": "Bitexco Financial Tower",
+   "minutes": 45,
+   "low": 30,
+   "high": 60,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.headout.com/saigon-bitexco-skydeck-tickets/saigon-skydeck-in-bitexco-financial-tower-tickets-e-23076",
+     "publisher": "Headout",
+     "says": "Skydeck visitors usually spend 30 to 60 minutes."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.headout.com/saigon-bitexco-skydeck-tickets/saigon-skydeck-in-bitexco-financial-tower-tickets-e-23076",
+    "https://www.civitatis.com/en/ho-chi-minh/ticket-saigon-skydeck/?aid=11891"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Visit is the Saigon Skydeck; 30-60h typical, confirms current 45.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "dia-dao-phu-tho-hoa-eb2b68",
+   "name": "Địa Đạo Phú Thọ Hòa",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source gives a visit duration; only about 100 m restored tunnel reported open, descent sometimes limited.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "pho-di-bo-bui-vien-23a6e3",
+   "name": "Phố đi bộ Bùi Viện",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "850 m nightlife street; guides give hours and length but no stated visit duration.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-fito-a44647",
+   "name": "Bảo Tàng FITO",
+   "minutes": 60,
+   "low": 120,
+   "high": 180,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.trip.com/travel-guide/attraction/chanh-phu-hoa/fito-museum-museums-of-traditional-vietnamese-medicine-and-pharmacy-50588765/",
+     "publisher": "Trip.com",
+     "says": "Suggested visit about 2 to 3 hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://localvietnam.com/?p=27785",
+    "https://www.trip.com/travel-guide/attraction/chanh-phu-hoa/fito-museum-museums-of-traditional-vietnamese-medicine-and-pharmacy-50588765/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Six-floor traditional medicine museum, guided; 2-3h vs current 90.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "Checked LocalVietnam (signed, Marnick Schoonderwoerd, 41 Hoàng Dư Khương, D10): it suggests a 1-hour visit. The Trip.com figure was unverifiable and for a mislabelled listing. 60 replaces the museum category value of 90."
+  },
+  {
+   "id": "bao-tang-my-thuat-thanh-pho-ho-chi-minh-73dd12",
+   "name": "Bảo tàng Mỹ thuật Thành phố Hồ Chí Minh",
+   "minutes": 75,
+   "low": 45,
+   "high": 120,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.vietnamairlines.com/en/useful-information/travel-guide/ho-chi-minh-city-museum-of-fine-arts",
+     "publisher": "Vietnam Airlines travel guide",
+     "says": "Full tour takes about 45 to 60 minutes."
+    },
+    {
+     "url": "https://www.hoteldesartssaigon.com/?p=20030",
+     "publisher": "Hotel des Arts Saigon guide",
+     "says": "Visit takes one to two hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamairlines.com/en/useful-information/travel-guide/ho-chi-minh-city-museum-of-fine-arts",
+    "https://www.hoteldesartssaigon.com/?p=20030"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Sources span 45-120 min, middle about 75; current 90 slightly high.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "inlen-photo-gallery-77ed1f",
+   "name": "Inlen Photo Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": "attraction.gallery",
+   "status_flag": null,
+   "note": "Small apartment-based photo gallery; no hours or visit length found, may not be open to walk-ins.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "vin-gallery-4a7a76",
+   "name": "Vin Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": "attraction.gallery",
+   "status_flag": null,
+   "note": "Contemporary art gallery with rotating shows; no source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "tiniworld-fd8a99",
+   "name": "Tiniworld",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://offpeaktrip.com/en/guide/hochiminh/tiniworld-gigamall",
+     "publisher": "OffPeakTrip",
+     "says": "Plan about 1.5 hours for a thorough visit."
+    }
+   ],
+   "verifier_urls": [
+    "https://offpeaktrip.com/en/guide/hochiminh/tiniworld-gigamall"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Indoor miniature-world attraction in Gigamall; 90 min vs current 180.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "The only source is a templated, unsigned offpeaktrip page that misdescribes the venue (a children's indoor playground). No reliable duration, so keep the category value."
+  },
+  {
+   "id": "chua-xa-loi-0b6154",
+   "name": "Chùa Xá Lợi",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Sources give opening hours only, no visit duration.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-hoa-binh-1ec77d",
+   "name": "Nhà hát Hòa Bình",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Nothing found on show lengths for this venue.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "san-khau-kich-hoang-thai-thanh-368d13",
+   "name": "Sân khấu kịch Hoàng Thái Thanh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Press covers the company but gives no play length or current schedule.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "thao-cam-vien-sai-gon-zoo-botanical-gard-034c49",
+   "name": "Thảo Cầm Viên - Sài gòn Zoo & Botanical Gardens",
+   "minutes": 180,
+   "low": 120,
+   "high": 240,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://ca.trip.com/travel-guide/attraction/ho-chi-minh-city/saigon-zoo-and-botanical-garden-10521719?curr=CNY",
+     "publisher": "Trip.com",
+     "says": "Allow at least 2 to 3 hours for zoo and gardens."
+    },
+    {
+     "url": "https://www.budgetyourtrip.com/vietnam/ho-chi-minh-city/saigon-zoo-and-botanical-garden-worth-visiting/1715",
+     "publisher": "Budget Your Trip",
+     "says": "Many people spend around 3 hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://localvietnam.com/ho-chi-minh-city/saigon-zoo-botanical-gardens/",
+    "https://www.budgetyourtrip.com/vietnam/ho-chi-minh-city/saigon-zoo-and-botanical-garden-worth-visiting/1715"
+   ],
+   "suggested_category": "attraction.zoo",
+   "status_flag": null,
+   "note": "It is a zoo with gardens, not just a garden; 2-4h vs current 45.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-hoang-van-thu-3d0a6a",
+   "name": "Công viên Hoàng Văn Thụ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No coverage found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-tao-dan-84a1f2",
+   "name": "Công viên Tao Đàn",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Sources give hours and free entry only, no visit duration.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "khu-du-lich-van-thanh-3fdc46",
+   "name": "Khu du lịch Văn Thánh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "7.7 ha leisure park; sources give hours only, no visit duration.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-ben-thanh-68e3af",
+   "name": "Chợ Bến Thành",
+   "minutes": 90,
+   "low": 60,
+   "high": 180,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.nomads-travel-guide.com/places/ben-thanh-market",
+     "publisher": "Nomads Travel Guide",
+     "says": "Large market; thorough exploration takes one to two hours."
+    },
+    {
+     "url": "https://www.traveloka.com/en-vn/explore/destination/ben-thanh-market/583091",
+     "publisher": "Traveloka",
+     "says": "Most visitors spend 1.5 to 3 hours including food."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomads-travel-guide.com/places/ben-thanh-market",
+    "https://www.traveloka.com/en-vn/explore/destination/ben-thanh-market/583091",
+    "https://www.vietnamtourism.com/en/ben-thanh-market-the-complete-guide-to-saigon-s-landmark-market"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Typical browse plus snack 1.5-2h vs current 60.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "Checked vietnamtourism.com: 1.5–2h including a meal, and 90 min for a meal plus a look around. Nomads says 1–2h. The Traveloka citation gave no length. 90 is the typical browse; 120 is the shopping or meal upper end."
+  },
+  {
+   "id": "cho-rach-ong-1533ef",
+   "name": "Chợ Rạch Ông",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Local wholesale-style market with almost no visitor coverage.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "phu-van-lau-b8e7fa",
+   "name": "Phu Văn Lâu",
+   "minutes": 30,
+   "low": 20,
+   "high": 40,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://localvietnam.com/hue/phu-van-lau/",
+     "publisher": "Local Vietnam",
+     "says": "Pavilion itself takes about 20 to 40 minutes."
+    }
+   ],
+   "verifier_urls": [
+    "https://localvietnam.com/hue/phu-van-lau/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Free pavilion outside the Imperial City gate, usually paired with it; 30 min vs current 45.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-nguyen-chi-thanh-8ecbad",
+   "name": "Bảo tàng Nguyễn Chí Thanh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Opened 2022 at 144 Đặng Thái Thân; press has no visit duration or current hours.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-ca-go-4a880b",
+   "name": "Chợ cá Gỗ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Only a free beach art/photo stop (Mân Thái) found; no duration given, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "hoang-thanh-thang-long-a81ce3",
+   "name": "Hoàng thành Thăng Long",
+   "minutes": 120,
+   "low": 60,
+   "high": 180,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.tripadvisor.com/6417854",
+     "publisher": "TripAdvisor",
+     "says": "Suggested duration 1-2 hours."
+    },
+    {
+     "url": "https://kampatour.com/thang-long-imperial-citadel",
+     "publisher": "Kampatour",
+     "says": "At least two hours, three for history enthusiasts."
+    }
+   ],
+   "verifier_urls": [
+    "https://kampatour.com/thang-long-imperial-citadel",
+    "https://travelpast50.com/thang-long-imperial-citadel-hanoi/",
+    "https://www.tripadvisor.com/6417854"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Citadel site plus 18 Hoàng Diệu excavation; sources say 1-3 h, so 2 h replaces 45; no official page found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cot-co-ha-noi-93d380",
+   "name": "Cột cờ Hà Nội",
+   "minutes": 35,
+   "low": 20,
+   "high": 60,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://vietnamtravel.com/hanoi-flag-tower",
+     "publisher": "Vietnamtravel.com",
+     "says": "Recommends 30 minutes to 1 hour at the tower."
+    },
+    {
+     "url": "https://www.vietnamtourism.com/ja/places/hanoi/hanoi-flag-tower",
+     "publisher": "Vietnam tourism portal (vietnamtourism.com)",
+     "says": "Tower alone takes about 20-30 minutes."
+    }
+   ],
+   "verifier_urls": [
+    "https://vietnamtravel.com/hanoi-flag-tower"
+   ],
+   "suggested_category": null,
+   "status_flag": "partial access: only exterior and first level open; upper levels closed except special tours",
+   "note": "Tower only (longer if combined with Military History Museum); slightly under current 45.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-dia-chat-ha-noi-612f3a",
+   "name": "Bảo tàng Địa chất Hà Nội",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Found only opening hours and free entry; no visit duration, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-my-thuat-viet-nam-16a585",
+   "name": "Bảo tàng Mỹ thuật Việt Nam",
+   "minutes": 75,
+   "low": 30,
+   "high": 180,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://localvietnam.com/hanoi/vietnam-fine-arts-museum-hanoi/",
+     "publisher": "Local Vietnam",
+     "says": "Quick pass through highlights takes 30-60 minutes."
+    },
+    {
+     "url": "https://www.kupi.com/en-ae/explore/vietnam/hanoi/vietnam-national-fine-arts-museum",
+     "publisher": "Kupi",
+     "says": "Set aside 2-3 hours to see the collection properly."
+    }
+   ],
+   "verifier_urls": [
+    "https://localvietnam.com/hanoi/vietnam-fine-arts-museum-hanoi/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Sources spread widely (quick 30-60 min vs 2-3 h thorough); 75 min is a typical first-timer middle, below current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-nuoc-ho-tay-6b4470",
+   "name": "Công viên nước Hồ Tây",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://mia.vn/cam-nang-du-lich/kinh-nghiem-vui-choi-cong-vien-nuoc-ho-tay-13323",
+    "https://thoibaotaichinhvietnam.vn/ngay-214-cong-vien-nuoc-ho-tay-se-chinh-thuc-mo-cua-tro-lai-14361.html"
+   ],
+   "suggested_category": null,
+   "status_flag": "seasonal: summer only (about late Apr-Sep); likely closed now",
+   "note": "Tickets are unlimited-time with no recommended duration found, so category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-mua-roi-nuoc-thang-long-d2e83f",
+   "name": "Nhà hát Múa rối nước Thăng Long",
+   "minutes": 65,
+   "low": 60,
+   "high": 75,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.klook.com/activity/35653-thang-long-water-puppet-show-ticket-hanoi/",
+     "publisher": "Klook",
+     "says": "Show lasts about 50-60 minutes."
+    },
+    {
+     "url": "https://www.headout.com/immersive-theatre/thang-long-water-puppet-show-ticket-e-30821/",
+     "publisher": "Headout",
+     "says": "Show runs about 50 minutes."
+    },
+    {
+     "url": "https://activities.marriott.com/asia/vietnam/hanoi/activities/thang_long_water_puppet_theater_tickets-XCWPVN",
+     "publisher": "Marriott Activities",
+     "says": "Show listed at 55 minutes."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.headout.com/immersive-theatre/thang-long-water-puppet-show-ticket-e-30821/",
+    "https://www.klook.com/activity/35653-thang-long-water-puppet-show-ticket-hanoi/"
+   ],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "Show about 50 min (45-60) plus 15 min seating = 65; much shorter than current 120; official site not found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-dem-pho-co-ha-noi-e00f9e",
+   "name": "Chợ đêm phố cổ Hà Nội",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": "weekend evenings only",
+   "note": "Only a 1-2 h figure for nearby Đồng Xuân market found, not this night market; weekend evenings only, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "di-tich-lich-su-go-o-moi-9b0d7a",
+   "name": "Di tích lịch sử Gò Ô Môi",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Small 700-800 m2 mound memorial; no visit duration or hours found, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "buu-dien-trung-tam-sai-gon-a91614",
+   "name": "Bưu điện Trung tâm Sài Gòn",
+   "minutes": 45,
+   "low": 30,
+   "high": 60,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.vietnamairlines.com/en/useful-information/travel-guide/saigon-central-post",
+     "publisher": "Vietnam Airlines travel guide",
+     "says": "Full visit takes 30-45 minutes."
+    },
+    {
+     "url": "https://www.makemytrip.com/tripideas/attractions/saigon-central-post-office",
+     "publisher": "MakeMyTrip",
+     "says": "Suggests about 30 minutes."
+    },
+    {
+     "url": "https://www.tripadvisor.com/--d311089.html",
+     "publisher": "TripAdvisor",
+     "says": "Duration listed as under 1 hour."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamairlines.com/en/useful-information/travel-guide/saigon-central-post"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Free working post office; sources give 30-60 min, so current 45 is confirmed.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "dinh-doc-lap-97d379",
+   "name": "Dinh Độc Lập",
+   "minutes": 90,
+   "low": 60,
+   "high": 120,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.tripadvisor.com/--d317890.html",
+     "publisher": "TripAdvisor",
+     "says": "Suggested duration 1-2 hours."
+    },
+    {
+     "url": "https://www.klook.com/en-US/activity/130952-independence-palace-ticket-in-ho-chi-minh-city/",
+     "publisher": "Klook",
+     "says": "Suggested duration 1-2 hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://dinhdoclap.gov.vn/en/visit",
+    "https://www.klook.com/en-US/activity/130952-independence-palace-ticket-in-ho-chi-minh-city/",
+    "https://www.tripadvisor.com/--d317890.html"
+   ],
+   "suggested_category": "attraction.historic_site",
+   "status_flag": null,
+   "note": "Palace interiors, bunker and grounds take 1-2 h; 90 replaces 45; official site gives hours only, ticket sales close about 15:30.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-biet-dong-sai-gon-9ceba2",
+   "name": "Bảo tàng Biệt Động Sài Gòn",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://vnexpress.net/bao-tang-biet-dong-sai-gon-4035246.html"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Small museum (about 100 m2, 100+ artifacts) but no source states a duration; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-ho-chi-minh-60b49f",
+   "name": "Bảo tàng Hồ Chí Minh",
+   "minutes": 90,
+   "low": 60,
+   "high": 120,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.kupi.com/en/explore/vietnam/ho-chi-minh-city/dragon-wharf-ho-chi-minh-museum",
+     "publisher": "Kupi",
+     "says": "Allow approximately 1-2 hours."
+    },
+    {
+     "url": "https://idctravel.com/attraction/nha-rong-wharf.html",
+     "publisher": "IDC Travel",
+     "says": "Recommends 1-2 hours for a thorough visit."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.kupi.com/en/explore/vietnam/ho-chi-minh-city/dragon-wharf-ho-chi-minh-museum",
+    "https://vietnamnews.vn/life-style/1781061/ho-chi-minh-museum-at-nha-rong-wharf-temporarily-closes-for-renovation-set-to-reopen-by-national-day.html",
+    "https://nhandan.vn/ocop/anh-ben-nha-rong-khoac-dien-mao-moi-sau-3-thang-chinh-trang-post979881.html"
+   ],
+   "suggested_category": null,
+   "status_flag": "closed for renovation from 7 May 2026 (planned to end Sept 2026); reopening not confirmed",
+   "note": "Nhà Rồng wharf museum; two aggregator guides agree on 1-2 h, both secondary. Sources say closed Mondays, listed hours show Monday open.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-phu-nu-nam-bo-9265d6",
+   "name": "Bảo tàng Phụ nữ Nam Bộ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Guides list 27 permanent exhibitions but no visit duration; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "jack-clayton-art-gallery-093007",
+   "name": "Jack Clayton Art Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": "attraction.gallery",
+   "status_flag": null,
+   "note": "A printmaker's private studio-gallery in Khánh Hội, not a museum; no duration found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-van-hoa-dam-sen-f0901d",
+   "name": "Công viên Văn hóa Đầm Sen",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://nguoiquansat.vn/doi-thu-cua-ba-nguyen-phuong-hang-tung-chien-luoc-moi-sau-khi-chiu-ap-luc-gay-gat-tu-khu-du-lich-dai-nam-305246.html"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "One guide hints at about 3 h but I could not attribute it to a specific page; park plus water park suggests a long visit, so category value (180) stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "vietopia-b1dcf1",
+   "name": "Vietopia",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://offpeaktrip.com/en/guide/hochiminh/vietopia",
+     "publisher": "OffPeak Trip",
+     "says": "Plan around 1.5 hours for a thorough visit."
+    }
+   ],
+   "verifier_urls": [
+    "https://offpeaktrip.com/en/guide/hochiminh/vietopia",
+    "http://vietopia.com.vn/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Interactive role-play edutainment centre; single third-party figure of 1.5 h replaces 180; no official source found.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "The only figure comes from an unsigned templated offpeaktrip page, and the official site states no play time. Keep the category value."
+  },
+  {
+   "id": "den-ba-an-459e86",
+   "name": "Đền Bà Ấn",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "This is the Mariamman Hindu temple at 45 Trương Định; guides give no duration (only fire ceremony at 10:00 and 19:00), category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-kich-idecaf-a34afc",
+   "name": "Nhà hát Kịch IDECAF",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Press covers plays and schedules but never the running time in minutes; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "san-khau-nghe-thuat-truong-hung-minh-a248a9",
+   "name": "Sân Khấu Nghệ Thuật Trương Hùng Minh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Press covers plays and schedules but no running time in minutes; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-23-thang-9-53bacb",
+   "name": "Công viên 23 tháng 9",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://cafef.vn/do-san-khau-sen-hong-nhuong-cho-lam-ga-duong-sat-ben-thanh-can-gio-188261028122508526.chn"
+   ],
+   "suggested_category": null,
+   "status_flag": "partly fenced for rail station construction from Oct 2026",
+   "note": "Guides only say a short visit of one session; no figure, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-ho-ban-nguyet-fc83d3",
+   "name": "Công viên Hồ Bán Nguyệt",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Free lakeside walk in Phú Mỹ Hưng; no duration found, category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-van-hoa-phu-nhuan-0f86b5",
+   "name": "Công viên Văn hóa Phú Nhuận",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No page found about this park at all; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "pho-di-bo-dem-ky-dai-quang-trung-2b4758",
+   "name": "Phố đi bộ Đêm Kỳ Đài Quang Trung",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": "food.street_food",
+   "status_flag": null,
+   "note": "District 10 food-stall street (about 30 stalls, 18:00-23:00); no duration found, and it is not a park.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-binh-tay-116947",
+   "name": "Chợ Bình Tây",
+   "minutes": null,
+   "low": 60,
+   "high": 120,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomads-travel-guide.com/places/binh-tay-market/",
+     "publisher": "Nomads Travel Guide",
+     "says": "Around 1-2 hours; indoor alleys narrow and crowded."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomads-travel-guide.com/places/binh-tay-market/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Large two-storey wholesale market with courtyard; one secondary source gives 1-2 h, so 90 replaces 60.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "There is one unsigned, templated source (Nomads, 1–2h) and nothing stronger. For a sightseeing browse of a wholesale market, the market category value of 60 stands."
+  },
+  {
+   "id": "cho-tan-dinh-5e7feb",
+   "name": "Chợ Tân Định",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Guides give hours and description only, no duration; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "truong-quoc-hoc-hue-75dcc4",
+   "name": "Trường Quốc Học Huế",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Working school, free entry with guard's permission, best on weekday afternoons or Sundays; no duration found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-thien-nhien-duyen-hai-mien-trun-bd82b5",
+   "name": "Bảo tàng Thiên nhiên duyên hải miền Trung",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Three floors, 1,454 specimens, free since 1 Apr 2025, but no duration found; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-my-thuat-da-nang-43e70a",
+   "name": "Bảo tàng Mỹ thuật Đà Nẵng",
+   "minutes": null,
+   "low": 90,
+   "high": 180,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://travelsetu.com/guide/da-nang-museum-of-fine-arts-tourism",
+     "publisher": "TravelSetu",
+     "says": "Ideal visit about 2-3 hours."
+    },
+    {
+     "url": "https://offpeaktrip.com/en/guide/danang/danang-fine-arts-museum",
+     "publisher": "OffPeakTrip",
+     "says": "Plan around 1.5 hours for a thorough visit."
+    }
+   ],
+   "verifier_urls": [
+    "https://offpeaktrip.com/en/guide/danang/danang-fine-arts-museum",
+    "https://www.expatolife.com/da-nang-fine-arts-museum-vietnam/",
+    "https://youindanang.com/da-nang-fine-arts-museum/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Both are minor travel guides that disagree somewhat; 120 is a cautious middle, so current 90 is slightly low.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "TravelSetu is a content farm, and OffPeakTrip actually says 1.5h. Signed blogs (Expatolife, You in Da Nang) give about 1.5h, which equals the museum category value of 90."
+  },
+  {
+   "id": "nha-co-87-ma-may-dcf39e",
+   "name": "Nhà cổ 87 Mã Mây",
+   "minutes": 30,
+   "low": 20,
+   "high": 40,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/places/hanoi/heritage-house-87-ma-may",
+     "publisher": "vietnamtourism.com",
+     "says": "Allow 20 to 40 minutes without rushing."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/places/hanoi/heritage-house-87-ma-may"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Small restored Old Quarter house; one source only, shorter than current 45.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "lang-chu-tich-ho-chi-minh-59f123",
+   "name": "Lăng Chủ tịch Hồ Chí Minh",
+   "minutes": 60,
+   "low": 30,
+   "high": 90,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/ho-chi-minh-mausoleum-opening-hours-free-entry-and-the-dress-code",
+     "publisher": "vietnamtourism.com",
+     "says": "Peak queue 30-90 minutes; walk-through lasts only a few minutes."
+    },
+    {
+     "url": "https://thuvienphapluat.vn/phap-luat-nha-dat/gio-mo-cua-lang-bac-nam-2025-moi-nhat-tham-quan-lang-bac-co-mat-phi-khong-3437.html",
+     "publisher": "thuvienphapluat.vn",
+     "says": "Closed for maintenance mid-2025; reopened 2 August 2025 after that closure."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/ho-chi-minh-mausoleum-opening-hours-free-entry-and-the-dress-code"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Mausoleum only (security queue plus brief walk-through); the wider complex with museum and stilt house takes 2-3 hours. Annual maintenance closure each year; my sum, not a stated total.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-ha-noi-a4df62",
+   "name": "Bảo tàng Hà Nội",
+   "minutes": 90,
+   "low": 60,
+   "high": 120,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://sg.trip.com/travel-guide/city/hanoi-museum-23032412/",
+     "publisher": "Trip.com",
+     "says": "Recommended sightseeing time 1-2 hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://sg.trip.com/travel-guide/city/hanoi-museum-23032412/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Booking-platform figure only; supports current 90. Official site shows 9:00-17:00 Tue-Sun.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-phong-khong-khong-quan-699e48",
+   "name": "Bảo tàng Phòng không - Không quân",
+   "minutes": 150,
+   "low": 120,
+   "high": 180,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://mia.vn/cam-nang-du-lich/bao-tang-phong-khong-khong-quan-13307",
+     "publisher": "mia.vn",
+     "says": "A visit takes about 3 hours, indoor and outdoor areas."
+    }
+   ],
+   "verifier_urls": [
+    "https://mia.vn/cam-nang-du-lich/bao-tang-phong-khong-khong-quan-13307"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Large indoor plus outdoor aircraft park; another listing says at least 2-3 hours (not attributable). Longer than current 90. Weekend outdoor area only.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "den-bach-ma-0aea5d",
+   "name": "Đền Bạch Mã",
+   "minutes": 25,
+   "low": 15,
+   "high": 30,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/places/hanoi/bach-ma-temple",
+     "publisher": "vietnamtourism.com",
+     "says": "Allow 15 to 30 minutes."
+    },
+    {
+     "url": "https://localvietnam.com/hanoi/bach-ma-temple/",
+     "publisher": "Local Vietnam",
+     "says": "About 15-20 minutes inside the temple."
+    }
+   ],
+   "verifier_urls": [
+    "https://localvietnam.com/hanoi/bach-ma-temple/",
+    "https://www.vietnamtourism.com/en/places/hanoi/bach-ma-temple"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Small Old Quarter temple; much shorter than current 40. Official page notes a midday closure until about 13:30.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "polygon-musik-4a3ac9",
+   "name": "Polygon Musik",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": "activity unconfirmed (Foody notes no recent activity)",
+   "note": "Live-music cafe/bar with free entry and variable gigs; no stated visit length, address inconsistent across listings.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-dong-xuan-2194c2",
+   "name": "Chợ Đồng Xuân",
+   "minutes": 90,
+   "low": 60,
+   "high": 120,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/dong-xuan-market-in-hanoi-the-complete-guide-to-the-old-quarter-s-landmark-bazaar",
+     "publisher": "vietnamtourism.com",
+     "says": "Ninety minutes is enough for a browse; about two with eating."
+    },
+    {
+     "url": "https://nomads-travel-guide.com/places/dong-xuan-market",
+     "publisher": "Nomads Travel Guide",
+     "says": "Around 1-2 hours, longer with the weekend night market."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/dong-xuan-market-in-hanoi-the-complete-guide-to-the-old-quarter-s-landmark-bazaar",
+    "https://nomads-travel-guide.com/places/dong-xuan-market"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Large four-storey indoor market; a typical browse is longer than current 60.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "ho-con-rua-7621cd",
+   "name": "Hồ Con Rùa",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Roundabout plaza; no source gave a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cau-anh-sao-516bc3",
+   "name": "Cầu Ánh Sao",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Pedestrian bridge in Phu My Hung; no source gave a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "duong-sach-72439c",
+   "name": "Đường Sách",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Only an unreliable content-farm page gave 45-90 minutes; street is about 100 m long, so kept at category value.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-chien-dich-ho-chi-minh-c7cfd8",
+   "name": "Bảo tàng Chiến dịch Hồ Chí Minh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source states a visit length; open weekdays only with lunch break.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-khong-quan-phia-nam-918513",
+   "name": "Bảo tàng Không quân phía Nam",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No reliable coverage of visit length or current hours found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-thanh-pho-ho-chi-minh-fdc347",
+   "name": "Bảo tàng Thành phố Hồ Chí Minh",
+   "minutes": 75,
+   "low": 60,
+   "high": 120,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.hoteldesartssaigon.com/?p=19657",
+     "publisher": "Hotel des Arts Saigon",
+     "says": "Suggested visit length 60 to 90 minutes."
+    },
+    {
+     "url": "https://4travel.jp/os_shisetsu/10007187",
+     "publisher": "4travel.jp",
+     "says": "Sightseeing time 1-2 hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.hoteldesartssaigon.com/?p=19657",
+    "https://4travel.jp/os_shisetsu/10007187"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "A third guide table gives 1-1.5 hours; slightly shorter than current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "lotus-gallery-ce784e",
+   "name": "Lotus Gallery",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [
+    {
+     "url": "https://izitour.com/en/blog/art-gallery-in-ho-chi-minh-city",
+     "publisher": "iZi Tour",
+     "says": "One of the first private art galleries in Saigon."
+    }
+   ],
+   "verifier_urls": [],
+   "suggested_category": "attraction.gallery",
+   "status_flag": null,
+   "note": "Private commercial gallery with rotating shows, not a museum; no visit length found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "dam-sen-water-park-310e87",
+   "name": "Dam Sen Water Park",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source states a typical stay; Expedia listings say closed on Tuesdays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "chua-ba-thien-hau-54ffe8",
+   "name": "Chùa Bà Thiên Hậu",
+   "minutes": 45,
+   "low": 30,
+   "high": 60,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/thien-hau-temple-in-ho-chi-minh-city-opening-hours-dress",
+     "publisher": "vietnamtourism.com",
+     "says": "Allow 30 to 60 minutes at the temple itself."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/thien-hau-temple-in-ho-chi-minh-city-opening-hours-dress"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Temple only; 2-3 hours if combined with Binh Tay Market. Close to current 40.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "kich-hong-van-aa70da",
+   "name": "Kịch Hồng Vân",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://baovanhoa.vn/nghe-thuat/san-khau-kich-hong-van-ra-mat-hai-kich-gia-gan-223070.html"
+   ],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "Theatre with several nightly slots; no source gave play length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-nghe-thuat-hat-boi-afeacd",
+   "name": "Nhà Hát Nghệ Thuật Hát Bội",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "Hat boi performances now appear at the Tran Huu Trang theatre; no show length found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "san-khau-the-gioi-tre-458c20",
+   "name": "Sân khấu Thế Giới Trẻ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://www.sggp.org.vn/ganh-hat-ve-khuya-ky-uc-mot-thoi-cai-luong-post847589.html"
+   ],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "Weekend drama shows; no source gave show length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-ben-bach-dang-b8c36e",
+   "name": "Công Viên Bến Bạch Đằng",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Riverside promenade; no source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-lam-son-820c39",
+   "name": "Công viên Lam Sơn",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No coverage found at all.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-van-lang-2a58c1",
+   "name": "Công viên Văn Lang",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Local park with music fountain; no source gave a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "phu-my-hung-sakura-park-95e6d9",
+   "name": "Phú Mỹ Hưng - Sakura Park",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Roughly 600 m riverside park; no source gave a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-dakao-5595bc",
+   "name": "Chợ Đakao",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No coverage found for this market.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-thiec-fedfdf",
+   "name": "Chợ Thiếc",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Local votive-paper and food market; no visit length found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "lang-huong-thuy-xuan-856ca2",
+   "name": "Làng hương Thủy Xuân",
+   "minutes": 70,
+   "low": 45,
+   "high": 90,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/vi/lang-huong-hue-thuy-xuan-cach-tham-quan-nhung-gi-mong-oi",
+     "publisher": "vietnamtourism.com",
+     "says": "Spend 45 to 90 minutes there; workshop 30-45 minutes."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/vi/lang-huong-hue-thuy-xuan-cach-tham-quan-nhung-gi-mong-oi"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Incense-making village on one road; longer than current 45 if watching craft or joining a workshop.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-trung-bay-hoang-sa-59fa9d",
+   "name": "Nhà trưng bày Hoàng Sa",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Sources found give hours and 4-floor layout but no visit length; category value stays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "o-quan-chuong-2734ff",
+   "name": "Ô Quan Chưởng",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Free open-air gate; no source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "pho-bich-hoa-phung-hung-5e0893",
+   "name": "Phố bích họa Phùng Hưng",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Free street stretch of about 200 m; guides give no duration, only that it is short and often paired with Train Street.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-ho-chi-minh-2dd70a",
+   "name": "Bảo tàng Hồ Chí Minh",
+   "minutes": null,
+   "low": 90,
+   "high": 150,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/vi/attractions/ho-chi-minh-museum",
+     "publisher": "Nomadotravel guide",
+     "says": "Suggests about 1.5 to 2.5 hours for the museum."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomadotravel.app/vi/attractions/ho-chi-minh-museum",
+    "https://localvietnam.com/hanoi/ho-chi-minh-museum-hanoi/"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Museum only, not the mausoleum; one guide range 1.5-2.5h, so 120 min vs the current 90.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "Checked LocalVietnam (signed): reserve a maximum of two hours. Nomadotravel is unsigned. A typical visit sits at about 90, the current category value."
+  },
+  {
+   "id": "bao-tang-phu-nu-viet-nam-e65341",
+   "name": "Bảo tàng Phụ nữ Việt Nam",
+   "minutes": 105,
+   "low": 90,
+   "high": 120,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.vietnamtourism.com/en/places/hanoi/vietnamese-womens-museum",
+     "publisher": "Vietnam National Authority of Tourism (vietnamtourism.com)",
+     "says": "About 1.5 to 2 hours to see all floors unhurried."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.vietnamtourism.com/en/places/hanoi/vietnamese-womens-museum",
+    "https://www.vietnamtourism.com/en/legal"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Government-tourism page gives 1.5-2h; other guides in search results cluster at 1-2h, so 105 vs current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "den-quan-thanh-46a47c",
+   "name": "Đền Quán Thánh",
+   "minutes": 45,
+   "low": 30,
+   "high": 60,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/vi/attractions/quan-thanh-temple",
+     "publisher": "Nomadotravel guide",
+     "says": "Temple alone takes about 30 to 60 minutes."
+    }
+   ],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Temple itself only (not Tây Hồ walk); close to the current 40.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "trixie-cafe-lounge-a2733c",
+   "name": "Trixie Cafe & Lounge",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://vinwonders.com/vi/wonderpedia/news/cafe-nhac-song-ha-noi/"
+   ],
+   "suggested_category": "food.cafe",
+   "status_flag": null,
+   "note": "No source found for this venue or any show there; looks like a cafe/lounge, so category is doubtful, keep current.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-long-bien-505f78",
+   "name": "Chợ Long Biên",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Wholesale market busy 2-5 AM, near-empty by 6:30 AM; no source gives a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "lang-ong-ba-chieu-71fd0b",
+   "name": "Lăng Ông Bà Chiểu",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Searches gave size and hours but no visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cau-mong-dbb4a4",
+   "name": "Cầu Mống",
+   "minutes": null,
+   "low": 45,
+   "high": 90,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/vi/attractions/ben-nghe-canal",
+     "publisher": "Nomadotravel guide",
+     "says": "Walk along Bến Nghé canal, including the bridge, takes 45 minutes to 1.5 hours."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomadotravel.app/vi/attractions/ben-nghe-canal"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Bridge is only 128 m; value reflects the canal-side stroll travellers actually do, not the bridge alone.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "The 45–90 min figure covers the whole Bến Nghé canal walk, not the 128 m bridge. This is not a gateway case and the source is unsigned, so keep the category value."
+  },
+  {
+   "id": "landmark-81-593743",
+   "name": "Landmark 81",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://offpeaktrip.com/en/guide/hochiminh/landmark-81-sky-view-observatory",
+    "https://www.headout.com/saigon-bitexco-skydeck-tickets/landmark-81-saigon-skyview-tickets-e-17117"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No usable source for SkyView/Landmark 81 visit length; searches returned only a reseller ticket page.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-chung-tich-chien-tranh-08b374",
+   "name": "Bảo tàng Chứng tích Chiến tranh",
+   "minutes": 120,
+   "low": 90,
+   "high": 180,
+   "basis": "two_sources",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/en/attractions/war-remnants-museum",
+     "publisher": "Nomadotravel guide",
+     "says": "Plan two to three hours, up to four to read everything."
+    },
+    {
+     "url": "https://pickyourtrail.com/attractions/vietnam/war-remnants-museum",
+     "publisher": "Pickyourtrail",
+     "says": "Most visitors spend about 1.5 to 2 hours (from search summary)."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.nomadotravel.app/en/attractions/war-remnants-museum"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Indoor galleries plus outdoor displays; typical about 2h vs current 90.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "bao-tang-lich-su-thanh-pho-ho-chi-minh-e64ec0",
+   "name": "Bảo tàng Lịch sử Thành phố Hồ Chí Minh",
+   "minutes": null,
+   "low": 90,
+   "high": 150,
+   "basis": "one_source",
+   "sources": [
+    {
+     "url": "https://www.nomadotravel.app/en/attractions/hcmc-museum-of-history",
+     "publisher": "Nomadotravel guide",
+     "says": "Plan 1.5 to 2.5 hours; at least 90 minutes for labels."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.frommers.com/destinations/ho-chi-minh-city/attractions/vietnam-history-museum",
+    "https://www.nomadotravel.app/en/attractions/hcmc-museum-of-history"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "This is the History Museum at the zoo grounds (Nguyễn Bỉnh Khiêm); address in data lists Nguyễn Thị Minh Khai, worth checking.",
+   "settled_by": "opus-decide (verifier)",
+   "reason": "Checked Frommer's: most casual visitors need 'an hour or two', so the category value of 90 fits. Separately, the stored address is wrong: Frommer's gives 2 Nguyễn Bỉnh Khiêm, D1 (zoo grounds), and it should be fixed."
+  },
+  {
+   "id": "bao-tang-ton-duc-thang-975f9f",
+   "name": "Bảo tàng Tôn Đức Thắng",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [
+    {
+     "url": "https://www.sggp.org.vn/khanh-thanh-cong-trinh-xay-dung-moi-bao-tang-ton-duc-thang-post776101.html",
+     "publisher": "Sài Gòn Giải Phóng",
+     "says": "New museum building opened 3 January 2025."
+    }
+   ],
+   "verifier_urls": [
+    "https://www.sggp.org.vn/khanh-thanh-cong-trinh-xay-dung-moi-bao-tang-ton-duc-thang-post776101.html"
+   ],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No visit-length source; new building opened Jan 2025, free entry, closed Mondays.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "quang-san-art-museum-a719b8",
+   "name": "Quang San Art Museum",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Over 1,500 works but no source states a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "khu-vui-choi-giai-tri-snow-town-sai-gon-d243f4",
+   "name": "Khu Vui Chơi Giải Trí Snow Town Sài Gòn",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://www.klook.com/en-NZ/activity/37813-snow-town-saigon-ticket-ho-chi-minh-city/"
+   ],
+   "suggested_category": null,
+   "status_flag": "operating status unverified: official website domain no longer resolves",
+   "note": "No session length or typical stay found; official site not reached.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "chua-giac-lam-7d9e72",
+   "name": "Chùa Giác Lâm",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No pagoda-specific duration found (the 30-60 min figure seen belongs to Thiên Hậu).",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-ben-thanh-af8809",
+   "name": "Nhà hát Bến Thành",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "Theatre with varying plays; no standard show length found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "nha-hat-quan-doi-9e0a07",
+   "name": "Nhà hát Quân Đội",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": "show_schedule_only",
+   "note": "Not researched in depth; no usable source on show length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "taste-of-the-soul-8608c4",
+   "name": "Taste of The Soul",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [
+    "https://tasteofthesoul.wmhaus.vn/"
+   ],
+   "suggested_category": null,
+   "status_flag": "episodic dinner-music event series; no fixed schedule or confirmed venue",
+   "note": "Could not match this venue to a listed show; the Chào Show at another address (90-120 min) is not confirmed to be it.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-dong-thu-thiem-c89112",
+   "name": "Công viên Đông Thủ Thiêm",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-le-thi-rieng-7c20c4",
+   "name": "Công viên Lê Thị Riêng",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "No source found.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cong-vien-vinhomes-central-park-260d00",
+   "name": "Công viên Vinhomes Central Park",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Only size (14 ha, 1 km riverside path); no visit length; some reviews say access is for residents.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "vuon-hoa-tuong-dai-bac-ho-bea588",
+   "name": "Vườn hoa Tượng Đài Bác Hồ",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Small garden in front of City Hall; no source gives a visit length.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-dem-hanh-thong-tay-d637ef",
+   "name": "Chợ Đêm Hạnh Thông Tây",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Local clothes/food night market; no source gives a browsing time.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "cho-van-thanh-af3ba0",
+   "name": "Chợ Văn Thánh",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Not covered by any usable source.",
+   "settled_by": "agreed",
+   "reason": null
+  },
+  {
+   "id": "pho-di-bo-nguyen-dinh-chieu-a36c54",
+   "name": "Phố đi bộ Nguyễn Đình Chiểu",
+   "minutes": null,
+   "low": null,
+   "high": null,
+   "basis": "none",
+   "sources": [],
+   "verifier_urls": [],
+   "suggested_category": null,
+   "status_flag": null,
+   "note": "Short street (350-450 m), evening hours; no source states a typical stay.",
+   "settled_by": "agreed",
+   "reason": null
+  }
+ ]
+}

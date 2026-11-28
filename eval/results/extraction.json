@@ -1,0 +1,214 @@
+{
+  "generatedAt": "2026-11-08T15:25:37.445Z",
+  "model": "gemini-3.5-flash-lite",
+  "promptVersion": "semantic-v3",
+  "queries": 62,
+  "answered": 62,
+  "failed": [],
+  "callsPerQuery": 1.02,
+  "latencyMs": {
+    "mean": 5246,
+    "p50": 1811,
+    "p95": 38772
+  },
+  "days": {
+    "stated": {
+      "n": 20,
+      "correct": 20,
+      "accuracy": 1
+    },
+    "absent": {
+      "n": 2,
+      "correct": 2,
+      "accuracy": 1
+    }
+  },
+  "budget": {
+    "stated": {
+      "n": 17,
+      "correct": 17,
+      "accuracy": 1
+    },
+    "absent": {
+      "n": 3,
+      "correct": 3,
+      "accuracy": 1
+    }
+  },
+  "interests": {
+    "queries": 29,
+    "tp": 35,
+    "fp": 2,
+    "fn": 0,
+    "precision": 0.946,
+    "recall": 1,
+    "f1": 0.972,
+    "exactMatch": 0.931
+  },
+  "avoid": {
+    "queries": 20,
+    "tp": 17,
+    "fp": 1,
+    "fn": 3,
+    "precision": 0.944,
+    "recall": 0.85,
+    "f1": 0.895,
+    "exactMatch": 0.8
+  },
+  "mustVisit": {
+    "queries": 14,
+    "tp": 13,
+    "fp": 0,
+    "fn": 2,
+    "precision": 1,
+    "recall": 0.867,
+    "f1": 0.929,
+    "exactMatch": 0.857
+  },
+  "asTheAppReadsIt": {
+    "avoid": {
+      "queries": 20,
+      "tp": 20,
+      "fp": 2,
+      "fn": 0,
+      "precision": 0.909,
+      "recall": 1,
+      "f1": 0.952,
+      "exactMatch": 0.9
+    },
+    "mustVisit": {
+      "queries": 14,
+      "tp": 13,
+      "fp": 0,
+      "fn": 2,
+      "precision": 1,
+      "recall": 0.867,
+      "f1": 0.929,
+      "exactMatch": 0.857
+    }
+  },
+  "misses": [
+    {
+      "id": "b07",
+      "text": "thích văn hoá và lịch sử",
+      "field": "interests",
+      "gold": [
+        "culture"
+      ],
+      "predicted": [
+        "culture",
+        "lich su"
+      ]
+    },
+    {
+      "id": "c02",
+      "text": "tôi dị ứng đậu phộng",
+      "field": "avoid",
+      "gold": [
+        "đậu phộng"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "c06",
+      "text": "mình ăn chay, không ăn thịt",
+      "field": "avoid (as the app reads it)",
+      "gold": [
+        "thịt"
+      ],
+      "predicted": [
+        "Tránh: không ăn thịt",
+        "Ăn chay"
+      ]
+    },
+    {
+      "id": "c06",
+      "text": "mình ăn chay, không ăn thịt",
+      "field": "avoid",
+      "gold": [
+        "thịt"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "c08",
+      "text": "dị ứng hải sản, không ăn cay",
+      "field": "avoid",
+      "gold": [
+        "hải sản",
+        "cay"
+      ],
+      "predicted": [
+        "không ăn cay"
+      ]
+    },
+    {
+      "id": "c10",
+      "text": "không thích đi bộ nhiều",
+      "field": "avoid (as the app reads it)",
+      "gold": [],
+      "predicted": [
+        "Tránh: không thích đi bộ nhiều"
+      ]
+    },
+    {
+      "id": "c10",
+      "text": "không thích đi bộ nhiều",
+      "field": "avoid",
+      "gold": [],
+      "predicted": [
+        "không thích đi bộ nhiều"
+      ]
+    },
+    {
+      "id": "d10",
+      "text": "ăn ở Phở Hòa Pasteur",
+      "field": "must (as the app reads it)",
+      "gold": [
+        "Phở Hòa Pasteur"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "d10",
+      "text": "ăn ở Phở Hòa Pasteur",
+      "field": "must",
+      "gold": [
+        "Phở Hòa Pasteur"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "e08",
+      "text": "3 ngày, thích bảo tàng, văn hoá, ghé Nhà hát Thành phố, không uống cà phê",
+      "field": "must (as the app reads it)",
+      "gold": [
+        "Nhà hát Thành phố"
+      ],
+      "predicted": []
+    },
+    {
+      "id": "e08",
+      "text": "3 ngày, thích bảo tàng, văn hoá, ghé Nhà hát Thành phố, không uống cà phê",
+      "field": "interests",
+      "gold": [
+        "museum",
+        "culture"
+      ],
+      "predicted": [
+        "museum",
+        "culture",
+        "cafe"
+      ]
+    },
+    {
+      "id": "e08",
+      "text": "3 ngày, thích bảo tàng, văn hoá, ghé Nhà hát Thành phố, không uống cà phê",
+      "field": "must",
+      "gold": [
+        "Nhà hát Thành phố"
+      ],
+      "predicted": []
+    }
+  ]
+}

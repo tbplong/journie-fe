@@ -1,0 +1,369 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1900" height="1320" viewBox="0 0 1900 1320" font-family="Helvetica, Arial, sans-serif">
+<defs><marker id="ah" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="context-stroke"/></marker><marker id="ahd" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#1f2933"/></marker><marker id="ahb" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="8" markerHeight="8" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="#4b5563"/></marker></defs>
+<rect width="1900" height="1320" fill="#ffffff"/>
+<circle cx="700" cy="19" r="10" fill="#ffffff" stroke="#374151" stroke-width="1.8"/><path d="M682,54 C682,35 718,35 718,54 Z" fill="#ffffff" stroke="#374151" stroke-width="1.8"/><text x="700" y="70" text-anchor="middle" font-size="12" fill="#374151">TRAVELER</text>
+<path d="M713.5,76 L790,120" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)" marker-start="url(#ahd)"/>
+<circle cx="850" cy="19" r="10" fill="#ffffff" stroke="#374151" stroke-width="1.8"/><path d="M832,54 C832,35 868,35 868,54 Z" fill="#ffffff" stroke="#374151" stroke-width="1.8"/><text x="850" y="70" text-anchor="middle" font-size="12" fill="#374151">BUSINESS</text>
+<path d="M850.0,76 L850,120" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)" marker-start="url(#ahd)"/>
+<circle cx="1000" cy="19" r="10" fill="#ffffff" stroke="#374151" stroke-width="1.8"/><path d="M982,54 C982,35 1018,35 1018,54 Z" fill="#ffffff" stroke="#374151" stroke-width="1.8"/><text x="1000" y="70" text-anchor="middle" font-size="12" fill="#374151">ADMIN</text>
+<path d="M986.5,76 L910,120" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)" marker-start="url(#ahd)"/>
+<rect x="330" y="120" width="1040" height="335" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.4"/>
+<text x="850" y="142.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#1f2933">Frontend — React single-page app</text>
+<text x="850" y="158.0" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">built with Vite · static files on Vercel · runs in the browser (except /api/place-photo, server-side)</text>
+<g transform="translate(430,165) scale(0.5833333333333334)"><g fill="none" stroke="#149eca" stroke-width="2.4"><ellipse cx="24" cy="24" rx="21" ry="8"/><ellipse cx="24" cy="24" rx="21" ry="8" transform="rotate(60 24 24)"/><ellipse cx="24" cy="24" rx="21" ry="8" transform="rotate(120 24 24)"/></g><circle cx="24" cy="24" r="4" fill="#149eca"/></g>
+<text x="444.0" y="206" text-anchor="middle" font-size="10" fill="#1f2933">React 19</text>
+<g transform="translate(522,165) scale(0.5833333333333334)"><defs><linearGradient id="vg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#41d1ff"/><stop offset="1" stop-color="#bd34fe"/></linearGradient></defs><path d="M3 8 L24 45 L45 8 L24 12 Z" fill="url(#vg)"/><path d="M28 3 L16 6 L18 25 L13 24 L23 42 L22 27 L27 28 Z" fill="#ffc517"/></g>
+<text x="536.0" y="206" text-anchor="middle" font-size="10" fill="#1f2933">Vite 8</text>
+<g transform="translate(614,165) scale(0.5833333333333334)"><rect x="2" y="2" width="44" height="44" rx="5" fill="#3178c6"/><text x="43" y="41" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-weight="bold" font-size="20" fill="#ffffff">TS</text></g>
+<text x="628.0" y="206" text-anchor="middle" font-size="10" fill="#1f2933">TypeScript</text>
+<g transform="translate(706,165) scale(0.5833333333333334)"><path d="M24 12c-6 0-9.7 3-11.2 9 2.2-3 4.9-4.1 7.9-3.4 1.7.4 2.9 1.7 4.3 3.1 2.2 2.3 4.8 4.9 10.5 4.9 6 0 9.7-3 11.2-9-2.2 3-4.9 4.1-7.9 3.4-1.7-.4-2.9-1.7-4.3-3.1C32.3 14.6 29.7 12 24 12zM12.8 25.5c-6 0-9.7 3-11.2 9 2.2-3 4.9-4.1 7.9-3.4 1.7.4 2.9 1.7 4.3 3.1 2.2 2.3 4.8 4.9 10.5 4.9 6 0 9.7-3 11.2-9-2.2 3-4.9 4.1-7.9 3.4-1.7-.4-2.9-1.7-4.3-3.1C21.1 28.1 18.5 25.5 12.8 25.5z" fill="#38bdf8"/></g>
+<text x="720.0" y="206" text-anchor="middle" font-size="10" fill="#1f2933">Tailwind 4</text>
+<g transform="translate(798,165) scale(0.5833333333333334)"><path d="M7 41 C7 21 19 8 42 6 C40 29 27 41 7 41 Z" fill="#199900"/><path d="M7 41 L31 17" stroke="#ffffff" stroke-width="2.2"/></g>
+<text x="812.0" y="206" text-anchor="middle" font-size="10" fill="#1f2933">Leaflet</text>
+<text x="900" y="180.0" text-anchor="start" font-size="11" font-weight="normal" fill="#1f2933">React Router 8 · TanStack Query 5</text>
+<text x="900" y="193.75" text-anchor="start" font-size="11" font-weight="normal" fill="#1f2933">Zustand 5 · motion · Lenis</text>
+<g transform="translate(1300,167) scale(0.5)"><path d="M24 7 L44 41 H4 Z" fill="#000000"/></g>
+<text x="1312.0" y="204" text-anchor="middle" font-size="10" fill="#1f2933">Vercel</text>
+<rect x="352" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="344" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="344" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="417.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Auth &amp; Landing</text>
+<text x="417.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">login · register</text>
+<rect x="497" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="489" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="489" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="562.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Planner</text>
+<text x="562.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">chat + form → plan</text>
+<rect x="642" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="634" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="634" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="707.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Trips &amp; Live</text>
+<text x="707.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">timeline · share</text>
+<rect x="787" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="779" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="779" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="852.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Recommend</text>
+<text x="852.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">ask → list of places</text>
+<rect x="932" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="924" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="924" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="997.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Places &amp; Sets</text>
+<text x="997.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">discover · saved</text>
+<rect x="1077" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1069" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1069" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1142.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Profile &amp; Inbox</text>
+<text x="1142.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">preferences</text>
+<rect x="1222" y="228" width="130" height="52" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1214" y="238" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1214" y="254" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1287.0" y="250.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Admin &amp; Business</text>
+<text x="1287.0" y="264.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">users · stats</text>
+<text x="366" y="222.0" text-anchor="start" font-size="10" font-weight="normal" font-style="italic" fill="#4b5563">Feature pages</text>
+<rect x="350" y="350" width="228" height="84" rx="6" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="464.0" y="375.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Server function /api/place-photo</text>
+<text x="464.0" y="388.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Vercel · Vite middleware in dev</text>
+<text x="464.0" y="402.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">fallback: no saved Google photo</text>
+<text x="464.0" y="416.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">server/placePhoto.ts · ZIOMAP key</text>
+<rect x="620" y="346" width="460" height="94" rx="0" fill="#eef6ff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="850.0" y="376.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">API client layer (src/api)</text>
+<text x="850.0" y="389.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">http.ts: fetch · Bearer token · RFC 9457 errors</text>
+<text x="850.0" y="403.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">remoteOr(): backend first, localStorage fallback</text>
+<text x="850.0" y="417.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">React Query hooks (queries.ts)</text>
+<path d="M1120,344 A115.0,10 0 0 1 1350,344 L1350,432 A115.0,10 0 0 1 1120,432 Z" fill="#fff7ed" stroke="#1f2933" stroke-width="1.2"/>
+<path d="M1120,344 A115.0,10 0 0 0 1350,344" fill="none" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1235.0" y="377.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Browser localStorage</text>
+<text x="1235.0" y="390.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">fallback data: accounts,</text>
+<text x="1235.0" y="404.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">trips, sets, shares,</text>
+<text x="1235.0" y="418.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">events, admin…</text>
+<rect x="560" y="294" width="580" height="36" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="850.0" y="309.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Domain layer (src/domain)</text>
+<text x="850.0" y="322.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">planTrip() · solver.ts (branch-and-bound OPTW) · scoring · opening hours · replan</text>
+<path d="M850,280 L850,294" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="867.75" y="281.0" width="88.5" height="13" fill="#ffffff"/>
+<text x="912.0" y="291.0" text-anchor="middle" font-size="10" fill="#374151">use (all pages)</text>
+<path d="M850,330 L850,346" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="867.5" y="332.0" width="149.0" height="13" fill="#ffffff"/>
+<text x="942.0" y="342.0" text-anchor="middle" font-size="10" fill="#374151">draft trip → /routing/days</text>
+<path d="M620,392 L578,392" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<path d="M1080,392 L1120,392" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="15" y="120" width="275" height="335" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="152.5" y="140.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1f2933">External services (frontend side)</text>
+<rect x="30" y="150" width="245" height="44" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="152.5" y="168.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">OpenStreetMap tile servers</text>
+<text x="152.5" y="182.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">basemap tiles (osm.org, osm.fr fallback)</text>
+<path d="M330,172 L275,172" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="30" y="200" width="245" height="44" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="152.5" y="218.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">OSRM public demo server</text>
+<text x="152.5" y="232.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">route/v1 · road geometry on map</text>
+<path d="M330,222 L275,222" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="30" y="250" width="245" height="44" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="152.5" y="268.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Wikimedia Commons</text>
+<text x="152.5" y="282.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">real place photos (open licence)</text>
+<path d="M330,272 L275,272" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="30" y="300" width="245" height="44" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="152.5" y="318.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Mapillary Graph API</text>
+<text x="152.5" y="332.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">street-level photos · optional</text>
+<path d="M330,322 L275,322" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="30" y="350" width="245" height="44" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="152.5" y="368.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Cloudflare Turnstile</text>
+<text x="152.5" y="382.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">anti-bot on sign-in · optional</text>
+<path d="M330,372 L275,372" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="30" y="400" width="245" height="44" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="152.5" y="418.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">ZioMap API → Google Maps</text>
+<text x="152.5" y="432.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">fallback photo URL · image from Google</text>
+<path d="M350,422 L275,422" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<path d="M820,440 L820,535" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="605.25" y="455.5" width="209.50000000000003" height="13" fill="#ffffff"/>
+<text x="710.0" y="465.5" text-anchor="middle" font-size="10" fill="#374151">JSON over HTTP(S): /chat, /retrieval,</text>
+<rect x="643.75" y="467.5" width="132.5" height="13" fill="#ffffff"/>
+<text x="710.0" y="477.5" text-anchor="middle" font-size="10" fill="#374151">/routing, /routing/days</text>
+<rect x="613.5" y="479.5" width="193.00000000000003" height="13" fill="#ffffff"/>
+<text x="710.0" y="489.5" text-anchor="middle" font-size="10" fill="#374151">via Vite proxy /api (dev/preview);</text>
+<rect x="643.75" y="491.5" width="132.5" height="13" fill="#ffffff"/>
+<text x="710.0" y="501.5" text-anchor="middle" font-size="10" fill="#374151">backend has no CORS yet</text>
+<path d="M880,535 L880,440" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="966.0" y="455.5" width="28.0" height="13" fill="#ffffff"/>
+<text x="980.0" y="465.5" text-anchor="middle" font-size="10" fill="#374151">JSON</text>
+<rect x="900.0" y="467.5" width="160.0" height="13" fill="#ffffff"/>
+<text x="980.0" y="477.5" text-anchor="middle" font-size="10" fill="#374151">(problem+json on app errors;</text>
+<rect x="897.25" y="479.5" width="165.5" height="13" fill="#ffffff"/>
+<text x="980.0" y="489.5" text-anchor="middle" font-size="10" fill="#374151">422: FastAPI {detail: [...]})</text>
+<rect x="330" y="535" width="1040" height="475" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.4"/>
+<text x="850" y="556.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#1f2933">Backend application — FastAPI</text>
+<text x="850" y="572.0" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Python 3.13 · Pydantic · httpx · psycopg 3 · Vercel serverless (sin1) · Uvicorn for local dev</text>
+<g transform="translate(352,546) scale(0.625)"><circle cx="24" cy="24" r="22" fill="#009688"/><path d="M27 8 L13 27 H23 L21 40 L35 20 H25 Z" fill="#ffffff"/></g>
+<g transform="translate(390,546) scale(0.625)"><path d="M23.6 3C13.4 3 14 7.4 14 7.4V12h10v1.6H10.1S3.5 12.9 3.5 23.3s5.8 10 5.8 10h3.5v-4.8s-.2-5.8 5.7-5.8h9.8s5.5.1 5.5-5.3V8.5S34.6 3 23.6 3zm-5.4 3.1a1.8 1.8 0 1 1 0 3.6 1.8 1.8 0 0 1 0-3.6z" fill="#3776ab"/><path d="M24.4 45c10.2 0 9.6-4.4 9.6-4.4V36H24v-1.6h13.9s6.6.7 6.6-9.7-5.8-10-5.8-10h-3.5v4.8s.2 5.8-5.7 5.8h-9.8s-5.5-.1-5.5 5.3v8.9S13.4 45 24.4 45zm5.4-3.1a1.8 1.8 0 1 1 0-3.6 1.8 1.8 0 0 1 0 3.6z" fill="#ffd43b"/></g>
+<rect x="345" y="595" width="1010" height="240" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="362" y="612.0" text-anchor="start" font-size="12" font-weight="bold" fill="#1f2933">Feature module</text>
+<rect x="365" y="622" width="230" height="203" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="357" y="632" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="357" y="648" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="480.0" y="639.5" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f2933">Chat / Extraction module</text>
+<rect x="385" y="654" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="480.0" y="674.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Router</text>
+<text x="480.0" y="687.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">POST /chat</text>
+<rect x="385" y="710" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="480.0" y="730.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Service</text>
+<text x="480.0" y="743.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">extract_constraints()</text>
+<rect x="385" y="766" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="480.0" y="786.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Prompt · Repair</text>
+<text x="480.0" y="799.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">Gemini JSON schema · Pydantic</text>
+<rect x="615" y="622" width="230" height="203" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="607" y="632" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="607" y="648" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="730.0" y="639.5" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f2933">Retrieval module</text>
+<rect x="635" y="654" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="730.0" y="674.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Router</text>
+<text x="730.0" y="687.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">POST /retrieval</text>
+<rect x="635" y="710" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="730.0" y="730.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Service · retrieve()</text>
+<text x="730.0" y="743.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">names · interests · scoring</text>
+<rect x="635" y="766" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="730.0" y="786.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Repository</text>
+<text x="730.0" y="799.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">candidates.py · semantic.py</text>
+<rect x="865" y="622" width="230" height="203" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="857" y="632" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="857" y="648" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="980.0" y="639.5" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f2933">Routing module</text>
+<rect x="885" y="654" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="980.0" y="674.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Router</text>
+<text x="980.0" y="687.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">POST /routing · /routing/days</text>
+<rect x="885" y="710" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="980.0" y="730.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Service · plan()</text>
+<text x="980.0" y="743.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">day split · opening hours</text>
+<rect x="885" y="766" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="980.0" y="786.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Solver</text>
+<text x="980.0" y="799.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">ILS (TOPTW) · rules · validate</text>
+<rect x="1115" y="622" width="230" height="203" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1107" y="632" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1107" y="648" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1230.0" y="639.5" text-anchor="middle" font-size="11.5" font-weight="bold" fill="#1f2933">Core &amp; Health module</text>
+<rect x="1135" y="654" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1230.0" y="674.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Router</text>
+<text x="1230.0" y="687.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">GET / · GET /health</text>
+<rect x="1135" y="710" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1230.0" y="730.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Settings</text>
+<text x="1230.0" y="743.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">pydantic-settings (env)</text>
+<rect x="1135" y="766" width="190" height="46" rx="0" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1230.0" y="786.1125" text-anchor="middle" font-size="10.5" font-weight="bold" fill="#1f2933">Errors</text>
+<text x="1230.0" y="799.2375" text-anchor="middle" font-size="9.5" font-weight="normal" fill="#4b5563">RFC 9457 problem+json</text>
+<rect x="345" y="865" width="1010" height="130" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1340" y="882.0" text-anchor="end" font-size="12" font-weight="bold" fill="#1f2933">Infrastructure module</text>
+<rect x="365" y="892" width="360" height="90" rx="0" fill="#eef6ff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="545.0" y="920.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Gemini adapter (services/gemini.py)</text>
+<text x="545.0" y="933.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">GeminiClient.generate_json() → generateContent</text>
+<text x="545.0" y="947.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">embed_all() → embed_texts() → batchEmbedContents</text>
+<text x="545.0" y="961.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">≤ 100 texts per call · other key on 429</text>
+<rect x="745" y="892" width="230" height="90" rx="0" fill="#eef6ff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="860.0" y="920.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Connection pool</text>
+<text x="860.0" y="933.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">retrieval/db.py</text>
+<text x="860.0" y="947.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">psycopg AsyncConnectionPool</text>
+<text x="860.0" y="961.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">max 3 · statement_timeout</text>
+<rect x="995" y="892" width="135" height="90" rx="0" fill="#eef6ff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1062.5" y="927.1" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">OSRM client</text>
+<text x="1062.5" y="940.85" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">routing/osrm.py</text>
+<text x="1062.5" y="954.6" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">table/v1 → road km</text>
+<rect x="1150" y="892" width="190" height="90" rx="0" fill="#eef6ff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1245.0" y="920.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Shared HTTP client</text>
+<text x="1245.0" y="933.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">httpx.AsyncClient</text>
+<text x="1245.0" y="947.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">(app lifespan)</text>
+<text x="1245.0" y="961.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">no redirects: key stays</text>
+<path d="M480,825 L480,892" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="483.25" y="834.75" width="77.5" height="13" fill="#ffffff"/>
+<text x="522.0" y="844.75" text-anchor="middle" font-size="10" fill="#374151">generate_json</text>
+<path d="M655,825 L655,892" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="583.75" y="834.75" width="66.5" height="13" fill="#ffffff"/>
+<text x="617.0" y="844.75" text-anchor="middle" font-size="10" fill="#374151">embed query</text>
+<path d="M800,825 L800,892" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="712.5" y="834.75" width="83.0" height="13" fill="#ffffff"/>
+<text x="754.0" y="844.75" text-anchor="middle" font-size="10" fill="#374151">SQL · pgvector</text>
+<path d="M905,825 L905,892" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="917.0" y="834.75" width="72.0" height="13" fill="#ffffff"/>
+<text x="953.0" y="844.75" text-anchor="middle" font-size="10" fill="#374151">fetch_by_ids</text>
+<rect x="906.0" y="846.75" width="94.0" height="13" fill="#ffffff"/>
+<text x="953.0" y="856.75" text-anchor="middle" font-size="10" fill="#374151">(retrieval repo)</text>
+<path d="M1060,825 L1060,892" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="1065.75" y="834.75" width="44.5" height="13" fill="#ffffff"/>
+<text x="1088.0" y="844.75" text-anchor="middle" font-size="10" fill="#374151">road_km</text>
+<rect x="345" y="1065" width="380" height="120" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="535.0" y="1108.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Google Gemini API</text>
+<text x="535.0" y="1121.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">gemini-3.5-flash-lite: /chat extraction</text>
+<text x="535.0" y="1135.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">gemini-embedding-2 (768-d): query vectors</text>
+<text x="535.0" y="1149.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">place vectors come from the offline import</text>
+<g transform="translate(358,1078) scale(0.625)"><defs><linearGradient id="gg" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#4285f4"/><stop offset="0.55" stop-color="#9b72cb"/><stop offset="1" stop-color="#d96570"/></linearGradient></defs><path d="M24 2 C24 14 34 24 46 24 C34 24 24 34 24 46 C24 34 14 24 2 24 C14 24 24 14 24 2 Z" fill="url(#gg)"/></g>
+<path d="M500,982 L500,1065" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="405.75" y="1020.46" width="88.5" height="13" fill="#ffffff"/>
+<text x="450.0" y="1030.46" text-anchor="middle" font-size="10" fill="#374151">HTTPS · API key</text>
+<path d="M600,1065 L600,982" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="608.0" y="1020.46" width="28.0" height="13" fill="#ffffff"/>
+<text x="622.0" y="1030.46" text-anchor="middle" font-size="10" fill="#374151">JSON</text>
+<rect x="745" y="1055" width="230" height="210" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="860.0" y="1073.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1f2933">Database</text>
+<path d="M762,1090 A98.0,10 0 0 1 958,1090 L958,1242 A98.0,10 0 0 1 762,1242 Z" fill="#e8f1fb" stroke="#336791" stroke-width="1.2"/>
+<path d="M762,1090 A98.0,10 0 0 0 958,1090" fill="none" stroke="#336791" stroke-width="1.2"/>
+<text x="860.0" y="1141.475" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">PostgreSQL + pgvector</text>
+<text x="860.0" y="1155.225" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Azure Flexible Server</text>
+<text x="860.0" y="1168.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">extensions: pg_trgm, vector</text>
+<text x="860.0" y="1182.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">table pois (1 table)</text>
+<text x="860.0" y="1196.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">hours jsonb · tsvector</text>
+<text x="860.0" y="1210.225" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">embedding vector(768)</text>
+<g transform="translate(947,1060) scale(0.4583333333333333)"><ellipse cx="24" cy="10" rx="16" ry="6" fill="#336791"/><path d="M8 10 V38 A16 6 0 0 0 40 38 V10 A16 6 0 0 1 8 10 Z" fill="#336791"/><path d="M8 19 A16 6 0 0 0 40 19 M8 28 A16 6 0 0 0 40 28" fill="none" stroke="#ffffff" stroke-width="1.6"/></g>
+<path d="M790,982 L790,1080" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="758.75" y="1029.76" width="22.5" height="13" fill="#ffffff"/>
+<text x="770.0" y="1039.76" text-anchor="middle" font-size="10" fill="#374151">SQL</text>
+<path d="M930,1080 L930,982" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="938.0" y="1029.76" width="28.0" height="13" fill="#ffffff"/>
+<text x="952.0" y="1039.76" text-anchor="middle" font-size="10" fill="#374151">rows</text>
+<rect x="995" y="1065" width="225" height="92" rx="6" fill="#ffffff" stroke="#1f2933" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="1107.5" y="1094.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">OSRM server (optional OSRM_URL)</text>
+<text x="1107.5" y="1107.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">table/v1 distance matrix</text>
+<text x="1107.5" y="1121.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">self-hosted recommended for prod</text>
+<text x="1107.5" y="1135.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">unset/fails → straight-line estimate</text>
+<path d="M1040,982 L1040,1065" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="1004.0" y="1020.46" width="28.0" height="13" fill="#ffffff"/>
+<text x="1018.0" y="1030.46" text-anchor="middle" font-size="10" fill="#374151">HTTP</text>
+<path d="M1100,1065 L1100,982" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="1108.0" y="1020.46" width="28.0" height="13" fill="#ffffff"/>
+<text x="1122.0" y="1030.46" text-anchor="middle" font-size="10" fill="#374151">JSON</text>
+<rect x="1440" y="120" width="445" height="1145" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.4"/>
+<text x="1662" y="142.0" text-anchor="middle" font-size="13" font-weight="bold" fill="#1f2933">Offline data pipeline — Journie-Data</text>
+<text x="1662" y="158.0" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Python scripts + web research · run by hand · not on the request path</text>
+<rect x="1460" y="172" width="405" height="118" rx="6" fill="#f8fafc" stroke="#1f2933" stroke-width="1.2"/>
+<text x="1662.5" y="207.35" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Data sources</text>
+<text x="1662.5" y="221.1" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Vietmap (Autocomplete · Place · Reverse) · HERE Discover</text>
+<text x="1662.5" y="234.85" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">OSM Overpass · Overture Maps (S3 parquet) · VisitHCMC</text>
+<text x="1662.5" y="248.6" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Wikivoyage · Wikidata · Wikipedia · web research</text>
+<text x="1662.5" y="262.35" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">ZioMap → Google Places · Wikimedia Commons · Mapillary</text>
+<rect x="1490" y="335" width="345" height="56" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1482" y="345" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1482" y="361" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1662.5" y="359.975" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">1. Seed harvest</text>
+<text x="1662.5" y="373.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">editorial lists + OSM / Overture / Wikivoyage</text>
+<rect x="1490" y="430" width="345" height="72" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1482" y="440" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1482" y="456" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1662.5" y="456.1" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">2. Verify &amp; enrich</text>
+<text x="1662.5" y="469.85" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">≥ 2 independent sources agree (pin ≤ 25 m)</text>
+<text x="1662.5" y="483.6" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">HERE opening hours · Vietmap Reverse → ward</text>
+<rect x="1490" y="540" width="345" height="72" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1482" y="550" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1482" y="566" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1662.5" y="566.1" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">3. Assemble &amp; classify</text>
+<text x="1662.5" y="579.85" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">taxonomy category · visit minutes · removals</text>
+<text x="1662.5" y="593.6" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">descriptions + hours from web research (research_1000.json)</text>
+<rect x="1490" y="650" width="345" height="72" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1482" y="660" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1482" y="676" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1662.5" y="676.1" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">4. Export</text>
+<text x="1662.5" y="689.85" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">places_1000 / places_&lt;city&gt;_verified.parquet</text>
+<text x="1662.5" y="703.6" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">69 columns · taxonomy.v1.yaml</text>
+<path d="M1662,290 L1662,335" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="1675.0" y="307.5" width="138.0" height="13" fill="#ffffff"/>
+<text x="1744.0" y="317.5" text-anchor="middle" font-size="10" fill="#374151">HTTPS (API keys in .env)</text>
+<path d="M1850,290 L1850,466 L1835,466" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<path d="M1662,391 L1662,430" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<path d="M1662,502 L1662,540" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<path d="M1662,612 L1662,650" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="1490" y="1110" width="345" height="130" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1482" y="1120" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1482" y="1136" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1662.5" y="1151.35" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">5. Import &amp; embed (journie-be)</text>
+<text x="1662.5" y="1165.1" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">scripts/import_parquet.py</text>
+<text x="1662.5" y="1178.85" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">validate taxonomy · upsert pois</text>
+<text x="1662.5" y="1192.6" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">build search columns</text>
+<text x="1662.5" y="1206.35" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">embed changed rows → pois.embedding</text>
+<rect x="1490" y="780" width="250" height="84" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="1482" y="790" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="1482" y="806" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="1615.0" y="805.225" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Photos &amp; Google Place IDs</text>
+<text x="1615.0" y="818.975" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Commons · Mapillary · Google (ZioMap)</text>
+<text x="1615.0" y="832.725" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">→ src/content/*.json</text>
+<text x="1615.0" y="846.475" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">→ public/places/google/*.jpg</text>
+<path d="M1600,722 L1600,780" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="1522.0" y="746.0" width="72.0" height="13" fill="#ffffff"/>
+<text x="1558.0" y="756.0" text-anchor="middle" font-size="10" fill="#374151">after export</text>
+<path d="M1790,722 L1790,1110" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="1754.0" y="922.4" width="72.0" height="13" fill="#ffffff"/>
+<text x="1790.0" y="932.4" text-anchor="middle" font-size="10" fill="#374151">copy parquet</text>
+<rect x="1754.0" y="934.4" width="72.0" height="13" fill="#ffffff"/>
+<text x="1790.0" y="944.4" text-anchor="middle" font-size="10" fill="#374151">(+ taxonomy)</text>
+<rect x="1732.0" y="946.4" width="116.00000000000001" height="13" fill="#ffffff"/>
+<text x="1790.0" y="956.4" text-anchor="middle" font-size="10" fill="#374151">into journie-be/data</text>
+<path d="M1490,1215 L975,1215" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="1182.75" y="1202.0" width="99.50000000000001" height="13" fill="#ffffff"/>
+<text x="1232.5" y="1212.0" text-anchor="middle" font-size="10" fill="#374151">upsert pois (SQL)</text>
+<path d="M1600,1240 L1600,1295 L535,1295 L535,1185" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<rect x="877.5" y="1282.0" width="325.0" height="13" fill="#ffffff"/>
+<text x="1040.0" y="1292.0" text-anchor="middle" font-size="10" fill="#374151">batchEmbedContents (name + description, changed rows only)</text>
+<path d="M1490,818 L1405,818 L1405,405 L1370,405" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<rect x="1370.65" y="464.09999999999997" width="68.7" height="12.5" fill="#ffffff"/>
+<text x="1405.0" y="473.59999999999997" text-anchor="middle" font-size="9.5" fill="#374151">photos + IDs</text>
+<rect x="1357.5875" y="475.49999999999994" width="94.825" height="12.5" fill="#ffffff"/>
+<text x="1405.0" y="484.99999999999994" text-anchor="middle" font-size="9.5" fill="#374151">Commons/Mapillary</text>
+<rect x="1360.2" y="486.9" width="89.60000000000001" height="12.5" fill="#ffffff"/>
+<text x="1405.0" y="496.4" text-anchor="middle" font-size="9.5" fill="#374151">by hand · Google</text>
+<rect x="1378.4875" y="498.29999999999995" width="53.025000000000006" height="12.5" fill="#ffffff"/>
+<text x="1405.0" y="507.79999999999995" text-anchor="middle" font-size="9.5" fill="#374151">by script</text>
+<rect x="15" y="490" width="275" height="150" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<text x="152.5" y="510.0" text-anchor="middle" font-size="12" font-weight="bold" fill="#1f2933">Legend</text>
+<path d="M32,528 L92,528" fill="none" stroke="#1f2933" stroke-width="1.2" marker-end="url(#ahd)"/>
+<text x="104" y="532.0" text-anchor="start" font-size="11" font-weight="normal" fill="#1f2933">request / call</text>
+<path d="M32,556 L92,556" fill="none" stroke="#4b5563" stroke-width="1.2" stroke-dasharray="5 4" marker-end="url(#ahb)"/>
+<text x="104" y="560.0" text-anchor="start" font-size="11" font-weight="normal" fill="#1f2933">response, data or hand-off</text>
+<rect x="32" y="576" width="60" height="22" rx="4" fill="#ffffff" stroke="#1f2933" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="104" y="591.0" text-anchor="start" font-size="11" font-weight="normal" fill="#1f2933">optional service</text>
+<rect x="44" y="606" width="46" height="24" rx="0" fill="#ffffff" stroke="#1f2933" stroke-width="1.2"/>
+<rect x="36" y="616" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<rect x="36" y="632" width="16" height="9" fill="#ffffff" stroke="#1f2933" stroke-width="1"/>
+<text x="104" y="623.0" text-anchor="start" font-size="11" font-weight="normal" fill="#1f2933">module / component</text>
+<rect x="15" y="660" width="275" height="160" rx="0" fill="#fffbea" stroke="#b7950b" stroke-width="1.2" stroke-dasharray="6 4"/>
+<text x="152.5" y="681.0" text-anchor="middle" font-size="11" font-weight="bold" fill="#1f2933">Current state (backend 7395b66)</text>
+<text x="152.5" y="694.75" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">Backend routes: /chat, /retrieval,</text>
+<text x="152.5" y="708.5" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">/routing, /routing/days, /health.</text>
+<text x="152.5" y="722.25" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">No auth, users or trips tables yet:</text>
+<text x="152.5" y="736.0" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">those features run on localStorage</text>
+<text x="152.5" y="749.75" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">through remoteOr() in the frontend.</text>
+<text x="152.5" y="763.5" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">/retrieval serves Ho Chi Minh City</text>
+<text x="152.5" y="777.25" text-anchor="middle" font-size="10" font-weight="normal" fill="#4b5563">(925 places in the test schema).</text>
+</svg>
